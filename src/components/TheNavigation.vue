@@ -19,8 +19,8 @@
       <div class="lg:hidden navbar-backdrop fixed top-0 left-0 w-full h-full bg-gray-800 opacity-50"></div>
       <nav class="fixed top-0 left-0 bottom-0 w-full max-w-xxs flex flex-col h-full py-8 px-4 bg-gray-700 overflow-auto">
         <div class="mb-6">
-          <a class="block mb-12" href="#">
-            <img class="h-40" src="../assets/htmlknight.svg" alt="">
+          <a class="block mb-4" href="#">
+            <img class="h-20" src="../assets/htmlknight.svg" alt="">
           </a>
           <ul class="mb-8">
             <!-- Intro -->
