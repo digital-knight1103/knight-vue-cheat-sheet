@@ -26,7 +26,7 @@
             <li class="mb-4">
               <a class="flex items-center p-4 text-white bg-green-500 rounded-xl" href="#">
                 <IconOverview />
-                <span class="ml-4 text-sm font-semibold">Overview</span>
+                <span class="ml-4 text-sm font-semibold">Wstęp</span>
               </a>
             </li>
             <li class="mb-4">
@@ -35,14 +35,15 @@
                   <IconAnalitics/>
                 </span>
                 <span class="ml-4 text-sm font-semibold">Analytics</span>
+                <span class="inline-block ml-auto">
+                  <IconArrowDown/> 
+                </span> 
               </a>
             </li>
             <li class="mb-4">
               <a class="flex items-center p-4 text-gray-300 hover:bg-gray-800 rounded-xl" href="#">
                 <span class="text-gray-400">
-                  <svg width="20" height="20" viewbox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17 4.5H14V3.5C14 2.70435 13.6839 1.94129 13.1213 1.37868C12.5587 0.816071 11.7956 0.5 11 0.5H9C8.20435 0.5 7.44129 0.816071 6.87868 1.37868C6.31607 1.94129 6 2.70435 6 3.5V4.5H3C2.20435 4.5 1.44129 4.81607 0.87868 5.37868C0.316071 5.94129 0 6.70435 0 7.5V16.5C0 17.2956 0.316071 18.0587 0.87868 18.6213C1.44129 19.1839 2.20435 19.5 3 19.5H17C17.7956 19.5 18.5587 19.1839 19.1213 18.6213C19.6839 18.0587 20 17.2956 20 16.5V7.5C20 6.70435 19.6839 5.94129 19.1213 5.37868C18.5587 4.81607 17.7956 4.5 17 4.5ZM8 3.5C8 3.23478 8.10536 2.98043 8.29289 2.79289C8.48043 2.60536 8.73478 2.5 9 2.5H11C11.2652 2.5 11.5196 2.60536 11.7071 2.79289C11.8946 2.98043 12 3.23478 12 3.5V4.5H8V3.5ZM18 16.5C18 16.7652 17.8946 17.0196 17.7071 17.2071C17.5196 17.3946 17.2652 17.5 17 17.5H3C2.73478 17.5 2.48043 17.3946 2.29289 17.2071C2.10536 17.0196 2 16.7652 2 16.5V11C2.97544 11.3869 3.97818 11.7011 5 11.94V12.53C5 12.7952 5.10536 13.0496 5.29289 13.2371C5.48043 13.4246 5.73478 13.53 6 13.53C6.26522 13.53 6.51957 13.4246 6.70711 13.2371C6.89464 13.0496 7 12.7952 7 12.53V12.32C7.99435 12.4554 8.99649 12.5255 10 12.53C11.0035 12.5255 12.0057 12.4554 13 12.32V12.53C13 12.7952 13.1054 13.0496 13.2929 13.2371C13.4804 13.4246 13.7348 13.53 14 13.53C14.2652 13.53 14.5196 13.4246 14.7071 13.2371C14.8946 13.0496 15 12.7952 15 12.53V11.94C16.0218 11.7011 17.0246 11.3869 18 11V16.5ZM18 8.81C17.0274 9.22049 16.0244 9.55483 15 9.81V9.5C15 9.23478 14.8946 8.98043 14.7071 8.79289C14.5196 8.60536 14.2652 8.5 14 8.5C13.7348 8.5 13.4804 8.60536 13.2929 8.79289C13.1054 8.98043 13 9.23478 13 9.5V10.24C11.0113 10.54 8.98875 10.54 7 10.24V9.5C7 9.23478 6.89464 8.98043 6.70711 8.79289C6.51957 8.60536 6.26522 8.5 6 8.5C5.73478 8.5 5.48043 8.60536 5.29289 8.79289C5.10536 8.98043 5 9.23478 5 9.5V9.83C3.97562 9.57483 2.9726 9.24049 2 8.83V7.5C2 7.23478 2.10536 6.98043 2.29289 6.79289C2.48043 6.60536 2.73478 6.5 3 6.5H17C17.2652 6.5 17.5196 6.60536 17.7071 6.79289C17.8946 6.98043 18 7.23478 18 7.5V8.81Z" fill="currentColor"></path>
-                  </svg>
+                  <IconSuitcase/>
                 </span>
                 <span class="ml-4 mr-auto text-sm font-semibold">Komponenty</span>
                 <span class="flex items-center justify-center w-6 h-6 bg-green-500 text-white text-xs font-semibold rounded-full">4</span>
@@ -110,6 +111,23 @@
             <span class="ml-4 text-sm font-semibold">Log Out (disabled)</span>
           </a>
         </div>
+        <div class="mt-auto">
+          <a class="group block py-6 pl-6 pr-8 my-4 bg-blue-500 hover:bg-blue-600 rounded-xl transition duration-200" href="#">
+            <div class="flex w-12 h-12 mb-4 items-center justify-center bg-blue-600 group-hover:bg-blue-500 rounded-xl">
+              <IconDoubleArrowTop/>
+            </div>
+            <h5 class="text-sm font-medium text-blue-50 mb-2">Upgrade to PRO</h5>
+            <p class="text-xs leading-normal font-semibold text-blue-200">One year support, monthly updates for up to 5 team members.</p>
+          </a>
+          <a class="group flex py-5 px-6 items-center bg-gray-600 hover:bg-gray-500 rounded-xl transition duration-200" href="#">
+            <div class="flex w-8 h-8 mr-2 items-center justify-center bg-gray-500 group-hover:bg-gray-600 rounded-lg">
+              <img src="../assets/htmlknight.svg" alt=""></div>
+            <span class="text-sm text-gray-100 font-medium">Digital_Knight</span>
+            <div class="ml-auto text-gray-400 group-hover:text-gray-300">
+              <IconVerticalDots/>
+            </div>
+          </a>
+        </div>
       </nav>
     </div>
     <div class="mx-auto lg:ml-80"></div>
@@ -126,6 +144,10 @@ import IconOrder from '@/assets/icons/IconOrder.vue'
 import IconUser from '@/assets/icons/IconUser.vue'
 import IconSetting from '@/assets/icons/IconSetting.vue'
 import IconLogout from '@/assets/icons/IconLogout.vue'
+import IconArrowDown from '@/assets/icons/IconArrowDown.vue'
+import IconSuitcase from '@/assets/icons/IconSuitcase.vue'
+import IconVerticalDots from '@/assets/icons/IconVerticalDots.vue'
+import IconDoubleArrowTop from '@/assets/icons/IconDoubleArrowTop.vue'
 
 export default defineComponent({
   name: 'TheNavigation',
@@ -136,7 +158,11 @@ export default defineComponent({
     IconOrder,
     IconUser,
     IconSetting,
-    IconLogout
+    IconLogout,
+    IconArrowDown,
+    IconSuitcase,
+    IconVerticalDots,
+    IconDoubleArrowTop
   },
   setup() {
     // Burger menus
