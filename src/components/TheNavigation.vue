@@ -5,7 +5,7 @@
       <div class="w-full xl:w-auto px-2 xl:mr-12">
         <div class="flex items-center justify-between">
           <a class="inline-flex items-center h-8" href="#">
-            <img src="../assets/htmlknight.svg" alt="">
+            <img src="../assets/htmlknight.svg" alt="knight vue logo">
           </a>
           <div class="xl:hidden">
             <button class="navbar-burger text-gray-400 hover:text-gray-300 focus:outline-none">
