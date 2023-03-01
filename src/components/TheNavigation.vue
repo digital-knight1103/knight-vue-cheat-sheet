@@ -23,14 +23,16 @@
             <img class="h-40" src="../assets/htmlknight.svg" alt="">
           </a>
           <ul class="mb-8">
-            <li class="mb-4">
+            <!-- Intro -->
+            <li class="mb-2">
               <a class="flex items-center p-4 text-white bg-green-500 rounded-xl" href="#">
                 <IconOverview />
                 <span class="ml-4 text-sm font-semibold">Wstęp</span>
               </a>
             </li>
             
-            <li class="mb-4">
+            <!-- Composition API -->
+            <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/compositionAPI">
                 <IconAnalitics/>
                 <span class="ml-8 font-bold">
@@ -43,33 +45,39 @@
             </li>
 
             <!-- Components -->
-            <li class="mb-4 rounded-xl hover:bg-gray-800">
-              <RouterLink class='text-gray-300' to="/components">
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/components">
                 <IconSuitcase/>
                 <span class="ml-8 font-bold">
                   Komponenty
                 </span>
-                <span class="flex items-center justify-center w-6 h-6 bg-green-500 text-white text-xs font-semibold rounded-full">4</span>
+                <span class="ml-4 flex items-center justify-center w-6 h-6 bg-green-500 text-white text-xs font-semibold rounded-full">
+                  4
+                </span>
               </RouterLink>
             </li>
 
-            <li class="mb-4">
-              <RouterLink to="/test">
+            <!-- TEST -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/test">
                 <IconOrder/>
                 <span class="ml-8 font-bold">
-                  TEST
+                  Testowy
                 </span>
+                <span class="inline-block ml-auto">
+                  <IconArrowDown/> 
+                </span> 
               </RouterLink>
             </li>
 
+            <!-- About -->
             <li>
-              <a class="flex items-center p-4 text-gray-300 hover:bg-gray-800 rounded-xl" href="#">
-                <span class="text-gray-400">
-                  <IconUser/>
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/about">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  O mnie
                 </span>
-                <RouterLink to="/about">O mnie</RouterLink>
-                <!-- <span class="ml-4 text-sm font-semibold">O mnie</span> -->
-              </a>
+              </RouterLink>
             </li>
           </ul>
           <div>
@@ -135,7 +143,7 @@
         </div>
       </nav>
     </div>
-    <div class="bg-white mx-auto lg:ml-80 rounded-lg">
+    <div class="bg-white mx-auto lg:ml-[290px] rounded-lg">
       <RouterView />
     </div>
 
@@ -234,7 +242,10 @@ nav a {
   font-weight: 600;
 }
 nav a.router-link-active {
-    color: white;
+    color: #fff;
+    /* background-color: rgb(36 209 100); */
+    background-color: rgb(21 26 35);
+    /* border: 1px solid rgb(36 209 100); */
 }
 nav a.router-link-exact-active {
   /* color: white; */
@@ -242,9 +253,11 @@ nav a.router-link-exact-active {
   font-weight: 600;
 }
 
+/* Bez ramki routerlinki
 nav a:first-of-type {
   border: 0;
 }
+*/
 
 </style>
 
