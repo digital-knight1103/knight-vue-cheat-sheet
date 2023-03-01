@@ -1,28 +1,23 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-// import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="25" height="25" />
+    <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="25" height="25" /> -->
 
-      <!-- <HelloWorld msg="You did it!" /> -->
+      <TheNavigation/>
 
-      <nav>
+      <!-- <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-      </nav>
-  </header>
-
+      </nav> -->
   <RouterView />
 </template>
 
+<script setup lang="ts">
+import { RouterLink, RouterView } from 'vue-router'
+import TheNavigation from './components/TheNavigation.vue';
+// import HelloWorld from './components/HelloWorld.vue'
+</script>
+
+
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
 
 .logo {
   display: block;
@@ -55,11 +50,6 @@ nav a:first-of-type {
 }
 
 @media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
 
   .logo {
     margin: 0 2rem 0 0;
