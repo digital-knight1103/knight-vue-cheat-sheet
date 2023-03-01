@@ -5,7 +5,7 @@
       <div class="w-full xl:w-auto px-2 xl:mr-12">
         <div class="flex items-center justify-between">
           <a class="inline-flex items-center h-8" href="#">
-            <img src="trizzle-assets/trizzle-logo.svg" alt="">
+            <img src="../assets/htmlknight.svg" alt="">
           </a>
           <div class="xl:hidden">
             <button class="navbar-burger text-gray-400 hover:text-gray-300 focus:outline-none">
@@ -19,12 +19,12 @@
       <div class="lg:hidden navbar-backdrop fixed top-0 left-0 w-full h-full bg-gray-800 opacity-50"></div>
       <nav class="fixed top-0 left-0 bottom-0 w-full max-w-xxs flex flex-col h-full py-8 px-4 bg-gray-700 overflow-auto">
         <div class="mb-6">
-          <a class="inline-block mb-12" href="#">
-            <img class="h-7" src="trizzle-assets/logos/trizzle-logo.svg" alt="">
+          <a class="block mb-12" href="#">
+            <img class="h-40" src="../assets/htmlknight.svg" alt="">
           </a>
           <ul class="mb-8">
             <li class="mb-4">
-              <a class="flex items-center p-4 text-white bg-blue-500 rounded-xl" href="#">
+              <a class="flex items-center p-4 text-white bg-green-500 rounded-xl" href="#">
                 <IconOverview />
                 <span class="ml-4 text-sm font-semibold">Overview</span>
               </a>
