@@ -26,45 +26,49 @@
             <li class="mb-4">
               <a class="flex items-center p-4 text-white bg-green-500 rounded-xl" href="#">
                 <IconOverview />
-                
                 <span class="ml-4 text-sm font-semibold">Wstęp</span>
               </a>
             </li>
+            
             <li class="mb-4">
-              <a class="flex items-center p-4 text-gray-300 hover:bg-gray-800 rounded-xl" href="#">
-                <span class="text-gray-400">
-                  <IconAnalitics/>
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/compositionAPI">
+                <IconAnalitics/>
+                <span class="ml-8 font-bold">
+                  CompositionAPI
                 </span>
-                <RouterLink to="/about">Analytics</RouterLink>
-                <!-- Czemu nie działa szczałka w dół -->
                 <span class="inline-block ml-auto">
                   <IconArrowDown/> 
                 </span> 
-              </a>
+            </RouterLink>
             </li>
-            <li class="mb-4">
-              <a class="flex items-center p-4 text-gray-300 hover:bg-gray-800 rounded-xl" href="#">
-                <span class="text-gray-400">
-                  <IconSuitcase/>
+
+            <!-- Components -->
+            <li class="mb-4 rounded-xl hover:bg-gray-800">
+              <RouterLink class='text-gray-300' to="/components">
+                <IconSuitcase/>
+                <span class="ml-8 font-bold">
+                  Komponenty
                 </span>
-                <RouterLink class="mr-auto" to="/">Komponenty</RouterLink>
                 <span class="flex items-center justify-center w-6 h-6 bg-green-500 text-white text-xs font-semibold rounded-full">4</span>
-              </a>
+              </RouterLink>
             </li>
+
             <li class="mb-4">
-              <a class="flex items-center p-4 text-gray-300 hover:bg-gray-800 rounded-xl" href="#">
-                <span class="text-gray-400">
-                  <IconOrder/>
+              <RouterLink to="/test">
+                <IconOrder/>
+                <span class="ml-8 font-bold">
+                  TEST
                 </span>
-                <span class="ml-4 text-sm font-semibold">Orders</span>
-              </a>
+              </RouterLink>
             </li>
+
             <li>
               <a class="flex items-center p-4 text-gray-300 hover:bg-gray-800 rounded-xl" href="#">
                 <span class="text-gray-400">
                   <IconUser/>
                 </span>
-                <span class="ml-4 text-sm font-semibold">O mnie</span>
+                <RouterLink to="/about">O mnie</RouterLink>
+                <!-- <span class="ml-4 text-sm font-semibold">O mnie</span> -->
               </a>
             </li>
           </ul>
@@ -131,7 +135,7 @@
         </div>
       </nav>
     </div>
-    <div class="bg-white mx-auto lg:ml-80">
+    <div class="bg-white mx-auto lg:ml-80 rounded-lg">
       <RouterView />
     </div>
 
@@ -219,11 +223,22 @@ export default defineComponent({
 </script>
 
 <style scoped>
-nav a.router-link-exact-active {
-  /* color: white; */
+
+nav a {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
   margin-left: 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  font-weight: 600;
+}
+nav a.router-link-active {
+    color: white;
+}
+nav a.router-link-exact-active {
+  /* color: white; */
+  margin-left: 1rem;
   font-weight: 600;
 }
 
@@ -232,3 +247,5 @@ nav a:first-of-type {
 }
 
 </style>
+
+flex items-center p-4 text-gray-300 hover:bg-gray-800 rounded-xl
