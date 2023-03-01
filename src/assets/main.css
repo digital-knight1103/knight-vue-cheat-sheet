@@ -14,9 +14,11 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
+  color: rgb(145 158 176 / var(--tw-text-opacity));
+  background-color: rgb(30 36 49 / var(--tw-bg-opacity));
   transition: color 0.5s, background-color 0.5s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #app {
