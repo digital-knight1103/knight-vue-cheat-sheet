@@ -44,6 +44,19 @@
             </RouterLink>
             </li>
 
+            <!-- Atomic Design -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/test">
+                <IconOrder/>
+                <span class="ml-8 font-bold">
+                  Atomic Design
+                </span>
+                <span class="inline-block ml-auto">
+                  <IconArrowDown/> 
+                </span> 
+              </RouterLink>
+            </li>
+
             <!-- Components -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/components">
@@ -57,21 +70,8 @@
               </RouterLink>
             </li>
 
-            <!-- TEST -->
-            <li class="mb-2">
-              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/test">
-                <IconOrder/>
-                <span class="ml-8 font-bold">
-                  Testowy
-                </span>
-                <span class="inline-block ml-auto">
-                  <IconArrowDown/> 
-                </span> 
-              </RouterLink>
-            </li>
-
             <!-- About -->
-            <li>
+            <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/about">
                 <IconUser/>
                 <span class="ml-8 font-bold">
@@ -79,9 +79,20 @@
                 </span>
               </RouterLink>
             </li>
+
+            <!-- Props -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Props / Emits
+                </span>
+              </RouterLink>
+            </li>
           </ul>
+
           <div>
-            <span class="block mb-8 text-xs font-semibold text-gray-400 uppercase">Tools</span>
+            <span class="block mb-4 text-xs text-gray-300 uppercase font-bold">Tools</span>
             <ul>
               <li>
                 <a class="flex items-center p-4 text-gray-300 hover:bg-gray-800 rounded-xl" href="#">
@@ -124,30 +135,35 @@
             <span class="ml-4 text-sm font-semibold">Log Out (disabled)</span>
           </a>
         </div>
+
+        <!-- UPGRADE -->
         <div class="mt-auto">
-          <a class="group block py-6 pl-6 pr-8 my-4 bg-blue-500 hover:bg-blue-600 rounded-xl transition duration-200" href="#">
+          <a class="flex py-6 pl-6 pr-8 my-4 bg-blue-500 hover:bg-blue-600 rounded-xl transition duration-200" href="#">
             <div class="flex w-12 h-12 mb-4 items-center justify-center bg-blue-600 group-hover:bg-blue-500 rounded-xl">
               <IconDoubleArrowTop/>
             </div>
-            <h5 class="text-sm font-medium text-blue-50 mb-2">Upgrade to PRO</h5>
-            <p class="text-xs leading-normal font-semibold text-blue-200">One year support, monthly updates for up to 5 team members.</p>
+            <h5 class="block text-sm font-medium text-blue-50 mb-2">Upgrade to PRO</h5>
+            <p class="block text-xs leading-normal font-semibold text-blue-200">Projekt w budowie. Oczywiście w wolnych chwilach.</p>
           </a>
-          <a class="group flex py-5 px-6 items-center bg-gray-600 hover:bg-gray-500 rounded-xl transition duration-200" href="#">
-            <div class="flex w-8 h-8 mr-2 items-center justify-center bg-gray-500 group-hover:bg-gray-600 rounded-lg">
-              <img src="../assets/htmlknight.svg" alt=""></div>
+
+          <a class="group flex py-5 px-6 items-center bg-gray-600 hover:bg-gray-500 rounded-xl transition duration-200" href="https://github.com/digital-knight1103">
+            <div class="flex w-5 h-5 mr-2 items-center justify-center bg-gray-500 group-hover:bg-gray-600 rounded-lg">
+              <img src="../assets/github-mark-white.svg" alt="github Logo"></div>
             <span class="text-sm text-gray-100 font-medium">Digital_Knight</span>
             <div class="ml-auto text-gray-400 group-hover:text-gray-300">
               <IconVerticalDots/>
             </div>
           </a>
         </div>
+        <!-- FINISH upgrade -->
+
       </nav>
     </div>
     <div class="bg-white mx-auto lg:ml-[290px] rounded-lg">
       <RouterView />
     </div>
 
-    <!-- JESZCZE SPRAWDZIC prównać z app -->
+    <!-- TODO JESZCZE SPRAWDZIC porównać z app -->
     <!-- <RouterView /> -->
   </div>
 </div>
@@ -231,12 +247,10 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
 nav a {
   display: flex;
   align-items: center;
   padding: 1rem;
-  margin-left: 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;
@@ -249,7 +263,6 @@ nav a.router-link-active {
 }
 nav a.router-link-exact-active {
   /* color: white; */
-  margin-left: 1rem;
   font-weight: 600;
 }
 
@@ -260,5 +273,3 @@ nav a:first-of-type {
 */
 
 </style>
-
-flex items-center p-4 text-gray-300 hover:bg-gray-800 rounded-xl
