@@ -62,7 +62,7 @@
                 <span class="ml-8 font-bold">
                   Komponenty
                 </span>
-                <span class="inline-block ml-auto flex items-center justify-center w-6 h-6 bg-green-500 text-white text-xs font-semibold rounded-full">
+                <span class="ml-auto flex items-center justify-center w-6 h-6 bg-green-500 text-white text-xs font-semibold rounded-full">
                   4
                 </span>
               </RouterLink>

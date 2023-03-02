@@ -1,7 +1,8 @@
 <template>
   <div>
     <PageHeader title="Atomic Design"></PageHeader>
-    <PageContent></PageContent>
+    <PageContent>
+    </PageContent>
   </div>
 </template>
 
@@ -14,7 +15,7 @@ export default defineComponent({
   name: 'CompositionView',
   components: {
     PageHeader,
-    PageContent
+    PageContent,
   },
   setup() {
   }
