@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeader></PageHeader>
+    <PageHeader title="CompositionAPI"></PageHeader>
     <PageContent></PageContent>
   </div>
 </template>

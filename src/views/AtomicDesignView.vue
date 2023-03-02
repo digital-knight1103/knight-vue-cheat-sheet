@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeader title="O mnie"></PageHeader>
+    <PageHeader title="Atomic Design"></PageHeader>
     <PageContent></PageContent>
   </div>
 </template>

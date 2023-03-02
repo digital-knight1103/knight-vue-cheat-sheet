@@ -47,7 +47,7 @@
 
             <!-- Atomic Design -->
             <li class="mb-2">
-              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/test">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/atomicdesign">
                 <IconOrder/>
                 <span class="ml-8 font-bold">
                   Atomic Design
