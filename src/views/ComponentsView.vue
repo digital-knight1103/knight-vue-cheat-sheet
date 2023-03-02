@@ -2,15 +2,14 @@
   <div>
     <PageHeader title="Components"></PageHeader>
     <div class="grid grid-cols-3 ">
-      <CardComponent></CardComponent>
-      <CardComponent></CardComponent>
-      <CardComponent></CardComponent>
-      <CardComponent></CardComponent>
-      <CardComponent></CardComponent>
-      <CardComponent></CardComponent>
-      <CardComponent></CardComponent>
-      <CardComponent></CardComponent>
-      <CardComponent></CardComponent>
+      <CardComponent title="Button" description="opis komponentu"></CardComponent>
+      <CardComponent title="Form" description="opis komponentu"></CardComponent>
+      <CardComponent title="Card" description="opis komponentu"></CardComponent>
+      <CardComponent title="Dupa" description="opis komponentu"></CardComponent>
+      <CardComponent title="Button" description="opis komponentu"></CardComponent>
+      <CardComponent title="Button" description="opis komponentu"></CardComponent>
+      <CardComponent title="Button" description="opis komponentu"></CardComponent>
+      <CardComponent title="Button" description="opis komponentu"></CardComponent>
     </div>
   </div>
 </template>
