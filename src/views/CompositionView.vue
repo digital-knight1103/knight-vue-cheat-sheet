@@ -1,15 +1,22 @@
 <template>
-  <div class="com">
-    <h1>Composition API - test</h1>
+  <div>
+    <PageHeader></PageHeader>
+    <PageContent></PageContent>
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .com {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+<script lang="ts">
+import { defineComponent } from 'vue'
+import PageHeader from '@/components/molecules/PageHeader/PageHeader.vue';
+import PageContent from '@/components/molecules/PageContent/PageContent.vue'
+
+export default defineComponent({
+  name: 'CompositionView',
+  components: {
+    PageHeader,
+    PageContent
+  },
+  setup() {
   }
-}
-</style>
+})
+</script>

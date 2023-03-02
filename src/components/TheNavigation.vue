@@ -17,17 +17,18 @@
     </nav>
     <div class="hidden lg:block navbar-menu relative z-50">
       <div class="lg:hidden navbar-backdrop fixed top-0 left-0 w-full h-full bg-gray-800 opacity-50"></div>
-      <nav class="fixed top-0 left-0 bottom-0 w-full max-w-xxs flex flex-col h-full py-8 px-4 bg-gray-700 overflow-auto">
+      <nav class="fixed top-0 left-0 bottom-0 w-full max-w-xxs flex flex-col h-full pb-8 pt-2 px-4 bg-gray-700 overflow-auto">
         <div class="mb-6">
-          <a class="block mb-4" href="#">
-            <img class="h-20" src="../assets/htmlknight.svg" alt="">
+          <a class="flex justify-center mb-4" href="#">
+            <img class="h-20" src="../assets/htmlknight.svg" alt="logo knight vue">
           </a>
+
           <ul class="mb-8">
             <!-- Intro -->
             <li class="mb-2">
               <a class="flex items-center p-4 text-white bg-green-500 rounded-xl" href="#">
                 <IconOverview />
-                <span class="ml-4 text-sm font-semibold">Wstęp</span>
+                <span class="ml-8 text-sm font-semibold">Wstęp</span>
               </a>
             </li>
             
@@ -51,9 +52,6 @@
                 <span class="ml-8 font-bold">
                   Atomic Design
                 </span>
-                <span class="inline-block ml-auto">
-                  <IconArrowDown/> 
-                </span> 
               </RouterLink>
             </li>
 
@@ -64,7 +62,7 @@
                 <span class="ml-8 font-bold">
                   Komponenty
                 </span>
-                <span class="ml-4 flex items-center justify-center w-6 h-6 bg-green-500 text-white text-xs font-semibold rounded-full">
+                <span class="inline-block ml-auto flex items-center justify-center w-6 h-6 bg-green-500 text-white text-xs font-semibold rounded-full">
                   4
                 </span>
               </RouterLink>
@@ -86,6 +84,26 @@
                 <IconUser/>
                 <span class="ml-8 font-bold">
                   Props / Emits
+                </span>
+              </RouterLink>
+            </li>
+
+            <!-- Events -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Eventy
+                </span>
+              </RouterLink>
+            </li>
+
+            <!-- v-model -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  v-model
                 </span>
               </RouterLink>
             </li>
@@ -138,12 +156,12 @@
 
         <!-- UPGRADE -->
         <div class="mt-auto">
-          <a class="flex py-6 pl-6 pr-8 my-4 bg-blue-500 hover:bg-blue-600 rounded-xl transition duration-200" href="#">
-            <div class="flex w-12 h-12 mb-4 items-center justify-center bg-blue-600 group-hover:bg-blue-500 rounded-xl">
+          <a class="group py-6 pl-6 pr-8 my-4 bg-green-500 hover:bg-green-600 rounded-xl transition duration-200" href="#" id="upgrade">
+            <div class="flex w-12 h-12 mb-4 items-center justify-center bg-green-600 group-hover:bg-green-700 rounded-xl">
               <IconDoubleArrowTop/>
             </div>
-            <h5 class="block text-sm font-medium text-blue-50 mb-2">Upgrade to PRO</h5>
-            <p class="block text-xs leading-normal font-semibold text-blue-200">Projekt w budowie. Oczywiście w wolnych chwilach.</p>
+            <h5 class="block text-sm text-gray-100 mb-2 font-semibold">KNIGHT PRO</h5>
+            <p class="block text-xs leading-normal font-semibold text-gray-100">Projekt w budowie. Oczywiście w wolnych chwilach.</p>
           </a>
 
           <a class="group flex py-5 px-6 items-center bg-gray-600 hover:bg-gray-500 rounded-xl transition duration-200" href="https://github.com/digital-knight1103">
@@ -159,7 +177,7 @@
 
       </nav>
     </div>
-    <div class="bg-white mx-auto lg:ml-[290px] rounded-lg">
+    <div class="bg-gray-600 mx-auto lg:ml-[290px] rounded-lg">
       <RouterView />
     </div>
 
@@ -264,6 +282,10 @@ nav a.router-link-active {
 nav a.router-link-exact-active {
   /* color: white; */
   font-weight: 600;
+}
+
+#upgrade {
+  display: grid;
 }
 
 /* Bez ramki routerlinki
