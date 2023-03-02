@@ -1,6 +1,8 @@
 # Knight VUE - cheat sheet
 
-This template should help get you started developing with Vue 3 in Vite.
+<img src="./assets/htmlknight.svg" alt="Alt text" title="Optional title">
+
+Mała pomoc dydaktyczna i ściągawka do pracy z VUE3
 
 ## Recommended IDE Setup
 
