@@ -29,7 +29,8 @@
               <span class="text-xs text-gray-300">Użyte technologie</span>
             </div>
           </div>
-          <a class="block py-4 px-12 text-center text-white font-bold text-sm leading-6 bg-green-500 hover:bg-green-600 rounded-xl transition duration-200" href="#">Apply Now</a>
+          <!-- Zrobi router linka -->
+          <AppButton text="Sprawdź" :full="true"></AppButton>
         </div>
       </div>
     </section>
@@ -39,11 +40,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import IconVerticalDotsVue from '@/assets/icons/IconVerticalDots.vue';
+import AppButton from '@/components/atoms/AppButton/AppButton.vue';
 
 export default defineComponent({
     name: "CardComponent",
     components: {
-      IconVerticalDotsVue
+      IconVerticalDotsVue,
+      AppButton
     },
     props: {
         title: {
