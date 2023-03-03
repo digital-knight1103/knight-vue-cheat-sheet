@@ -1,10 +1,10 @@
 <template>
   <div>
     <PageHeader title="Atomic Design"></PageHeader>
+    
     <PageContent>
       <BoxInfo title="Hints" :description="desHints"/>
     </PageContent>
-    <BoxInfo title="Hints" :description="desHints"/>
   </div>
 </template>
 
