@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <PageHeader title="CompositionAPI"></PageHeader>
     <PageContent></PageContent>
   </div>

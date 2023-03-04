@@ -26,7 +26,7 @@
           <ul class="mb-8">
             <!-- Intro -->
             <li class="mb-2">
-              <a class="flex items-center p-4 text-white bg-green-500 rounded-xl" href="#">
+              <a class="flex items-center p-4 text-white bg-green-500 rounded-xl" href="home">
                 <IconOverview />
                 <span class="ml-8 text-sm font-semibold">Wstęp</span>
               </a>
@@ -244,7 +244,7 @@
 
       </nav>
     </div>
-    <div class="bg-gray-600 mx-auto lg:ml-[290px] rounded-lg">
+    <div class="bg-gray-600 mx-auto lg:ml-[290px] rounded-lg mt-8">
       <RouterView />
     </div>
 
