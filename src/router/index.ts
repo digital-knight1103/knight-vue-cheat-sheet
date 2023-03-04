@@ -48,7 +48,40 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/TestView.vue')
-    }
+    },
+    // Knowleadge Parts
+    {
+      path: '/propsemits',
+      name: 'propsemits',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/PropsEmitsView.vue')
+    },
+    {
+      path: '/events',
+      name: 'events',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/EventsView.vue')
+    },
+    {
+      path: '/vmodel',
+      name: 'vmodel',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/V-ModelView.vue')
+    },
+    {
+      path: '/forms',
+      name: 'forms',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/FormsView.vue')
+    },
   ]
 })
 
