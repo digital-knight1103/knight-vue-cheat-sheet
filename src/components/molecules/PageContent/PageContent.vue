@@ -18,7 +18,6 @@ export default defineComponent({
 
 <style scoped>
 .card {
-
   position: relative;
   display: flex;
   flex-direction: column;

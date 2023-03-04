@@ -1,10 +1,11 @@
 <template>
   <main>
     <!-- <TheWelcome /> -->
-    <h1>Strona główna</h1>
+    <MainBanner/>
   </main>
 </template>
 
 <script setup lang="ts">
-// import TheWelcome from '../components/TheWelcome.vue'
+import MainBanner from '@/components/molecules/MainBanner/MainBanner.vue'
+
 </script>
