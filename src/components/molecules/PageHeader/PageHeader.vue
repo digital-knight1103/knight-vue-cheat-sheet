@@ -1,12 +1,12 @@
 <template>
-  <div class="page-header flex p-0 relative overflow-hidden items-center bg-cover bg-center min-h-[300px] rounded-lg mt-4">
+  <div class="page-header flex p-0 relative overflow-hidden items-center bg-cover bg-center min-h-[300px] rounded-lg mt-4" :class="[big ? smallBanner : bigBanner]">
     <span class="mask absolute top-0 left-0 w-full h-full bg-cover opacity-60"></span>
     <h1 class="text-xl text-white ml-4">{{ title }}</h1>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent,ref } from 'vue'
 
 export default defineComponent({
   name: 'PageHeader',
@@ -14,9 +14,21 @@ export default defineComponent({
     title: {
       type: String,
       required: true
+    },
+    big: {
+      type: Boolean,
+      default: false
     }
   },
   setup() {
+    const bigBanner = ref('min-h-[300px]')
+    const smallBanner = ref('min-h-[150px]')
+
+    return {
+      bigBanner,
+      smallBanner
+    }
+
   }
 })
 </script>

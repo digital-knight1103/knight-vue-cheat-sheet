@@ -69,7 +69,7 @@
             </li>
 
             <!-- About -->
-            <li class="mb-2">
+            <li class="mb-8">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/about">
                 <IconUser/>
                 <span class="ml-8 font-bold">
@@ -77,6 +77,11 @@
                 </span>
               </RouterLink>
             </li>
+
+              
+            <div class="border-green-500 opacity-60 border-t-[1px] relative mb-10">
+              <span class="absolute text-[12px] font-bold">Wiedza</span>
+            </div>
 
             <!-- Props -->
             <li class="mb-2">
@@ -107,10 +112,72 @@
                 </span>
               </RouterLink>
             </li>
+
+            <!-- formularze -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Formularze
+                </span>
+              </RouterLink>
+            </li>
+
+            <!-- class/styles -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Klasy i style
+                </span>
+              </RouterLink>
+            </li>
+
+            <!-- sloty -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Sloty
+                </span>
+              </RouterLink>
+            </li>
+
+            <!-- provides/inject -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Provides/Inject
+                </span>
+              </RouterLink>
+            </li>
+
+            <!-- lifecycle Hooks -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Cykl życia
+                </span>
+              </RouterLink>
+            </li>
+
+            <!-- composables -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Composables
+                </span>
+              </RouterLink>
+            </li>
           </ul>
 
           <div>
-            <span class="block mb-4 text-xs text-gray-300 uppercase font-bold">Tools</span>
+            <div class="border-green-500 opacity-60 border-t-[1px] relative mb-6">
+              <span class="absolute text-[12px] font-bold">Narzędzia(Tools)</span>
+            </div>
             <ul>
               <li>
                 <a class="flex items-center p-4 text-gray-300 hover:bg-gray-800 rounded-xl" href="#">
