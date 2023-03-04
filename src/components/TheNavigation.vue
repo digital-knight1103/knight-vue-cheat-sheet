@@ -210,6 +210,11 @@
             </ul>
           </div>
         </div>
+
+        <div class="border-green-500 opacity-60 border-t-[1px] relative mb-6">
+          <span class="absolute text-[12px] font-bold">Ustawienia</span>
+        </div>
+
         <div class="mt-auto">
           <a class="flex items-center p-4 text-gray-300 hover:bg-gray-800 rounded-xl" href="#">
             <span class="text-gray-400">

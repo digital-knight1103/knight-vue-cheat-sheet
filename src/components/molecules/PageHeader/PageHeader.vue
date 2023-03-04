@@ -15,6 +15,10 @@ export default defineComponent({
       type: String,
       required: true
     },
+    path: {
+      type: String,
+      default: ''
+    },
     big: {
       type: Boolean,
       default: false
