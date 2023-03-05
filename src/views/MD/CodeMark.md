@@ -13,7 +13,7 @@ title: CompositionAPI
 
 ```js
 // syntax highlighting example
-function vitesse() {
+function test() {
   const foo = 'bar'
   console.log(foo)
 }
