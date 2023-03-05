@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <PageHeader title="Events"></PageHeader>
+    <PageHeader path="../src/assets/images/proggramGirl.png" title="Events"></PageHeader>
     <PageContent></PageContent>
   </div>
 </template>

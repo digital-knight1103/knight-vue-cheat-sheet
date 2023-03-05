@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <PageHeader title="Props/Emits"></PageHeader>
+    <PageHeader path="../src/assets/images/laptopgreen.png" title="Props/Emits"></PageHeader>
     <PageContent></PageContent>
   </div>
 </template>

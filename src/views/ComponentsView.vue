@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeader title="Components"></PageHeader>
+    <PageHeader path="../src/assets/images/blockTower.png" title="Components"></PageHeader>
     <div class="grid grid-cols-3 ">
       <CardComponent title="Button" description="opis komponentu"></CardComponent>
       <CardComponent title="Form" description="opis komponentu"></CardComponent>

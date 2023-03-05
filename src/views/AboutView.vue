@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeader title="O mnie"></PageHeader>
+    <PageHeader path="../src/assets/images/knighteye.png" title="O mnie"></PageHeader>
     <PageContent></PageContent>
   </div>
 </template>

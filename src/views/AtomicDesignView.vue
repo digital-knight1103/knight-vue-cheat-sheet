@@ -1,6 +1,6 @@
 <template>
   <div>
-    <PageHeader title="Atomic Design"></PageHeader>
+    <PageHeader path="../src/assets/images/madchemistry.png" title="Atomic Design"></PageHeader>
     
     <PageContent>
       <BoxInfo title="Hints" :description="desHints"/>

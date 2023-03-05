@@ -25,11 +25,18 @@
 
           <ul class="mb-8">
             <!-- Intro -->
-            <li class="mb-2">
+            <!-- <li class="mb-2">
               <a class="flex items-center p-4 text-white bg-green-500 rounded-xl" href="home">
                 <IconOverview />
                 <span class="ml-8 text-sm font-semibold">Wstęp</span>
               </a>
+            </li> -->
+
+            <li class="mb-2">
+              <RouterLink to='/' class="flex items-center p-4 text-white bg-green-500 rounded-xl">
+                <IconOverview />
+                <span class="ml-8 text-sm font-semibold">Wstęp</span>
+              </RouterLink>
             </li>
             
             <!-- Composition API -->
@@ -253,7 +260,7 @@
 
       </nav>
     </div>
-    <div class="bg-gray-600 mx-auto lg:ml-[290px] rounded-lg mt-8">
+    <div class="mx-auto lg:ml-[290px] rounded-lg mt-8">
       <RouterView />
     </div>
 
@@ -364,10 +371,8 @@ nav a.router-link-exact-active {
   display: grid;
 }
 
-/* Bez ramki routerlinki
 nav a:first-of-type {
-  border: 0;
+  border: 8px;
 }
-*/
 
 </style>
