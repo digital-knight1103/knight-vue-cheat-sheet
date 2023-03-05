@@ -2,6 +2,7 @@
   <div class="container">
     <PageHeader title="CompositionAPI" path="../src/assets/images/forest.png"></PageHeader>
     <PageContent></PageContent>
+
   </div>
 </template>
 
