@@ -1,0 +1,35 @@
+.prose {
+  padding: 10px;
+
+}
+
+.prose pre:not(.shiki) {
+  padding: 10px;
+}
+
+.prose .shiki {
+  font-family: 'DM Mono', monospace;
+  padding:25px;
+  font-size: 1rem;
+  line-height: 1.4;
+  border-radius: 10px;
+}
+
+.prose img {
+  width: 100%;
+}
+
+.shiki-light {
+  background: #882020 !important;
+}
+.shiki-dark {
+  background: #21448a !important;
+}
+
+html.dark .shiki-light {
+  display: none;
+}
+
+html:not(.dark) .shiki-dark {
+  display: none;
+}
