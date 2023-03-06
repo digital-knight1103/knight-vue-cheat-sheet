@@ -1,10 +1,15 @@
 <template>
   <div class="my-0 mx-auto">
-    <ul class="tabs__header">
+    <ul 
+      class="tabs__header flex flex-wrap p-0 mb-4"
+    >
       <li 
         v-for="title in tabTitles" 
         :key="title"
-        :class="{ selected: title == selectedTitle}"
+        class="min-w-[100px]"
+        :class="{ 
+          selected: title == selectedTitle 
+        }"
         @click="selectedTitle = title"
       >
         {{ title }}
@@ -36,19 +41,8 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.tabs {
-  margin: 0 auto;
-}
-
-.tabs__header {
-  margin-bottom: 10px;
-  list-style: none;
-  padding: 0;
-  display: flex;
-}
 
 .tabs__header li {
-  width: 100px;
   text-align: center;
   padding: 10px 20px;
   margin-right: 10px;

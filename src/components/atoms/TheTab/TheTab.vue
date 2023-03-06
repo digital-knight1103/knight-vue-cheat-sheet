@@ -1,5 +1,5 @@
 <template>
-  <div class="tab-content" v-show="title == selectedTitle">
+  <div class="tab-content min-h-[100px] bg-gray-600 p-5 rounded-lg shadow-green" v-show="title == selectedTitle">
     <slot />
   </div>
 </template>
@@ -26,14 +26,3 @@ export default defineComponent({
 })
 
 </script>
-
-<style scoped>
-.tab-content {
-  min-height: 400px;
-  background-color: #1E2431;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
-}
-
-</style>

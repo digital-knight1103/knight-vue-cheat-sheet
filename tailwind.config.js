@@ -5,6 +5,11 @@ module.exports = {
   ],
   
   theme: {
+      extend: {
+        boxShadow: {
+          'green': '5px 5px 25px -6px rgb(36 209 100 / 0.1), 0 4px 6px -4px rgb(36 209 100 / 0.1);',
+        }
+      },
       screens: {
           sm: '640px',
           md: '768px',

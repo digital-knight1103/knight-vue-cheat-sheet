@@ -2,12 +2,11 @@
   <div>
     <PageHeader path="../src/assets/images/knighteye.png" title="O mnie"></PageHeader>
     <PageContent>
-      <h1>Tabs</h1>
+      <h1 class="text-center m-4 text-xl uppercase font-bold">Tabs</h1>
       <TabsWrapper>
         <TheTab title="Tab 1">Hello from Tab 1</TheTab>
         <TheTab title="Tab 2">Hello from Tab 2</TheTab>
         <TheTab title="Tab 3">Hello from Tab 3</TheTab>
-        <TheTab title="Tab 4">Hello from Tab 4</TheTab>
       </TabsWrapper>
     </PageContent>
   </div>
