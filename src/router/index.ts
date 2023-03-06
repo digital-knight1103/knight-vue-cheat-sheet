@@ -20,10 +20,7 @@ const router = createRouter({
     {
       path: '/components',
       name: 'components',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/ComponentsView.vue')
+      component: () => import('../views/ComponentsView.vue'),
     },
     {
       path: '/compositionAPI',
@@ -32,6 +29,14 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/CompositionView.vue')
+    },
+    {
+      path: '/tabs',
+      name: 'tabs',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/TabsView.vue')
     },
     {
       path: '/atomicdesign',
@@ -82,6 +87,7 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/FormsView.vue')
     },
+
   ]
 })
 

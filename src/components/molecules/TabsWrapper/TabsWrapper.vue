@@ -52,6 +52,10 @@ export default defineComponent({
   transition: 0.4s all ease-in-out;
 }
 
+.tabs__header li:last-child {
+  margin-right: 0;
+}
+
 .tabs__header li.selected {
   background-color: #24D164;
   color: white;

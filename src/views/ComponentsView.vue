@@ -2,14 +2,10 @@
   <div>
     <PageHeader path="../src/assets/images/blockTower.png" title="Components"></PageHeader>
     <div class="grid grid-cols-3 ">
-      <CardComponent title="Button" description="opis komponentu"></CardComponent>
-      <CardComponent title="Form" description="opis komponentu"></CardComponent>
-      <CardComponent title="Card" description="opis komponentu"></CardComponent>
-      <CardComponent title="Tabs" description="Kontener z tabami"></CardComponent>
-      <CardComponent title="Button" description="opis komponentu"></CardComponent>
-      <CardComponent title="Button" description="opis komponentu"></CardComponent>
-      <CardComponent title="Button" description="opis komponentu"></CardComponent>
-      <CardComponent title="Button" description="opis komponentu"></CardComponent>
+      <CardComponent path='home' title="Button" description="opis komponentu"></CardComponent>
+      <CardComponent path='home' title="Form" description="opis komponentu"></CardComponent>
+      <CardComponent path='home' title="Card" description="opis komponentu"></CardComponent>
+      <CardComponent path='tabs' title="Tabs" description="Kontener z tabami"></CardComponent>
     </div>
   </div>
 </template>
