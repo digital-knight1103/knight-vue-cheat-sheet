@@ -18,3 +18,8 @@ function test() {
   console.log(foo)
 }
 ```
+
+
+<div>
+  <TheWelcome />
+</div>

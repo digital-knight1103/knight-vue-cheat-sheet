@@ -1,6 +1,5 @@
 .prose {
   padding: 10px;
-
 }
 
 .prose pre:not(.shiki) {
@@ -8,6 +7,7 @@
 }
 
 .prose .shiki {
+  width: 100%;
   font-family: 'DM Mono', monospace;
   padding:25px;
   font-size: 1rem;
@@ -15,12 +15,19 @@
   border-radius: 10px;
 }
 
+.prose .shiki-container {
+  display: flex;
+  justify-content: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .prose img {
   width: 100%;
 }
 
 .shiki-light {
-  background: #882020 !important;
+  background: #1E2431 !important;
 }
 .shiki-dark {
   background: #21448a !important;
