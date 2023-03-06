@@ -26,3 +26,14 @@ export default defineComponent({
 })
 
 </script>
+
+<style scoped>
+.tab-content {
+  min-height: 400px;
+  background-color: #1E2431;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+}
+
+</style>
