@@ -5,7 +5,7 @@
       <CardComponent title="Button" description="opis komponentu"></CardComponent>
       <CardComponent title="Form" description="opis komponentu"></CardComponent>
       <CardComponent title="Card" description="opis komponentu"></CardComponent>
-      <CardComponent title="Dupa" description="opis komponentu"></CardComponent>
+      <CardComponent title="Tabs" description="Kontener z tabami"></CardComponent>
       <CardComponent title="Button" description="opis komponentu"></CardComponent>
       <CardComponent title="Button" description="opis komponentu"></CardComponent>
       <CardComponent title="Button" description="opis komponentu"></CardComponent>
