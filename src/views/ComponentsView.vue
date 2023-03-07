@@ -4,7 +4,7 @@
     <div class="grid grid-cols-3 ">
       <CardComponent path='home' title="Button" description="opis komponentu"></CardComponent>
       <CardComponent path='home' title="Form" description="opis komponentu"></CardComponent>
-      <CardComponent path='home' title="Card" description="opis komponentu"></CardComponent>
+      <CardComponent path='avatar' title="Avatar" description="avarat"></CardComponent>
       <CardComponent path='tabs' title="Tabs" description="Kontener z tabami"></CardComponent>
     </div>
   </div>
