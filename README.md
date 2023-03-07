@@ -1,7 +1,7 @@
 # Knight VUE - cheat sheet
 
 <img src="src/assets/smallknight.svg" alt="Alt text" title="Optional title" style="width: 50px;">
-<img src="src/assets/images/bcg.png" alt="Alt text" title="Optional title" style="width: 50px;">
+<img src="src/assets/images/bcg.png" alt="Alt text" title="Optional title" style="width: 600px;">
 
 Mała pomoc dydaktyczna i ściągawka do pracy z VUE3
 
