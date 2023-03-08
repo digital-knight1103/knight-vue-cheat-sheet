@@ -183,6 +183,16 @@
                 </span>
               </RouterLink>
             </li>
+
+            <!-- composables -->
+            <li class="mb-2">
+              <RouterLink class='text-green-300 hover:bg-gray-800 rounded-xl' to="test">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Test
+                </span>
+              </RouterLink>
+            </li>
           </ul>
 
           <div>
