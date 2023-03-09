@@ -4,23 +4,11 @@ import HomeView from '../views/HomeView.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    // Main 
     {
       path: '/',
       name: 'home',
       component: HomeView
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    },
-    {
-      path: '/components',
-      name: 'components',
-      component: () => import('../views/ComponentsView.vue'),
     },
     {
       path: '/compositionAPI',
@@ -30,6 +18,28 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/CompositionView.vue')
     },
+    {
+      path: '/atomicdesign',
+      name: 'atomicdesign',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/AtomicDesignView.vue')
+    },
+    {
+      path: '/components',
+      name: 'components',
+      component: () => import('../views/ComponentsView.vue'),
+    },
+    {
+      path: '/about',
+      name: 'about',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/AboutView.vue')
+    },
+    // Knowledge
     {
       path: '/tabs',
       name: 'tabs',
@@ -47,14 +57,6 @@ const router = createRouter({
       component: () => import('../views/TheAvatarView.vue')
     },
     {
-      path: '/atomicdesign',
-      name: 'atomicdesign',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AtomicDesignView.vue')
-    },
-    {
       path: '/test',
       name: 'test',
       // route level code-splitting
@@ -66,34 +68,27 @@ const router = createRouter({
     {
       path: '/propsemits',
       name: 'propsemits',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/PropsEmitsView.vue')
     },
     {
       path: '/events',
       name: 'events',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/EventsView.vue')
     },
     {
       path: '/vmodel',
       name: 'vmodel',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/V-ModelView.vue')
     },
     {
       path: '/forms',
       name: 'forms',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/FormsView.vue')
+    },
+    {
+      path: '/slots',
+      name: 'slots',
+      component: () => import('../views/SlotsView.vue')
     },
 
   ]
