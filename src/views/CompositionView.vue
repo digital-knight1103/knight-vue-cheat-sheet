@@ -11,7 +11,7 @@
 import { defineComponent } from 'vue'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader.vue';
 import PageContent from '@/components/molecules/PageContent/PageContent.vue'
-import CodeMark from './MD/CodeMark.md'
+import CodeMark from './PageMD/CodeMark.md'
 
 export default defineComponent({
   name: 'CompositionView',
