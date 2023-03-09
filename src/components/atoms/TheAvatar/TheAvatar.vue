@@ -1,5 +1,5 @@
 <template>
-  <span class="relative inline-block">
+  <span class="relative inline-block m-4">
     <img v-if="path.length > 0" :class="imgClass" :src="path" :alt="alt" />
     <img v-else src="../../../assets/images/av.png" :class="imgClass"/>
   </span>

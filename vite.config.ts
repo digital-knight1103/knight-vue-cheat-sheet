@@ -18,9 +18,11 @@ export default defineConfig({
       markdownItSetup(md) {
         md.use(Shiki, {
           theme: {
-            light: 'vitesse-light',
-            dark: 'vitesse-dark',
+            // dark/light
+            light: 'dracula', //dracula, vitesse-dark
+            dark: 'one-dark-pro',
           },
+          // theme: 'slack-dark',
         })
         // md.use(LinkAttributes, {
         //   matcher: (link: string) => /^https?:\/\//.test(link),

@@ -1,5 +1,6 @@
+
 .prose {
-  padding: 10px;
+  padding: 20px;
 }
 
 .prose pre:not(.shiki) {
@@ -9,29 +10,32 @@
 .prose .shiki {
   width: 100%;
   font-family: 'DM Mono', monospace;
-  padding:25px;
-  font-size: 1rem;
-  line-height: 1.4;
+  padding:20px;
+  font-size: 0.9rem;
+  line-height: 1.2;
   border-radius: 10px;
+  background: #1E2431 !important;
+  max-width: 800px;
+  margin: 10px auto;
 }
 
-.prose .shiki-container {
+/* .prose .shiki-container {
   display: flex;
   justify-content: center;
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto;
-}
+} */
 
 .prose img {
   width: 100%;
 }
 
-.shiki-light {
+/* .shiki-light {
   background: #1E2431 !important;
-}
-.shiki-dark {
+} */
+/* .shiki-dark {
   background: #21448a !important;
-}
+} */
 
 html.dark .shiki-light {
   display: none;

@@ -146,7 +146,7 @@
 
             <!-- sloty -->
             <li class="mb-2">
-              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="slots">
                 <IconUser/>
                 <span class="ml-8 font-bold">
                   Sloty

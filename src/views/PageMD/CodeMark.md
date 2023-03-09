@@ -19,7 +19,3 @@ function test() {
 }
 ```
 
-
-<div>
-  <TheWelcome />
-</div>
