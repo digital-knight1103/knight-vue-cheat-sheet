@@ -31,6 +31,8 @@ export default defineComponent({
     // const place = ref(null)
     let number = 1
 
+    let value = ref(10)
+
     const createBox = () => {
       const box = document.createElement('div')
       place.value.append(box)

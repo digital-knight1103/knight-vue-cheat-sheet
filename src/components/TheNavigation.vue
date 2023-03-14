@@ -270,8 +270,13 @@
 
       </nav>
     </div>
+
     <div class="mx-auto lg:ml-[290px] rounded-lg mt-8">
-      <RouterView />
+      <RouterView v-slot="{ Component }">
+        <Transition name="fade" mode="out-in">
+          <Component :is="Component"/>
+        </Transition>
+      </RouterView>
     </div>
 
     <!-- TODO JESZCZE SPRAWDZIC porównać z app -->
@@ -383,6 +388,16 @@ nav a.router-link-exact-active {
 
 nav a:first-of-type {
   border: 8px;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
 }
 
 </style>
