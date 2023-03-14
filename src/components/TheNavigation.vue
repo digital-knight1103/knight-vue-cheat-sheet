@@ -279,6 +279,25 @@
       </RouterView>
     </div>
 
+    <div class="check ml-[600px] mx-auto">
+      <label for="">
+        <input type="radio" name="anim" value="fade" v-model="anim">Fade
+      </label>
+      <label for="">
+        <input type="radio" name="anim" value="fade" v-model="anim">Slide
+      </label>
+      <label for="">
+        <input type="radio" name="anim" value="fade" v-model="anim">Slide down
+      </label>
+      <label for="">
+        <input type="radio" name="anim" value="fade" v-model="anim">Grow in
+      </label>
+      <label for="">
+        <input type="radio" name="anim" value="fade" v-model="anim">Grow out
+      </label>
+
+    </div>
+
     <!-- TODO JESZCZE SPRAWDZIC porównać z app -->
     <!-- <RouterView /> -->
   </div>
@@ -397,7 +416,7 @@ nav a:first-of-type {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
 }
 
 </style>
