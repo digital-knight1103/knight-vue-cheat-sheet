@@ -265,6 +265,8 @@
               <IconVerticalDots/>
             </div>
           </a>
+
+          <TimerVisit/>
         </div>
         <!-- FINISH upgrade -->
 
@@ -419,6 +421,7 @@ import IconArrowDown from '@/assets/icons/IconArrowDown.vue'
 import IconSuitcase from '@/assets/icons/IconSuitcase.vue'
 import IconVerticalDots from '@/assets/icons/IconVerticalDots.vue'
 import IconDoubleArrowTop from '@/assets/icons/IconDoubleArrowTop.vue'
+import TimerVisit from '@/components/atoms/TimerVisit/TimerVisit.vue'
 
 export default defineComponent({
   name: 'TheNavigation',
@@ -433,7 +436,8 @@ export default defineComponent({
     IconArrowDown,
     IconSuitcase,
     IconVerticalDots,
-    IconDoubleArrowTop
+    IconDoubleArrowTop,
+    TimerVisit
   },
   setup() {
     const anim = ref('fade')
