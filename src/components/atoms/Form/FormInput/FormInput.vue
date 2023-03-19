@@ -9,8 +9,10 @@
     </label>
     <input 
       class="block w-full outline-none bg-transparent text-sm text-gray-100 font-medium "
-      type="text"
+      type="email"
       :placeholder="placeholder?.length > 0 ? placeholder : text"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
     >
   </div>
 </template>
@@ -25,6 +27,10 @@ export default defineComponent ({
     text: {
       type: String,
       required: true
+    },
+    modelValue: {
+      type: [String, Number],
+      default: ''
     },
     full: {
       type: Boolean
