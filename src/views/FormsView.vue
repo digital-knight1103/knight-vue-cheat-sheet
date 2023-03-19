@@ -3,7 +3,7 @@
     <PageHeader path="" title="Formularze"></PageHeader>
     <PageContent>
       https://vueschool.io/articles/vuejs-tutorials/building-a-multi-step-form-with-petite-vue/
-      <FormEmail size="lg"/>
+      <FormInput text="Label do inputa"/>
 
     </PageContent>
   </div>
@@ -13,16 +13,17 @@
 import { defineComponent } from 'vue'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader.vue'
 import PageContent from '@/components/molecules/PageContent/PageContent.vue'
-import FormEmail from '@/components/atoms/Form/FormEmail/FormEmail.vue'
+import FormInput from '@/components/atoms/Form/FormInput/FormInput.vue'
 
 export default defineComponent({
   name: 'FormsView',
   components: {
     PageHeader,
     PageContent,
-    FormEmail,
+    FormInput,
   },
   setup() {
   }
 })
 </script>
+
