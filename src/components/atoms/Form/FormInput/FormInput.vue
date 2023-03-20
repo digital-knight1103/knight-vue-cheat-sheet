@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="my-4 relative w-full h-14 py-4 px-3 mb-8 border border-gray-400 hover:border-white focus-within:border-green-500 rounded-lg "
+    class="mt-4 relative w-full h-14 py-4 px-3 mb-2 border border-gray-400 hover:border-white focus-within:border-green-500 rounded-lg "
     :class="[ full ? 'w-full' : 'w-96' ]"
     >
     <label 
@@ -9,7 +9,9 @@
     </label>
     <input 
       class="block w-full outline-none bg-transparent text-sm text-gray-100 font-medium"
-      :placeholder="placeholder?.length > 0 ? placeholder : text"
+      v-bind="$attrs"
+      :placeholder="placeholder?.length > 0 ? placeholder : label"
+      :disabled="disabled"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
     >
@@ -37,7 +39,10 @@ export default defineComponent ({
     placeholder: {
       type: String,
       default: ''
-    }
+    },
+    disabled:{
+      type: Boolean
+    },
   }
 
 })
