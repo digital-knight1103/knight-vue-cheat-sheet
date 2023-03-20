@@ -4,133 +4,88 @@
     <PageContent>
       <FormsMark />
 
-      <p>
-
-        Jeśli użytkownik wprowadza zmiany w polu formularza, emitowany jest zdarzenie input za pomocą dyrektywy @input. Ta dyrektywa słucha zdarzeń wejściowych na elemencie formularza i wywołuje metodę $emit, która wysyła zdarzenie update:modelValue do rodzica komponentu, przekazując aktualną wartość pola formularza.
-        <code>
-          @input="$emit('update:modelValue', $event.target.value)"
-        </code>
-
-        W rodzicu komponentu możesz zarejestrować to zdarzenie i aktualizować wartość modelu, używając v-model, który jest syntaktycznym cukrem dla dyrektywy :value i @input.
-
-        <code>
-          child-component v-model="parentValue"/child-component
-        </code>
-
-        W tym przykładzie, parentValue będzie zawsze aktualizowane na podstawie wartości modelValue, którą zmienia dziecko w komponencie.
-
-      <p>
-      Ale jak spojrzymy do devTools zobaczymy że coś jest nie tak. Brakuje attrybutów takich jak type mimo że dodaliśmy. ???
-    </p>
-
-        <p class="my-4">
-          W Vue za każdym razem, gdy przekazujesz atrybuty, klasy i style od rodzica do dziecka, tak jak robimy to z typew naszym BaseInputkomponentu, Vue spróbuje automatycznie dowiedzieć się, gdzie wewnątrz szablonu te atrybuty powinny zostać wstrzyknięte.
-
-W przypadku komponentów z pojedynczym elementem opakowującym, znanych również jako pojedyncze komponenty główne, takie zachowanie jest bardzo proste. Vue po prostu wstrzyknie wszystkie atrybuty, klasy i style do elementu głównego.
-
-W komponentach wielordzeniowych, takich jak nasz BaseInput, Vue nie może ustalić bez naszej pomocy, do którego węzła lub fragmentu powinien wstrzyknąć atrybuty — więc Vue po prostu się poddaje i wyświetla ostrzeżenie.
-
-W przypadku naszego BaseInputchcemy mieć możliwość wstrzykiwania atrybutów bezpośrednio do pliku input, więc musimy ręcznie powiązać plik $attrssprzeciwić się temu. Zróbmy to teraz, dodając v-bind="$attrs”do naszego elementu wejściowego.
-</p>
-
-<p class="text-green-500">
-  input
-  v-bind="$attrs"
-  :value="modelValue"
-  :placeholder="label"
-  @input="$emit('update:modelValue', $event.target.value)"
-  class="field"
-</p>
-
-Dzięki tej małej zmianie, inputelementy będą teraz poprawnie odbierać typepowiązanie od rodzica, a nasze klasy CSS zostaną zastosowane. 
-
 <p>
   Warto wspomnieć o modyfikatorach
 </p>
 
-      </p>
-
       https://vueschool.io/articles/vuejs-tutorials/building-a-multi-step-form-with-petite-vue/
 
 
-      <!-- Formularz ładny -->
-      <div class="m-10 w-[400px] mx-auto grid gap-y-4">
-        <h1>Formularz oparty o komponenty</h1>
+  <!-- Formularz ładny -->
+  <div class="m-10 w-[600px] mx-auto grid gap-y-4 border border-green-500 p-10 rounded-lg">
+    <h1>Event</h1>
+    <form class="grid">
+      <FormSelect 
+      :options="categories"
+      v-model="event.category"
+      label="Kategorie" 
+    />
+    <h3>Name & describe your event</h3>
+      <FormInput 
+        v-model="event.title"
+        label="Label title"
+        type="text"
+      />
+      <FormInput 
+        v-model="event.description"
+        label="Label desc"
+        type="text"
+      />
+      <h3>Where is your event?</h3>
+      <FormInput 
+        v-model="event.title"
+        label="Label title"
+        type="text"
+      />
 
-        <form class="grid">
-          <FormSelect 
-          :options="categories"
-          v-model="event.category"
-          label="Kategorie" 
-        />
-  
-    
-          <h3>Name & describe your event</h3>
-    
-          <FormInput 
-            v-model="event.title"
-            label="Label title"
-            type="text"
+      <h3>Are pets allowed?</h3>
+      <div>
+        <input
+            type="radio"
+            v-model="event.pets"
+            :value="1"
+            name="pets"
           />
-    
-          <FormInput 
-            v-model="event.description"
-            label="Label desc"
-            type="text"
-          />
-    
-          <h3>Where is your event?</h3>
-
-          <FormInput 
-            v-model="event.location"
-            label="Location"
-            type="text"
-          />
-    
-          <h3>Are pets allowed?</h3>
-          <div>
-            <input
-                type="radio"
-                v-model="event.pets"
-                :value="1"
-                name="pets"
-              />
-            <label>Yes</label>
-          </div>
-    
-          <div>
-            <input
-              type="radio"
-              v-model="event.pets"
-              :value="0"
-              name="pets"
-            />
-            <label>No</label>
-          </div>
-    
-          <h3>Extras</h3>
-          <div>
-            <input
-              type="checkbox"
-              v-model="event.extras.catering"
-              class="field"
-            />
-            <label>Catering</label>
-          </div>
-    
-          <div>
-            <input
-              type="checkbox"
-              v-model="event.extras.music"
-              class="field"
-            />
-            <label>Live music</label>
-          </div>
-    
-          <button type="submit">Submit</button>
-        </form>
+        <label>Yes</label>
       </div>
-      {{ event }}
+
+      <div>
+        <input
+          type="radio"
+          v-model="event.pets"
+          :value="0"
+          name="pets"
+        />
+        <label>No</label>
+      </div>
+
+      <h3>Extras</h3>
+      <div>
+        <input
+          type="checkbox"
+          v-model="event.extras.catering"
+          class="field"
+        />
+        <label>Catering</label>
+      </div>
+
+      <div>
+        <input
+          type="checkbox"
+          v-model="event.extras.music"
+          class="field"
+        />
+        <label>Live music</label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="max-w-lg mx-auto">
+    <h1>Dane pobrane z formularza</h1>
+    {{ event }}
+  </div>
+      
 
       <!-- Zwykły Formularz -->
       <div class="m-10 grid gap-y-4">
