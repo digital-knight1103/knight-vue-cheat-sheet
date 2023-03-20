@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import Components from 'unplugin-vue-components/vite'
 import Markdown from 'vite-plugin-vue-markdown'
 import Shiki from 'markdown-it-shiki'
 import path from 'path'
@@ -33,6 +34,15 @@ export default defineConfig({
         // })
       },
     }),
+    
+    // https://github.com/antfu/unplugin-vue-components
+    Components({
+      // allow auto load markdown components under `./src/components/`
+      extensions: ['vue', 'md'],
+      // allow auto import and register components used in markdown
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      dts: 'src/components.d.ts',
+    }),
   ],
   resolve: {
     alias: {
@@ -40,5 +50,6 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
     },
     extensions: ['.ts', '.json', '.vue', '.png']
-  }
+  },
+  
 })
