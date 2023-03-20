@@ -6,17 +6,6 @@
 
       <p>
 
-
-        
-        V-model również możemy usunąć z komponentu bo na poziomie komponentu nam nie jest potrzebny. Uzyjemy go dopiero w rodzicu.
-
-        No tak ale jak nie ma v-model co jak te dane czy pobrac czy zaktualizować. Jakbyśmy mieli w głównym komponencie to v-model byłby idealny ale tu skorzystamy z takiego rozwiązania. 
-
-        W tym przykładzie wartość modelu jest przechowywana jako właściwość danych komponentu, którą nazywa się modelValue. Ta wartość jest przekazywana do elementu formularza jako wartość value.
-        <p class="text-green-500">
-          input :value="modelValue"
-        </p>
-
         Jeśli użytkownik wprowadza zmiany w polu formularza, emitowany jest zdarzenie input za pomocą dyrektywy @input. Ta dyrektywa słucha zdarzeń wejściowych na elemencie formularza i wywołuje metodę $emit, która wysyła zdarzenie update:modelValue do rodzica komponentu, przekazując aktualną wartość pola formularza.
         <code>
           @input="$emit('update:modelValue', $event.target.value)"
