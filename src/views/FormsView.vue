@@ -61,7 +61,11 @@ W przypadku naszego BaseInputchcemy mieć możliwość wstrzykiwania atrybutów 
 
 Dzięki tej małej zmianie, inputelementy będą teraz poprawnie odbierać typepowiązanie od rodzica, a nasze klasy CSS zostaną zastosowane. 
 
+<p>
+  Warto wspomnieć o modyfikatorach
 </p>
+
+      </p>
 
       https://vueschool.io/articles/vuejs-tutorials/building-a-multi-step-form-with-petite-vue/
 
