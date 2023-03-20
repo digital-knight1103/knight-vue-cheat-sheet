@@ -11,7 +11,6 @@ title: Slots
 
   <p>To teraz co dalej. W naszym komponencie stworzymy template ale nie bój się ostatecznie jest on usunięty a robi za nasz kontener dla elemetów bądź treści które do niego zamieścimy. Potrzebne nam to jest do tego aby skorzystać z v-slot:nazwa slota</p>
 
-  <FormInput input='text'/>
 </div>
 
 <div class='flex'>

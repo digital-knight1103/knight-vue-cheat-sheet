@@ -2,16 +2,10 @@
   <div class="container">
     <PageHeader path="" title="Formularze"></PageHeader>
     <PageContent>
+      <FormsMark />
+
       <p>
-        <p>
-        Hej w tej części zbudujemy formularz oczywiście w oparciu o atomic design aby komponenty były reużywalne i stworzone według najlepszych praktyk. To co zaczynamy. Warto zacząć od jakiegoś planu co by nam się przydało do naszego formularza. Może zacznijmy od stworzenia jakiegoś ładnego inputa.
-        
-        Stylami narazie się nie przejmój. Zaczynamy od labela. Najlepiej użyć tu interpolacji i poprzez propsa przekazać treść labelka od rodzica. Staje się on dzięki temu uniwersalny.  
-        </p>
-        <p class="my-2">
-          Ok. Czas na deser czyli naszego Inputa. Co zrobić aby był dosyć uniwersalny. To samo możemy zrobić z placeholderem co z labelkiem. Choć w tym przypadku aby łądnie wyglądało możemy go dodawać opcjonalnie.
-        Nie dodajemy do naszego inputa type ponieważ defaultowo jest ustawiony text a już w rodzicu zależnie od potrzeby dodamy type jeżeli będziemy otrzebować maila czy passowrd. Nieźle za jednym zamachem mamy już kilka opcji. 
-        </p>
+
 
         
         V-model również możemy usunąć z komponentu bo na poziomie komponentu nam nie jest potrzebny. Uzyjemy go dopiero w rodzicu.
@@ -73,7 +67,7 @@ Dzięki tej małej zmianie, inputelementy będą teraz poprawnie odbierać typep
       <!-- Formularz ładny -->
       <div class="m-10 w-[400px] mx-auto grid gap-y-4">
         <h1>Formularz oparty o komponenty</h1>
-        
+
         <form class="grid">
           <FormSelect 
           :options="categories"
@@ -246,10 +240,12 @@ import PageHeader from '@/components/molecules/PageHeader/PageHeader.vue'
 import PageContent from '@/components/molecules/PageContent/PageContent.vue'
 import FormInput from '@/components/atoms/Form/FormInput/FormInput.vue'
 import FormSelect from '@/components/atoms/Form/FormSelect/FormSelect.vue'
+import FormsMark from '../views/PageMD/FormsMark.md'
 
 export default defineComponent({
   name: 'FormsView',
   components: {
+    FormsMark,
     PageHeader,
     PageContent,
     FormInput,
@@ -285,3 +281,8 @@ export default defineComponent({
 })
 </script>
 
+<style scoped>
+.test {
+  margin: 20px;
+}
+</style>
