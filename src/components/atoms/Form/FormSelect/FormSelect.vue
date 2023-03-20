@@ -8,14 +8,26 @@
       class="absolute bottom-full left-0 ml-3 -mb-1 transform translate-y-0.5 text-xs font-semibold text-gray-300  px-1 bg-gray-500">
       {{ label }}
     </label>
-    <input 
+    <select 
       class="block w-full outline-none bg-transparent text-sm text-gray-100 font-medium"
-      v-bind="$attrs"
+      v-bind="{
+        ...$attrs,
+        onChange: ($event) => { $emit('update:modelValue', $event.target.value) }
+      }"
       :placeholder="placeholder?.length > 0 ? placeholder : label"
       :disabled="disabled"
       :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
     >
+      <option
+        class="bg-gray-600 text-white"
+        v-for="option in options"
+        :value="option"
+        :key="option"
+        :selected="option === modelValue"
+      >
+        {{ option }}
+      </option>
+    </select>
   </div>
 </template>
 
@@ -24,7 +36,7 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent ({
-  name: 'FormInput',
+  name: 'FormSelect',
   props: {
     label: {
       type: String,
@@ -33,6 +45,10 @@ export default defineComponent ({
     modelValue: {
       type: [String, Number],
       default: ''
+    },
+    options: {
+      type: Array,
+      required: true
     },
     full: {
       type: Boolean

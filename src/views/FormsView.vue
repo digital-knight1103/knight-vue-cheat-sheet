@@ -73,17 +73,14 @@ Dzięki tej małej zmianie, inputelementy będą teraz poprawnie odbierać typep
       <!-- Formularz ładny -->
       <div class="m-10 w-[400px] mx-auto grid gap-y-4">
         <h1>Formularz oparty o komponenty</h1>
+        
         <form class="grid">
-    
-          <label>Select a category</label>
-          <select v-model="event.category">
-            <option
-              v-for="option in categories"
-              :value="option"
-              :key="option"
-              :selected="option === event.category"
-            >{{ option }}</option>
-          </select>
+          <FormSelect 
+          :options="categories"
+          v-model="event.category"
+          label="Kategorie" 
+        />
+  
     
           <h3>Name & describe your event</h3>
     
@@ -248,6 +245,7 @@ import { defineComponent } from 'vue'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader.vue'
 import PageContent from '@/components/molecules/PageContent/PageContent.vue'
 import FormInput from '@/components/atoms/Form/FormInput/FormInput.vue'
+import FormSelect from '@/components/atoms/Form/FormSelect/FormSelect.vue'
 
 export default defineComponent({
   name: 'FormsView',
@@ -255,6 +253,7 @@ export default defineComponent({
     PageHeader,
     PageContent,
     FormInput,
+    FormSelect,
   },
   setup() {
     const categories = [
