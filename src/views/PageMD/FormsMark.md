@@ -424,6 +424,29 @@ Zauważ, że dla pól wyboru (checkbox) nie emitujemy wartości celu (target val
   />
 </Form>
 
+<div class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
+  <h1 class='text-2xl uppercase font-semibold'>Radio</h1> 
+  <p>Ufff już bliżej końca. Zostało jeszcze radio</p>
+  <p>
+  Nadszedł czas, aby zająć się ostatnim z naszych elementów formularza na ten kurs Radio.
+
+  Przyciski opcji w HTML mają unikalną cechę, o której musimy wiedzieć, zanim zaczniemy budować nasz komponent — nie działają one jako pojedyncze dane wejściowe, jak w przypadku pól wyboru. Żyją i funkcjonują jako część grupy przycisków opcji, które mają jeden stan.
+
+  W zależności od stanu grupy przycisk radiowy może być aktywny lub nieaktywny w stosunku do przycisków w swojej grupie.
+
+  Z powodu tego szczególnego dziwactwa w sposobie działania przycisków opcji, BaseRadiokomponent będzie miał również inny komponent do ich pogrupowania, the BaseRadioGroup. 
+  </p>
+
+  <p class='my-4'>
+  Nasz kochany v-model. Zauważ, że dla FormRadio ustaliliśmy rodzaj modelValue być z [String, Number]. To powie Vue, że ta właściwość może akceptować wartości łańcuchowe lub liczbowe. 
+  </p>
+
+  <p class='my-4'>
+  Gdy mamy do czynienia z przyciskami radiowymi, każdy przycisk zawiera wartość, którą reprezentuje w zestawie. Na przykład, gdybyś miał grupę przycisków opcji do wyboru ulubionego zwierzaka, jeden przycisk opcji reprezentowałby doga inny by reprezentował cat.
+
+Często zdarza się, że te przyciski reprezentują również wartości liczbowe. Na przykład podczas wybierania liczby gości do pokoju hotelowego lub nawet wartości logicznych w ich formacie numerycznym. 
+  </p>
+</div>
 
 
 

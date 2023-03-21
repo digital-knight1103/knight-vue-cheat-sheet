@@ -16,6 +16,7 @@ declare module '@vue/runtime-core' {
     FormInput: typeof import('./components/atoms/Form/FormInput/FormInput.vue')['default']
     FormLabel: typeof import('./components/atoms/Form/FormLabel/FormLabel.vue')['default']
     FormLegend: typeof import('./components/atoms/Form/FormLegend/FormLegend.vue')['default']
+    FormRadio: typeof import('./components/atoms/Form/FormRadio/FormRadio.vue')['default']
     FormSelect: typeof import('./components/atoms/Form/FormSelect/FormSelect.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     LoadingBar: typeof import('./components/atoms/LoadingBar/LoadingBar.vue')['default']

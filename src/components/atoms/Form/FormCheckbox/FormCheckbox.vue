@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent } from 'vue';
 export default defineComponent({
   name: 'FormCheckbox',
   props: {
@@ -19,7 +19,7 @@ export default defineComponent({
       default: ''
     },
       modelValue: {
-      type: Boolean as PropType<boolean>,
+      type: Boolean,
       default: false
   }
   }

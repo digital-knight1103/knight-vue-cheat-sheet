@@ -2,7 +2,7 @@
   <div class="container">
     <PageHeader path="" title="Formularze"></PageHeader>
     <PageContent>
-      <FormsMark />
+      <FormsMark class="mb-[1000px]"/>
 
 <p>
   Warto wspomnieć o modyfikatorach
