@@ -319,7 +319,7 @@ export default defineComponent ({
 
 })
 </script>
-  ```
+```
 
 
 <div class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
@@ -334,6 +334,95 @@ Na naszym słuchaczu zdarzeń dla onChangechwytamy $eventjako parametr funkcji i
     I co dalej. Trzeba by wybrać jakąś opcję. 
   </p>
 </div>
+
+<div class='mx-10 my-2 p-5 mt-10 bg-gray-600 rounded-lg text-white'>
+  <h1 class='text-2xl uppercase font-semibold'>Checkbox</h1> 
+  <p>Kolej na checkboxa, który równie często wystepuje w formularzach. Z label już wiem jak sobie poradzić ale czy wiemy jak z v-model. Tutaj będzie troszkę inaczej ponieważ checkboxy mają kilka dziwactw! o których musimy pamiętać zanim zaczniemy ustawiać nasze wiązania. Pierwszym z nich jest to, że wejścia checkboxów wiążą swój stan z właściwością checked, a nie bezpośrednio z wartością 'value'
+  </p>
+
+  <p class='my-4'>
+  Właściwość 'value' pól checkbox nie jest zwykle używana na frontendzie, ponieważ jej głównym celem jest dostarczenie wartości, gdy jest przekazywana do backendu poprzez przycisk submit. Jeśli pominiemy tę wartość, domyślnie ustawia się ona na on, co jest w porządku dla większości aplikacji - ponieważ większość formularzy będzie obsługiwana za pośrednictwem jakiegoś asynchronicznego postu, a przekazywane zmienne do backendu są kontrolowane przez kod frontendowy.
+  </p>
+
+  <p class="my-4">
+  Drugą rzeczą, o której musimy pamiętać jest to, że wejścia typu checkbox nie wywołują zdarzeń wejściowych, ale zdarzenia zmiany, gdy są zaznaczone i odznaczone.
+  </p>
+
+  <p>
+  Teraz, gdy jesteśmy uzbrojeni w tę wiedzę, dodajmy nasz prop modelValue, który będzie zawierał pierwszą część naszego dwukierunkowego wiązania: pozwalając rodzicowi na wstrzyknięcie stanu dla pola wyboru.
+  </p>
+
+  <p>
+  Następnie przejdźmy do szablonu i zastąpmy wiązanie v-model, które zostało skopiowane z formularza demo wcześniej, naszym nowym wiązaniem :checked w naszym rekwizycie modelValue.
+  </p>
+</div>
+
+```js
+<template>
+<div>
+  <input
+    type="checkbox"
+    :checked="modelValue"
+    class="field"
+  />
+  <label v-if="label" class="ml-2">{{ label }}</label>
+</div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+export default defineComponent({
+  name: 'FormCheckbox',
+  props: {
+    label: {
+      type: String,
+      default: ''
+    },
+      modelValue: {
+      type: Boolean,
+      default: false
+  }
+  }
+})
+</script>
+```
+
+<div class='mx-auto w-96 border border-green-500 p-6 rounded-lg'>
+  <FormCheckbox label='Zaznacz mnie przyjacielu'/>
+  <FormCheckbox label='I mnie też'/>
+</div>
+
+<div class='mx-10 my-2 p-5 mt-10 bg-gray-600 rounded-lg text-white'>
+
+  <p class='my-4'>
+  Na koniec, musimy emitować update:modelValue kiedy chcemy powiadomić rodzica, że pole wyboru zostało przełączone. Będziemy nasłuchiwać zdarzenia @change na elemencie wejściowym i emitować nowy, sprawdzony stan naszego elementu, gdy tylko zostanie ono wywołane.
+  </p>
+
+  <p>
+Zauważ, że dla pól wyboru (checkbox) nie emitujemy wartości celu (target value) poprzez $event.target.value, ale zamiast tego status checked poprzez $event.target.checked.
+  </p>
+
+  <p>
+  No to wrzućmy nasze checkboxy i połączmy z resztą zobaczymy jak to wygląda
+  </p>
+</div>
+
+<Form class='w-96 mx-auto'>
+  <h3 class='text-white font-semibold'>Przykładowe inputy</h3>
+    
+  <FormInput 
+    label="Name"
+    type="text"
+  />
+    
+  <FormInput 
+    label="Surname"
+    type="text"
+  />
+  <FormCheckbox 
+    label='Zaznacz'
+  />
+</Form>
 
 
 
