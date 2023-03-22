@@ -8,12 +8,13 @@
   Warto wspomnieć o modyfikatorach
 </p>
 
+
       https://vueschool.io/articles/vuejs-tutorials/building-a-multi-step-form-with-petite-vue/
 
 
-  <!-- Formularz ładny -->
+  <!-- Formularz Z KOMPONENTÓW -->
   <div class="m-10 w-[600px] mx-auto grid gap-y-4 border border-green-500 p-10 rounded-lg">
-    <h1>Event</h1>
+    <h1 class="mx-auto text-semibold text-white text-lg">Impreza Urodzinowa</h1>
     <form class="grid">
       <FormSelect 
       :options="categories"
@@ -33,62 +34,48 @@
       />
       <h3>Where is your event?</h3>
       <FormInput 
-        v-model="event.title"
+        v-model="event.location"
         label="Label title"
         type="text"
       />
 
-      <h3>Are pets allowed?</h3>
+      <h3>Można wziąć zwierzaczka ?</h3>
       <div>
-        <input
-            type="radio"
-            v-model="event.pets"
-            :value="1"
-            name="pets"
-          />
-        <label>Yes</label>
-      </div>
-
-      <div>
-        <input
-          type="radio"
+        <FormRadio 
+          label="Tak"
+          v-model="event.pets"
+          :value="1"
+          name="pets"
+        />
+        <FormRadio 
+          label="Nie"
           v-model="event.pets"
           :value="0"
           name="pets"
         />
-        <label>No</label>
       </div>
 
       <h3>Extras</h3>
-      <div>
-        <input
-          type="checkbox"
+        <FormCheckbox
+          label="Catering"
           v-model="event.extras.catering"
-          class="field"
         />
-        <label>Catering</label>
-      </div>
-
-      <div>
-        <input
-          type="checkbox"
+        <FormCheckbox
+          label="Live Music"
           v-model="event.extras.music"
-          class="field"
         />
-        <label>Live music</label>
-      </div>
 
       <button type="submit">Submit</button>
     </form>
   </div>
-  <div class="max-w-lg mx-auto">
+  <div class="max-w-[400px] mx-auto mb-5">
     <h1>Dane pobrane z formularza</h1>
     {{ event }}
   </div>
       
 
       <!-- Zwykły Formularz -->
-      <div class="m-10 grid gap-y-4">
+      <!-- <div class="m-10 grid gap-y-4">
         <h1>Formularz jako jeden komponent</h1>
         <form>
     
@@ -172,7 +159,7 @@
     
           <button type="submit">Submit</button>
         </form>
-      </div>
+      </div> -->
 
     </PageContent>
   </div>
@@ -184,6 +171,7 @@ import PageHeader from '@/components/molecules/PageHeader/PageHeader.vue'
 import PageContent from '@/components/molecules/PageContent/PageContent.vue'
 import FormInput from '@/components/atoms/Form/FormInput/FormInput.vue'
 import FormSelect from '@/components/atoms/Form/FormSelect/FormSelect.vue'
+import FormCheckbox from '@/components/atoms/Form/FormCheckbox/FormCheckbox.vue'
 import FormsMark from '../views/PageMD/FormsMark.md'
 
 export default defineComponent({
@@ -194,6 +182,7 @@ export default defineComponent({
     PageContent,
     FormInput,
     FormSelect,
+    FormCheckbox
   },
   setup() {
     const categories = [
@@ -213,7 +202,7 @@ export default defineComponent({
         pets: 1,
         extras: {
           catering: false,
-          music: false
+          music: true
         }
     }
 

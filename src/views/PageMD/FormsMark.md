@@ -428,27 +428,164 @@ Zauważ, że dla pól wyboru (checkbox) nie emitujemy wartości celu (target val
   <h1 class='text-2xl uppercase font-semibold'>Radio</h1> 
   <p>Ufff już bliżej końca. Zostało jeszcze radio</p>
   <p>
-  Nadszedł czas, aby zająć się ostatnim z naszych elementów formularza na ten kurs Radio.
+  Nadszedł czas, aby zająć się ostatnim z naszych elementów formularza Radio.
 
-  Przyciski opcji w HTML mają unikalną cechę, o której musimy wiedzieć, zanim zaczniemy budować nasz komponent — nie działają one jako pojedyncze dane wejściowe, jak w przypadku pól wyboru. Żyją i funkcjonują jako część grupy przycisków opcji, które mają jeden stan.
+  Przyciski opcji w HTML mają unikalną cechę, o której musimy wiedzieć, zanim zaczniemy budować nasz komponent — nie działają one jako pojedyncze dane wejściowe, jak w przypadku pól wyboru(checkbox). Żyją i funkcjonują jako część grupy przycisków opcji, które mają jeden stan.
 
   W zależności od stanu grupy przycisk radiowy może być aktywny lub nieaktywny w stosunku do przycisków w swojej grupie.
 
-  Z powodu tego szczególnego dziwactwa w sposobie działania przycisków opcji, BaseRadiokomponent będzie miał również inny komponent do ich pogrupowania, the BaseRadioGroup. 
+  Z powodu tego szczególnego dziwactwa w sposobie działania przycisków opcji, FormRadio komponent będzie miał również inny komponent do ich pogrupowania, the FormRadioGroup. 
   </p>
 
   <p class='my-4'>
-  Nasz kochany v-model. Zauważ, że dla FormRadio ustaliliśmy rodzaj modelValue być z [String, Number]. To powie Vue, że ta właściwość może akceptować wartości łańcuchowe lub liczbowe. 
+  Ok jedziemy. Labela nie ma co omawiać natomiast v-model już warto.
+  Zauważ, że dla FormRadio ustaliliśmy rodzaj modelValue być z [String, Number]. To powie Vue, że ta właściwość może akceptować wartości łańcuchowe lub liczbowe. 
   </p>
 
   <p class='my-4'>
-  Gdy mamy do czynienia z przyciskami radiowymi, każdy przycisk zawiera wartość, którą reprezentuje w zestawie. Na przykład, gdybyś miał grupę przycisków opcji do wyboru ulubionego zwierzaka, jeden przycisk opcji reprezentowałby doga inny by reprezentował cat.
+  Gdy mamy do czynienia z przyciskami radiowymi, każdy przycisk zawiera wartość (value), którą reprezentuje w zestawie. Na przykład, gdybyś miał grupę przycisków opcji do wyboru ulubionego zwierzaka, jeden przycisk opcji reprezentowałby doga inny by reprezentował cat czyli:
+  Musi być używany w połączeniu z innymi przyciskami radiowymi, tak aby się wzajemnie wykluczały.
+
+  Przyciski radiowe łączysz poprzez podobną wartość nazwy (name):
 
 Często zdarza się, że te przyciski reprezentują również wartości liczbowe. Na przykład podczas wybierania liczby gości do pokoju hotelowego lub nawet wartości logicznych w ich formacie numerycznym. 
   </p>
 </div>
 
+```html
+<label>
+  <input type="radio" name="newsletter" value="yes">
+  Yes
+</label>
+<label>
+  <input type="radio" name="newsletter" value="no">
+  No
+</label>
+//Zaważ że zaznaczenie jednego usuwa zaznaczenie drugiego
+```
+<div class='my-10'>
+  <label>
+  <input type="radio" name="newsletter" value="yes">
+  Yes
+</label>
+<label>
+  <input type="radio" name="newsletter" value="no">
+  No
+</label>
+</div>
 
+
+<div class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
+  <p>
+    Przejdźmy teraz do wiązania naszej właściwości modelValue z naszym elementem wejściowym. Podobnie jak pola wyboru, przyciski radiowe nie wiążą się z właściwością value, ale używają właściwości checked. Jednakże, w szczególnym przypadku przycisków radiowych musimy sprawdzić, czy ten przycisk jest tym, który jest aktualnie wybrany, czy nie.
+
+    Wróćmy do naszego ulubionego przykładu ze zwierzątkami. ModelValue naszych elementów BaseRadio będzie zawierał preferencje użytkownika, a więc albo kota albo psa - ale musimy być w stanie powiedzieć temu radiu, którą z tych wartości reprezentuje.
+
+    Aby to zrobić, dodamy do komponentu nowy rekwizyt(prop) - value.
+  </p>
+
+  <p class='my-4'>
+    Zauważ, że nie ustawiliśmy wartości domyślnej w przypadku wartości prop, ale zamiast tego wybraliśmy ustawienie właściwości na wymaganą. Jeśli ta właściwość nie jest ustawiona, Vue wyda dla nas ostrzeżenie.
+
+Przycisk radiowy po prostu nie ma sensu, gdy nie ma do niego przypisanej wartości, a wartość domyślna może być potencjalnie problematyczna, jeśli użytkownik zapomni ją ustawić i wiele radioodbiorników będzie miało tę samą wartość.
+
+Aby wiedzieć, czy nasze radio jest :checked, będziemy patrzeć, czy modelValue jest równy wartości. Oznacza to, że preferencje użytkownika, na przykład "pies", będą albo równe wartości tego radia, albo nie będą - zaznaczone lub odznaczone.
+
+Przejdźmy więc dalej i usuńmy stare wiązanie v-model oraz twardo zakodowany atrybut name i zastąpmy go naszym wiązaniem checked. Upewnimy się również, że zaktualizujemy wiązanie wartości do naszego nowego rekwizytu.
+
+Przetłumaczono z www.DeepL.com/Translator (wersja darmowa)
+  </p>
+
+  <p class='my-4'>
+    Już prawie! Teraz musimy dodać drugą część naszego kontraktu v-model, emitowanie zdarzeń aktualizacji. Przyciski radiowe wyzwalają zdarzenia zmiany, gdy stają się wybraną opcją, więc ustawmy słuchacza zdarzeń(listeneraa) zmiany z naszym update:modelValue emit.
+  </p>
+
+  <p class='my-4'>
+    Zwróć uwagę na ładunek naszego $emit. Zamierzamy emitować prop wartości. Chcemy, aby nasz odbiorca v-modelu na rodzicu przechowywał wartość aktualnie wybranego przycisku radiowego, a ponieważ zdarzenie change będzie wywoływane tylko wtedy, gdy element dokona wybranego wyboru, możemy bezpiecznie odpalić value, aby zaktualizować rodzica o nowo wybraną opcję.
+
+Na koniec, ponieważ usunęliśmy atrybut name, musimy upewnić się, że programista używający tego komponentu jest w stanie ustawić atrybuty takie jak name w naszym input. Tak więc użyjemy v-bind="$attrs" na naszym input, tak jak nauczyliśmy się tego podczas budowania naszego komponentu BaseInput, aby umożliwić wstrzyknięcie tego atrybutu do właściwego elementu.
+  </p>
+
+</div>
+
+
+<img src="../../assets/images/radio.png" style="width:400px;"/>
+
+```js
+<template>
+  <input
+      type="radio"
+      :checked="modelValue === value"
+      :value="value"
+      @change="$emit('update:modelValue, value')"
+      v-bind="$attrs"
+    />
+  <label v-if="label">{{ label }}</label>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  name: 'FormRadio',
+  props: {
+    label: {
+      type: String,
+      default: ''
+    },
+    modelValue: {
+      type: [String, Number],
+      default: ''
+    },
+    value: {
+      type: [String, Number],
+      required: true
+    }
+  }
+})
+</script>
+
+```
+
+<FormRadio label='kotek'/>
+
+<div class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
+  <p>
+    Teraz, gdy nasz komponent jest gotowy, możemy wrócić do naszego SimpleForm.vue i zastąpić dwa pola wyboru naszym nowym, błyszczącym komponentem BaseRadio!
+  </p>
+</div>
+
+```html
+<h3>Można wziąć zwierzaczka ?</h3>
+<div>
+  <FormRadio 
+    label="Tak"
+    v-model="event.pets"
+    :value="1"
+    name="pets"
+  />
+  <FormRadio 
+    label="Nie"
+    v-model="event.pets"
+    :value="0"
+    name="pets"
+  />
+</div>
+```
+
+<h3>Można wziąć zwierzaczka ?</h3>
+<div>
+  <FormRadio 
+    label="Tak"
+    :value="1"
+    name="pets"
+  />
+  <FormRadio 
+    label="Nie"
+    :value="0"
+    name="pets"
+  />
+</div>
 
 
 

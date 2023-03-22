@@ -1,11 +1,12 @@
 <template>
   <input
       type="radio"
-      v-model="event.pets"
-      :value="1"
-      name="pets"
+      :checked="modelValue === value"
+      :value="value"
+      @change="$emit('update:modelValue, value')"
+      v-bind="$attrs"
     />
-  <label v-if="label">{{ label }}</label>
+  <label v-if="label" class="ml-2">{{ label }}</label>
 </template>
 
 <script lang="ts">
@@ -21,6 +22,10 @@ export default defineComponent({
     modelValue: {
       type: [String, Number],
       default: ''
+    },
+    value: {
+      type: [String, Number],
+      required: true
     }
   }
 })
