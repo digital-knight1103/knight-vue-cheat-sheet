@@ -587,6 +587,18 @@ export default defineComponent({
   />
 </div>
 
+<BoxInfo 
+  title="Lepiej grupowe bo jeden radio grze uzyjesz"
+  description='trzeba grupować żeby nie narobić bałąganu'
+/>
+
+<div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
+  <h1 class='text-2xl uppercase font-semibold'>RadioGroup</h1> 
+  <p>Jak widzieliśmy, przyciski radiowe mają kilka dziwactw, które mogą potencjalnie uczynić je mylącymi i trudnymi do pracy, ale zrobiliśmy duży postęp w tworzeniu solidnego komponentu BaseRadio. W naszej następnej lekcji pójdziemy o krok dalej i stworzymy komponent BaseRadioGroup, który pozwoli nam jeszcze bardziej uprościć konfigurację i tworzenie grup przycisków radiowych.</p>
+
+</div>
+
+
 
 
 
