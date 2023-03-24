@@ -1,24 +1,37 @@
 ---
 title: Forms
 ---
+<h1 class='text-white mb-10 mt-5 text-2xl uppercase text-center'>
+  Budujemy Formularz krok po kroku
+</h1>
 
-<div class='mx-10 my-2 p-5 bg-gray-600 rounded-lg'>
-  <p class='text-white'>
-    W tej części zbudujemy formularz krok po kroku oczywiście w oparciu o 
-    <RouterLink to='' class='text-green-500 indent-8'>atomic design</RouterLink>
-    aby komponenty były reużywalne i stworzone według najlepszych praktyk. 
+<TextBoxMD>
+  <p class='indent-6'>
+    W tym module postaramy się zbudować formularz krok po kroku, jednak będziemy go tworzyć z takich komponentów aby były reużywalne i stworzone według najlepszych praktyk. To co gotowy do walki 🐱‍👤.
   </p>
+  <p class='my-2'>
+    Warto zacząć od jakiegoś planu, co by nam się przydało do naszego formularza. Może zacznijmy od stworzenia jakiegoś ładnego inputa typu "text" a nastepnie będzie kombinować jak zrobić resztę czyli selecta, checkboxa oraz ratio. 
+  </p>
+  <p class='my-2 indent-6'>
+    Stylami się narazie nie przejmujemy aby nie zaśmiecać ale udostępnie na końcu kod jak komuś się podoba styl. Oczywiście za style odpowiedzialny jest Pan Tailwind. To Bierzemy się za mięso. (przepraszam wszystkich vegan)
+  </p>
+</TextBoxMD>
+
+<TextBoxMD>
+  <h1 class="text-2xl uppercase font-semibold">
+    <span class='text-green-500 forn-bold'>#</span>  Input typu tekst.
+  </h1>
   <p>
-    To co zaczynamy. Warto zacząć od jakiegoś planu, co by nam się przydało do naszego formularza. Może zacznijmy od stworzenia jakiegoś ładnego inputa typy text a nastepnie będzie kombinować jak zrobić selecta albo typy ratio. 
+    Najpierw stworzymy nowy komponent i ładnie go nazwiemy <span class='text-green-500'>"FormInput"</span> i wedle naszej koncepci "Atomic Design" wrzucimy go do naszych atomów.
   </p>
-  <p>
-    Stylami się nie przejmujemy aby nie zaśmiecać ale udostępnie na końcu jak komuś się podoba styl. Bierzemy się za mięso. Zaczynamy od labela. Najlepiej użyć tu interpolacji i poprzez propsa przekazać treść labelka od rodzica. Staje się on dzięki temu uniwersalny.  
+  <p class='my-2'>
+    Bierzemy się za komponent. Zaczynamy od "labela". Najlepiej użyć tu interpolacji i poprzez propsa przekazać treść labelka od rodzica. Staje się on dzięki temu uniwersalny i będziemy mogli gu użyć w wielu różnych formularzach.
   </p>
-</div>
+</TextBoxMD>
 
+```vue
+// FormInput
 
-  ```js
-  // FormInput
 <template>
     <label>
       {{ label }}
@@ -40,33 +53,38 @@ export default defineComponent ({
 
 })
 </script>
-  ```
+```
+<BoxInfo class='mx-auto' title='TypeScript' description='Nie wiem czy miałeś wcześniej styczność z TypeScriptem we VUE. Dlatego żebyś nie nie przestraszył to odsyłam do Cię do części z TS a tutaj w kodzie dlatego że korzystamy z TypeScripta wystepuje defineComponent.' />
 
-<div class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
-  <p>
-    Labelek mamy, czas na główne danie. Co zrobić aby nasz input był dosyć uniwersalny.
-    Możemy np: ustawić nasz palceholder aby był równy wartości labelka.
-    Nie ustawiamy również type dla naszego inpute ponieważ te wartość przekażemy już w rodzicu. Dzięki temu będziemy mogli wybrać między np: text, email czy password. Nieźle za jednym zamacham mamy kilka opcji.
+<TextBoxMD>
+  <p class='indent-6'>
+    Labelka mamy, czas na główne danie. Co zrobić aby nasz input był super mega uniwersalny.
+    Możemy np: ustawić nasz palceholder aby był równy wartości labelka (tips).
+    Nie ustawiamy również typu "type" dla naszego inputa dla naszego inpute ponieważ te wartość przekażemy już w rodzicu. Dzięki temu będziemy mogli wybrać między np: text, email czy password. 
+  </p>
+  <p class='my-2'>
+    Nieźle za jednym zamacham mamy kilka opcji. 🧨
   </p>
   <p class='my-4'>
     V-model również możemy usunąć ponieważ na poziomie komponentu nie jest nam potrzebny. Uźyjemy go dopiero w rodzicu.
   </p>
   <p class='my-4'>
-    No tak ale jak nie ma v-model to jak te dane pobrac lub zaktualizować. Jakbyśmy mieli w głównym komponencie to v-model byłby idealny ale tu skorzystamy z takiego rozwiązania. 
+    No tak ale jak nie ma v-model to jak te dane pobrac lub zaktualizować ??? Jakbyśmy mieli w głównym komponencie to v-model byłby idealny ale tu skorzystamy z takiego rozwiązania. 
   </p>
   <p class='my-4'>
     W tym przykładzie wartość modelu jest przechowywana jako właściwość danych komponentu, którą nazywa się modelValue. Ta wartość będzie przekazana do elementu formularza (rodzica) jako wartość value.
   </p>
-</div>
+</TextBoxMD>
 
-```js
-  // FormInput
+```vue
+// FormInput
+
 <template>
-    <label>{{ label }}</label>
-    <input 
-      :placeholder='label'
-      :value="modelValue"
-    />
+  <label>{{ label }}</label>
+  <input 
+    :placeholder='label'
+    :value="modelValue"
+  />
 </template>
 
 <script lang="ts">
@@ -88,93 +106,143 @@ export default defineComponent ({
 </script>
 ```
 
-<div class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
-  <p>
-    Jeśli użytkownik wprowadza zmiany w polu formularza, emitowany jest zdarzenie input za pomocą dyrektywy <span class='text-green-500'>@input</span>. Ta dyrektywa słucha zdarzeń wejściowych na elemencie formularza i wywołuje metodę $emit, która wysyła zdarzenie <span class='text-blue-500'>update:modelValue</span> do rodzica komponentu, przekazując aktualną wartość pola formularza.
-    <code>
-      @input="$emit('update:modelValue', $event.target.value)"
-    </code>
+<TextBoxMD>
+  <p class='indent-6'>
+    Jeśli użytkownik wprowadza zmiany w polu formularza, emitowane jest zdarzenie "input" za pomocą dyrektywy <span class='text-green-500'>@input</span>. Ta dyrektywa słucha zdarzeń wejściowych na elemencie formularza i wywołuje metodę $emit, która wysyła zdarzenie <span class='text-green-500'>update:modelValue</span> do rodzica komponentu, przekazując aktualną wartość pola formularza.
   </p>
-</div>
+  <p class='my-2'>
+    @input="$emit('update:modelValue', $event.target.value)"
+  </p>
+</TextBoxMD>
 
-```js
+```vue
 // FormInput
+
 <template>
-    <label>{{ label }}</label>
-    <input 
-      :placeholder='label'
-      :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
-    />
+<label>{{ label }}</label>
+<input 
+  :placeholder='label'
+  :value="modelValue"
+  @input="$emit('update:modelValue', $event.target.value)"
+/>
 </template>
 ```
 
-<div  class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
-  <p>
-    W rodzicu możemy zarejestrować to zdarzenie i aktualizować wartość model, używając v-model, który jest połaczeniem dla dyrektywy :value i @input.
+<TextBoxMD>
+  <p class='indent-6'>
+    W rodzicu możemy zarejestrować to zdarzenie i aktualizować wartość model, używając v-model, który jest połaczeniem dla dyrektywy :value i @input ( więcej w module o v-model ). Jak juz mamy to wykonane to wrzucamy nasz komponet do naszego rodzica "FormData" który będzie naszym całym formularzem złożonym z komponetów i reszty elementów.
   </p>
+</TextBoxMD>
+
+```vue
+// FormData
+
+<template>
+  <form>
+    <h1>Formularz</h1>
+    <FormInput 
+      v-model="event.title"
+      label="Super Label"
+      type="text"
+    />
+  </form>
+</template>
+
+<script lang="ts">
+export default defineComponent({
+  name: 'FormData',
+  components: {
+    FormInput,
+  },
+  setup() {
+    const event = {
+        title: ''
+    }
+
+    return {
+      event,
+    }
+  }
+})
+</script>
+```
+
+<TextBoxMD>
+  <p>
+    I tak się prezentuje na input. Wizualnie wygląda OK ale jak zerkniemy w DevToolse to możemy się dopatrzeć że wystąpił mały problemik. A jaki zapytasz. To zerknij i zauważysz że nie wyświetla się nam atrybut "type" mimo że dodaliśmy. O co tu chodzi???
+  </p>
+</TextBoxMD>
+
+<div class='mx-auto w-96 mb-10'>
+<h1>Formularz</h1>
+<FormInput 
+  label="Super Label"
+  type="text"
+  class='w-24'
+/>
 </div>
 
-<div  class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
-  <p>
-   Ale jak spojrzymy do devTools zobaczymy że coś jest nie tak. Brakuje atrybutów takich jak type mimo że dodaliśmy. O co tu chodzi???
-  </p>
-  <BoxInfo title='DevTools' description='Będzie grubo'/>
-  <p>
+
+<TextBoxMD>
+  <p class='indent-6'>
     W Vue za każdym razem, gdy przekazujesz atrybuty, klasy i style od rodzica do dziecka, tak jak robimy to z type w naszym FormInput, Vue spróbuje automatycznie dowiedzieć się, gdzie wewnątrz szablonu te atrybuty powinny zostać wstrzyknięte.
     W przypadku komponentów z pojedynczym elementem opakowującym, znanych również jako pojedyncze komponenty główne, takie zachowanie jest bardzo proste. Vue po prostu wstrzyknie wszystkie atrybuty, klasy i style do elementu głównego.
   </p>
   <p class='my-2'>
-    W komponentach wielordzeniowych, takich jak nasz FormInput, Vue nie może ustalić bez naszej pomocy, do którego węzła lub fragmentu powinien wstrzyknąć atrybuty — więc Vue po prostu się poddaje i wyświetla ostrzeżenie.
+    W komponentach wielordzeniowych, takich jak nasz FormInput, Vue nie może ustalić bez naszej pomocy, do którego miejsca lub fragmentu powinien wstrzyknąć atrybuty — więc Vue po prostu się poddaje i powinno wyświetlić <span class='text-pink-500'>ostrzeżenie</span>.
   </p>
-</div>
+</TextBoxMD>
 
-<div class='flex mx-auto'>
+<div class='flex justify-center'>
 
 ```js
-// Jest tylko input więc nie ma problemu
+// Jest tylko jeden element input 
+// więc nie ma problemu
 // atrybuty spokojnie zostaną przekazane
 <template>
-    <input />
+  <input />
 </template>
 ```
 ```js
 // Są dwa elementy więc są i problemy
 // Vue nie wie gdzie przekazać atrybut
 <template>
-    <label>Problem</label>
-    <input />
+  <label>Problem</label>
+  <input />
 </template>
 ```
 
 </div>
 
-<div  class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
+<TextBoxMD>
   <p>
-   W przypadku naszego FormInput mieć możliwość wstrzykiwania atrybutów bezpośrednio do pliku input, więc musimy ręcznie powiązać plik $attrs przeciwić się temu. Zróbmy to teraz, dodając v-bind="$attrs”do naszego elementu wejściowego.
+   W przypadku naszego FormInput aby mieć możliwość wstrzykiwania atrybutów bezpośrednio do pliku input, musimy ręcznie powiązać plik <span class='text-pink-500'>$attrs</span>. Zróbmy to teraz, dodając v-bind="$attrs” do naszego elementu wejściowego.
   </p>
-</div>
+</TextBoxMD>
 
-```js
+```vue
+// FormInput 
+
 <template>
-    <input 
-      v-bind="$attrs" 
-      :placeholder="label"
-      :value="modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
-    >
+  <input 
+    v-bind="$attrs"   // teraz VUE wie gdzie dodać atrybu do inputa
+    :placeholder="label"
+    :value="modelValue"
+    @input="$emit('update:modelValue', $event.target.value)"
+  >
 </template>
 ```
 
-<div  class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
-  <p>
-   Dzięki tej małej zmianie, VUE teraz wie gdzie co dodać i dziecko będą teraz poprawnie odbierać atrybuty np:type od rodzica, oraz zastosowane klasy. 
-   Po tym wszystkim otrzymujemy takie cuś pięknego.
+<TextBoxMD>
+  <p class='indent-6'>
+   Dzięki tej małej zmianie, VUE wie gdzie co dodać i dziecko będzie miało możliwość poprawnego odbieranai atrybutu np: type lub zastosowane klasy. 
+   Po tym wszystkim powinno wszystko ładnie grać.
   </p>
-</div>
+</TextBoxMD>
 
-```js
+```vue
 // FormInput (dziecko)
+
 <template>
   <div class="kolorki i inne css-y">
     <label 
@@ -214,10 +282,12 @@ export default defineComponent ({
 </template>
 ```
 
-```js
-// FormInput (rodzic)
+```vue
+// FormData (rodzic)
+
 <template>
-  <Form>
+  <h1>Formularz</h1>
+  <form>
     <FormInput 
       v-model="event.title"
       label="Label title"
@@ -228,7 +298,7 @@ export default defineComponent ({
       label="Label desc"
       type="text"
     />
-  </Form>
+  </form>
 </template>
 
 <script lang="ts">
@@ -251,47 +321,46 @@ export default defineComponent({
   }
 })
 </script>
-</template>
 ```
 
 <div>
   <div class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
     <p>
-      I jak dodamy parę klas finalnie otrzymujemy takie cuś. Czyż to nie jest nawet ładne.
+      I proszę finalnie mamy dwa ładne inputy.
     </p>
   </div>
 </div>
 
-<Form class='w-96 mx-auto'>
-  <h3 class='text-white font-semibold'>Przykładowe inputy</h3>
-    
+<Form class='w-96 mx-auto mb-10'>
+  <h3 class='text-white font-semibold'>Formularz</h3> 
   <FormInput 
     label="Name"
     type="text"
   />
-    
   <FormInput 
     label="Surname"
     type="text"
   />
 </Form>
 
-<div class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
-  <h1 class='text-2xl uppercase font-semibold'>FormSelect</h1> 
-  <p>To co jedziemy dalej. Czas na jakiegoś selecta</p>
-  <p>Z labelkiem będzie identycznie więc bierzemy się od razu za grubsze sprawy. Jak poprzednio aby nasz komponent był elastyczny musimy umożliwić rodzicowi jego modyfikowanie. Więc znów v-model dodamy dopiero w rodzicu a tu dodamy modelValue czyli naszą domyślną nazwe właściwości, której VUE będzie szukać podczas wiązania v-model do niestandardowych komponentów
+<TextBoxMD>
+  <h1 class="text-2xl uppercase font-semibold">
+    <span class='text-green-500 forn-bold'>#</span> FormSelect
+  </h1>
+  <p>
+    To co jedziemy dalej. Czas na jakiegoś inputa typu selecta
   </p>
-</div>
+  <p class='my-2'>
+    Z labelkiem będzie identycznie więc bierzemy się od razu za grubsze sprawy. Jak poprzednio aby nasz komponent był elastyczny musimy umożliwić rodzicowi jego modyfikowanie. Więc znów v-model dodamy dopiero w rodzicu a w komponencie dodamy modelValue czyli naszą domyślną nazwe właściwości, której VUE będzie szukać podczas wiązania v-model do niestandardowych komponentów. Ok czas start. Tworzymy "FormSelect" jako nowy komponent. 
+  </p>
+</TextBoxMD>
 
-  ```js
-  // FormInput
+```vue
+// FormSelect
+
 <template>
     <label>{{ label }}</label>
     <select 
-      v-bind="{
-        ...$attrs,
-        onChange: ($event) => { $emit('update:modelValue', $event.target.value) }
-      }"
       :value="modelValue"
     >
       <option
@@ -320,7 +389,6 @@ export default defineComponent ({
 })
 </script>
 ```
-
 
 <div class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
   <p>Zauważ, że tym razem nie używamy bezpośredniego powiązania, konfigurując nasz detektor zdarzeń zmiany za pomocą @changesłowo kluczowe, tak jak zrobiliśmy to w naszym BaseInputskładnik dla @inputwydarzenie. Tym razem konfigurujemy powiązanie naszego zdarzenia bezpośrednio z plikiem v-bindobiekt, po naszym $attrswiążący.
