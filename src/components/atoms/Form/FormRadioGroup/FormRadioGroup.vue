@@ -1,14 +1,20 @@
 <template>
-  <FormRadio
+  <component
     v-for="option in options"
     :key="option.value"
-    :label="option.label"
-    :value="option.value"
-    :modelValue="modelValue"
-    :name="name"
-    @update:modelValue="$emit('update:modelValue', $event)"
+    :is="vertical ? 'div' : 'span'"
+    :class="{
+      horizontal: !vertical
+    }"
   >
-  </FormRadio>
+    <FormRadio
+      :label="option.label"
+      :value="option.value"
+      :modelValue="modelValue"
+      :name="name"
+      @update:modelValue="$emit('update:modelValue', $event)"
+    />
+  </component>
 </template>
 
 <script lang="ts">
@@ -32,8 +38,18 @@ export default defineComponent({
     modelValue: {
       type: [String, Number],
       required: true
+    },
+    vertical: {
+      type: Boolean,
+      default: false
     }
   }
 
 })
 </script>
+
+<style scoped>
+.horizontal {
+  margin-right: 20px;
+}
+</style>

@@ -787,14 +787,110 @@ export default {
 </script>
 ```
 
+<div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
+  <p class='my-4'>
+   Teraz, aby skorzystać z naszego propa  vertical  , który musimy zapakować FormRadioGroup we własnym komponencie. Gdy radio są ustawione pionowo, chcemy, aby było to a div, a gdy są poziome, użyjemy a span.
+
+  Istnieje oczywiście wiele sposobów rozwiązania tego konkretnego problemu, ale w szczególności to rozwiązanie pozwala mi pokazać, jak wykorzystać moc component :is dla Twoich dynamicznych komponentów formularzy! Zaczniemy od zapakowania wszystkiego w ok component element i przesuwanie v-for zapętlić się na nim.
+
+   (Nie zapomnij zabrać ze sobą również tzw :keywiążąca wraz z v-for)
+
+Teraz musimy określić logikę dla iswłasność r componentczęść. Bez względu na to, do którego ciągu znaków przekażemy, Vue użyje go podczas renderowania komponentu. Jeśli więc ustawimy isnieruchomość do div, ten komponent opakowujący będzie elementem div, a jeśli ustawimy go na span, będzie to oczywiście rozpiętość. 
+  </p>
+</div>
+
+```vue
+<template>
+  <component
+    v-for="option in options"
+    :key="option.value"
+    :is="vertical ? 'div' : 'span'"
+    :class="{
+      horizontal: !vertical
+    }"
+  >
+    <FormRadio
+      :label="option.label"
+      :value="option.value"
+      :modelValue="modelValue"
+      :name="name"
+      @update:modelValue="$emit('update:modelValue', $event)"
+    />
+  </component>
+</template>
+```
+
+
+
+
+
 <img src="../../assets/images/divForm.png" style="width:800px;"/>
 
+<div class='flex'>
+  <img src="../../assets/images/component1.png" style="width:400px;"/>
+  <img src="../../assets/images/component2.png" style="width:400px;"/>
+</div>
+
+<div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
+  <p class='my-4'>
+    Ponieważ nie jest to bardzo skomplikowana logika, możemy sobie pozwolić na pozostawienie wszystkiego w szablonie. Tutaj sprawdzamy, czy verticalprop jest truey , to ustawiamy a divjeśli nie spantak jak ustaliliśmy jakiś czas temu.
+
+    Zauważ, że oba 'div'oraz 'span'są ujęte w pojedyncze cudzysłowy, ponieważ muszą to być łańcuchy znaków.
+
+    Jeśli ustawimy verticalflaga dla nas BaseRadioGroupteraz włączone SimpleForm.vuei sprawdź to w przeglądarce, wszystko wydaje się działać zgodnie z oczekiwaniami. 
+  </p>
+  <p class='my-4'>
+  Jest jednak jeszcze jedna regulacja, którą musimy wprowadzić w układzie poziomym. Musimy dodać trochę stylizacji, aby nieco oddzielić elementy.
+
+Dodajmy A horizontalcss i zastosuj ją, gdy element używa układu poziomego. Lub w kategoriach kodu, gdy nie jest to pionowe. 
+  </p>
+</div>
+
+```vue 
+<template>
+  <component
+    v-for="option in options"
+    :key="option.value"
+    :is="vertical ? 'div' : 'span'"
+    :class="{
+      horizontal: !vertical
+    }"
+  >
+    <BaseRadio
+      :label="option.label"
+      :value="option.value"
+      :modelValue="modelValue"
+      :name="name"
+      @update:modelValue="$emit('update:modelValue', $event)"
+    />
+  </component>
+</template>
+
+<script>
+[...]
+</script>
+
+<style scoped>
+.horizontal {
+  margin-right: 20px;
+}
+</style>
+```
+
+<div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
+  <p class='my-4'>
+    W środku componenttag, ustawiamy nowy classwiązanie i używanie składni obiektu do włączania i wyłączania klas.
+
+  Kiedykolwiek warunek !verticalocenia na true- więc kiedy pion jest false, będziemy chcieli zastosować nasze horizontalklasa CSS.
+
+  Usuńmy verticalflaga z naszego BaseRadioGroupod SimpleForm.vuea następnie jeszcze raz sprawdź przeglądarkę.  
+  </p>
+  <p class='my-4'>
+  Wraz z ukończeniem naszej BaseRadioGroupcomponent kończymy tworzenie naszych komponentów formularza bazowego. Świetna robota, aby przejść przez to wszystko!
+
+  W następnej lekcji zrobimy mały krok i przyjrzymy się, jak możemy prawidłowo obsługiwać przesyłanie formularzy w Vue, wykorzystując moc powszechnie używanej biblioteki do wysyłania żądań HTTP: Axios. 
+  </p>
+</div>
 
 
 
-
-
-
-
-        
-    

@@ -45,6 +45,7 @@
           v-model="event.pets"
           name="pets"
           :options="petOptions"
+          vertical
         />
         <!-- <FormRadio 
           label="Tak"
