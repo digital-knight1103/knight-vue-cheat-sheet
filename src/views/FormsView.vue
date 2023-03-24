@@ -41,7 +41,12 @@
 
       <h3>Można wziąć zwierzaczka ?</h3>
       <div>
-        <FormRadio 
+        <FormRadioGroup
+          v-model="event.pets"
+          name="pets"
+          :options="petOptions"
+        />
+        <!-- <FormRadio 
           label="Tak"
           v-model="event.pets"
           :value="1"
@@ -52,7 +57,7 @@
           v-model="event.pets"
           :value="0"
           name="pets"
-        />
+        /> -->
       </div>
 
       <h3>Extras</h3>
@@ -205,10 +210,16 @@ export default defineComponent({
           music: true
         }
     }
+    const petOptions = [
+      { label: 'Yes', value: 1 },
+      { label: 'No', value: 0 },
+      { label: 'No matter', value: 2 },
+    ]
 
     return {
       categories,
-      event
+      event,
+      petOptions
     }
   }
 })

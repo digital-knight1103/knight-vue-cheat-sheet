@@ -587,16 +587,207 @@ export default defineComponent({
   />
 </div>
 
-<BoxInfo 
-  title="Lepiej grupowe bo jeden radio grze uzyjesz"
-  description='trzeba grupować żeby nie narobić bałąganu'
-/>
 
 <div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
   <h1 class='text-2xl uppercase font-semibold'>RadioGroup</h1> 
-  <p>Jak widzieliśmy, przyciski radiowe mają kilka dziwactw, które mogą potencjalnie uczynić je mylącymi i trudnymi do pracy, ale zrobiliśmy duży postęp w tworzeniu solidnego komponentu BaseRadio. W naszej następnej lekcji pójdziemy o krok dalej i stworzymy komponent BaseRadioGroup, który pozwoli nam jeszcze bardziej uprościć konfigurację i tworzenie grup przycisków radiowych.</p>
+  <p>Jak widzieliśmy, przyciski radiowe mają kilka dziwactw, które mogą potencjalnie uczynić je mylącymi i trudnymi do pracy, ale zrobiliśmy duży postęp w tworzeniu solidnego komponentu BaseRadio. W naszej następnej lekcji pójdziemy o krok dalej i stworzymy komponent BaseRadioGroup, który pozwoli nam jeszcze bardziej uprościć konfigurację i tworzenie grup przycisków radiowych.
+  </p>
 
+  <p class='my-4'>
+  W naszej ostatniej lekcji stworzyliśmy nasz ostatni komponent formularza bazowego dla tego kursu, BaseRadio.
+
+Jednak zostawiliśmy komponent, który jest całkowicie elastyczny i wielokrotnego użytku, ale czasami trochę trudny do zrozumienia. Dla kogoś, kto nie jest zaznajomiony z wewnętrznym działaniem BaseRadio, grupa wszystkich wskazujących na ten sam stan v-modelu może być myląca. Mogą również wystąpić błędy, jeśli ktoś zapomni dodać atrybut nazwy do pewnej części grupy.
+
+Byłoby lepiej, gdybyśmy mieli komponent opakowujący, który obsługiwał całą logikę zarządzania połączeniami v-model dla naszego użytkownika, dzięki czemu muszą pamiętać, aby zrobić to tylko raz - jak w większości innych, i jest łatwiejszy do zrozumienia na pierwszy rzut oka.
+
+Wejdź do BaseRadioGroup!
+  </p>
+
+  <p class='my-4'>
+    Jak wspomnieliśmy w ostatniej lekcji, tak naprawdę nie ma sensu, gdy przyciski radiowe są same w sobie, ponieważ nie zapewniają użytkownikowi wyboru, co jest kluczową cechą przycisków radiowych. Więc prawie zawsze chcesz zapewnić co najmniej dwa radia na każdą grupę, chyba że robisz coś takiego.
+    <BoxInfo 
+      title="Lepiej grupowe bo jeden radio grze uzyjesz"
+      description='trzeba grupować żeby nie narobić bałąganu'
+    />
+  </p>
 </div>
+
+<div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
+  <p class='my-4'>
+    Aby rozpocząć, musimy utworzyć rekwizyt, który pozwoli użytkownikowi tego komponentu przekazać tablicę opcji, spośród których użytkownik chce wybrać. Chcemy również mieć pewność, że wykorzystujemy dane zawarte w tym nowym optionsprop, aby przejrzeć obiekty zawierające i utworzyć nowy BaseRadioinstancja komponentu dla każdego z nich.
+
+    The options właściwość będzie tablicą obiektów i będziemy chcieli, aby każdy z obiektów w środku zawierał co najmniej dwie właściwości: the labeli value. Na przykład:  
+  </p>
+</div>
+
+```js
+const radioOptions = [
+  { label: 'Gud boi', value: 'dog' },
+  { label: 'Angri boi', value: 'cat' }
+]
+```
+
+<div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
+  <p class='my-4'>
+    Następnie użyjemy naszego labelka każda z naszych wytwórni radiowych i valuejako wartość każdego radia.  
+  </p>
+</div>
+
+
+
+
+<div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
+  <p class='my-4'>
+    Zauważ, że deklarujemy options prop zgodnie z wymaganiami, ponieważ ten komponent po prostu nie będzie działał bez niego.
+
+Jak dowiedzieliśmy się na ostatniej lekcji, wszystkie grupy radio są połączone razem jako grupa przez name property.
+
+Wszystkie radio w grupie muszą mieć to samo name aby przeglądarka wiedziała, że ​​powinny być zgrupowane.
+
+Więc przejdźmy dalej i dodajmy nasz drugi rekwizyt, the name prop i upewnij się, że jest poprawnie powiązany z naszym FormRadio.  
+  </p>
+</div>
+
+```js
+<template>
+  <FormRadio
+    v-for="option in options"
+    :key="option.value"
+    :label="option.label"
+    :value="option.value"
+  >
+  </FormRadio>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import FormRadio from '../FormRadio/FormRadio.vue';
+
+export default defineComponent({
+  name: 'FormRadioGroup',
+  components: {
+    FormRadio
+  },
+  props: {
+    options: {
+      type: Array,
+      required: true
+    },
+    name: {
+      type: String,
+      required: true
+    }
+  }
+
+})
+</script>
+```
+
+<div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
+  <p class='my-4'>
+    Jeszcze raz deklarujemy nasz rekwizyt jako required, ponieważ bez atrybutu nazwy wejścia radiowe nie zostaną poprawnie zgrupowane. 
+  </p>
+</div>
+
+<div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
+  <p class='my-4'>
+    Czas na v-model. Teraz, gdy poprawnie przechodzimy przez nasze komponenty radiowe, prawdopodobnie wiesz, co będzie dalej po zbudowaniu wielu tych komponentów formularza podstawowego. Nadszedł czas, aby umożliwić obsługę tego komponentu v-modelwiązanie dwukierunkowe. Jak zwykle dodamy modelValue prop. 
+  </p>
+</div>
+
+<div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
+  <p class='my-4'>
+    Tym razem zrobimy rekwizyt required, ponieważ grupy radiowe bez zaznaczenia niczego nie mają większego sensu; tak naprawdę nie ma stanu „nic nie wybrano” podczas korzystania z tego typu danych wejściowych formularza.
+
+Nie zapomnij również związać modelValue props dla każdego FormRadio w pętli!
+
+Następnie zacznijmy słuchać update:modelValue zdarzenie każdego z FormRadio i wyemitować je z powrotem do rodzica FormRadioGroup.  
+  </p>
+</div>
+
+```js 
+  <FormRadio
+    v-for="option in options"
+    :key="option.value"
+    :label="option.label"
+    :value="option.value"
+    :modelValue="modelValue"
+    :name="name"
+    @update:modelValue="$emit('update:modelValue', $event)"
+  >
+  </FormRadio>
+```
+
+<div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
+  <p class='my-4'>
+    Wróćmy teraz do naszego SimpleForm.vue  i zastąp „Czy zwierzęta są akceptowane?” Sekcja FormRadio nowym FormRadioGroup. Zerknij teraz na nasz formularz na samym dole I jak? 
+  </p>
+</div>
+
+```
+<FormRadioGroup
+    v-model="event.pets"
+    name="pets"
+    :options="petOptions"
+/>
+
+```
+
+<div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
+  <p class='my-4'>
+    Nie da się ukryć że coś trzeba poprawić. Może dajmy wybór urzytkownikowi czy chce aby nasze radio były ustawione w pionie jak i poziomie. 
+  </p>
+
+  <p class='my-4'>
+  Aby korzystanie z niego było jak najprostsze, wszystkie te przełączania będą kontrolowane przez jeden nowy props, vertical. Ustawimy domyślny układ radio w naszym FormRadioGroup poziomego, więc ten rekwizyt będzie typu boolowskiego i domyślnie false. 
+  </p>
+
+  <p class='my-4'>
+  Jest to bardzo powszechna praktyka podczas tworzenia komponentów w celu ustawiania rekwizytów, które mają włączać i wyłączać (znanych również jako „flagi”) na wartość domyślną false. To pozwala nam ustawić je na „włączone” z bardzo czystą składnią instancji komponentu. Na przykład z naszym verticalprop, jeśli użytkownik chce, aby jego grupa była ułożona pionowo, po prostu dodałby słowo kluczowe do instancji w następujący sposób: 
+  </p>
+</div>
+
+```html
+<FormRadioGroup
+  v-model="event.pets"
+  vertical
+/>
+```
+
+<div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
+  <p class='my-4'>
+   Zakłada się, że rekwizyty boolowskie w Vue, które nie są specjalnie powiązane, są prawdziwe . Więc w powyższym przykładzie verticaljest taki sam jak :vertical="true".
+
+  Wróćmy do FormRadioGroup.vue dodaj nasz verticalprop i rozpocznij konfigurowanie tej nowej funkcji. 
+  </p>
+</div>
+
+```js
+<script>
+export default {
+  props: {
+    options: {
+      type: Array,
+      required: true
+    },
+    name: {
+      type: String,
+      required: true
+    },
+    modelValue: {
+      type: [String, Number],
+      required: true
+    },
+    vertical: {
+      type: Boolean,
+      default: false
+    }
+  }
+}
+</script>
+```
+
+<img src="../../assets/images/divForm.png" style="width:800px;"/>
 
 
 
