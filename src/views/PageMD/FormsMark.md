@@ -351,7 +351,7 @@ export default defineComponent({
     To co jedziemy dalej. Czas na jakiegoś inputa typu selecta
   </p>
   <p class='my-2'>
-    Z labelkiem będzie identycznie więc bierzemy się od razu za grubsze sprawy. Jak poprzednio aby nasz komponent był elastyczny musimy umożliwić rodzicowi jego modyfikowanie. Więc znów v-model dodamy dopiero w rodzicu a w komponencie dodamy modelValue czyli naszą domyślną nazwe właściwości, której VUE będzie szukać podczas wiązania v-model do niestandardowych komponentów. Ok czas start. Tworzymy "FormSelect" jako nowy komponent. 
+    Z labelkiem będzie identycznie więc bierzemy się od razu za grubsze sprawy. Jak poprzednio aby nasz komponent był elastyczny musimy umożliwić rodzicowi jego modyfikowanie. Więc znów v-model dodamy dopiero w rodzicu a w komponencie dodamy modelValue czyli naszą domyślną nazwe właściwości, której VUE będzie szukać podczas wiązania v-model do niestandardowych komponentów. Ok czas start. Tworzymy "FormSelect" jako nowy komponent. Jako że w select potrzebujemy jakiś opcje wyboru to dokładamy options którę za pomocą pętli pozwoli nam wybrać jakąś dostępną opcję. 
   </p>
 </TextBoxMD>
 
@@ -378,7 +378,7 @@ export default defineComponent({
 import { defineComponent } from 'vue';
 
 export default defineComponent ({
-  name: 'FormInput',
+  name: 'FormSelect',
   props: {
     label: {
       type: String,
@@ -390,18 +390,21 @@ export default defineComponent ({
 </script>
 ```
 
-<div class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
-  <p>Zauważ, że tym razem nie używamy bezpośredniego powiązania, konfigurując nasz detektor zdarzeń zmiany za pomocą @changesłowo kluczowe, tak jak zrobiliśmy to w naszym BaseInputskładnik dla @inputwydarzenie. Tym razem konfigurujemy powiązanie naszego zdarzenia bezpośrednio z plikiem v-bindobiekt, po naszym $attrswiążący.
+<TextBoxMD>
+  <p>
+    Zauważ, że tym razem nie używamy bezpośredniego powiązania, konfigurując nasz detektor zdarzeń zmiany za pomocą @change słowo kluczowe, tak jak zrobiliśmy to w naszym FormInput dla @input wydarzenie. Tym razem konfigurujemy powiązanie naszego zdarzenia bezpośrednio z plikiem v-bind obiekt, po naszym $attrs wiążący.
+  </p> 
+  <p class='my-2'>
+    W Vue 3 ważne jest, aby pamiętać, że jeśli zdecydujemy się nie używać @składni znaku, zdarzenie zostanie poprzedzone słowem kluczowym on, w tym przypadku onChange ponieważ słuchałem change wydarzenie.
+  </p>
 
-W Vue 3 ważne jest, aby pamiętać, że jeśli zdecydujemy się nie używać @składni znaku, zdarzenie zostanie poprzedzone słowem kluczowym on, w tym przypadku onChangeponieważ słuchałem changewydarzenie.
+Wszystkie odbiorniki zdarzeń, które są odbierane w $attrs od rodzica poprzedzone są przedrostkiem on słowo kluczowe, a pierwsza litera jest wielka.
 
-Wszystkie odbiorniki zdarzeń, które są odbierane w $attrsod rodzica poprzedzone są przedrostkiem onsłowo kluczowe, a pierwsza litera jest wielka.
-
-Na naszym słuchaczu zdarzeń dla onChangechwytamy $eventjako parametr funkcji i $emitnasze wydarzenie update:modelValuez ładunkiem $event.target.valuepoinformowanie rodzica o wszelkich zmianach. </p>
+Na naszym słuchaczu zdarzeń dla onChangechwytamy $eventjako parametr funkcji i $emitnasze wydarzenie update:modelValuez ładunkiem $event.target.valuepoinformowanie rodzica o wszelkich zmianach.
   <p>
     I co dalej. Trzeba by wybrać jakąś opcję. 
   </p>
-</div>
+</TextBoxMD>
 
 <div class='mx-10 my-2 p-5 mt-10 bg-gray-600 rounded-lg text-white'>
   <h1 class='text-2xl uppercase font-semibold'>Checkbox</h1> 
