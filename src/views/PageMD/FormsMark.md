@@ -17,15 +17,16 @@ title: Forms
   </p>
 </TextBoxMD>
 
-<TextBoxMD>
+<TextBoxMD id='step1'>
+  <h1 class="text-xl uppercase font-semibold text-gray-300 mb-4">Krok 1</h1>
   <h1 class="text-2xl uppercase font-semibold">
     <span class='text-green-500 forn-bold'>#</span>  Input typu tekst.
   </h1>
   <p>
-    Najpierw stworzymy nowy komponent i ładnie go nazwiemy <span class='text-green-500'>"FormInput"</span> i wedle naszej koncepci "Atomic Design" wrzucimy go do naszych atomów.
+    Najpierw stworzymy nowy komponent i nazwiemy go <span class='text-green-500'>"FormInput"</span> i wedle naszej koncepcji "Atomic Design" wrzucimy go do naszych atomów.
   </p>
   <p class='my-2'>
-    Bierzemy się za komponent. Zaczynamy od "labela". Najlepiej użyć tu interpolacji i poprzez propsa przekazać treść labelka od rodzica. Staje się on dzięki temu uniwersalny i będziemy mogli gu użyć w wielu różnych formularzach.
+    Bierzemy się za komponent. Zaczynamy od "labela". Najlepiej użyć tu interpolacji i poprzez propsa przekazać treść labelka w rodzicu. Staje się on dzięki temu uniwersalny i będziemy mogli gu użyć w wielu różnych miejscach w naszej aplikacji..
   </p>
 </TextBoxMD>
 
@@ -54,13 +55,13 @@ export default defineComponent ({
 })
 </script>
 ```
-<BoxInfo class='mx-auto' title='TypeScript' description='Nie wiem czy miałeś wcześniej styczność z TypeScriptem we VUE. Dlatego żebyś nie nie przestraszył to odsyłam do Cię do części z TS a tutaj w kodzie dlatego że korzystamy z TypeScripta wystepuje defineComponent.' />
+<BoxInfo class='mx-auto' title='TypeScript' description='Nie wiem czy miałeś wcześniej styczność z TypeScriptem we VUE. Dlatego żebyś się nie przestraszył to odsyłam do Cię do części z TS a tutaj w kodzie dlatego że korzystamy z TypeScripta wystepuje defineComponent.' />
 
 <TextBoxMD>
   <p class='indent-6'>
     Labelka mamy, czas na główne danie. Co zrobić aby nasz input był super mega uniwersalny.
     Możemy np: ustawić nasz palceholder aby był równy wartości labelka (tips).
-    Nie ustawiamy również typu "type" dla naszego inputa dla naszego inpute ponieważ te wartość przekażemy już w rodzicu. Dzięki temu będziemy mogli wybrać między np: text, email czy password. 
+    Nie ustawiamy również typu "type" dla naszego inputa ponieważ te wartość przekażemy już w rodzicu. Dzięki temu będziemy mogli wybrać między np: text, email czy password. 
   </p>
   <p class='my-2'>
     Nieźle za jednym zamacham mamy kilka opcji. 🧨
@@ -169,7 +170,7 @@ export default defineComponent({
 
 <TextBoxMD>
   <p>
-    I tak się prezentuje na input. Wizualnie wygląda OK ale jak zerkniemy w DevToolse to możemy się dopatrzeć że wystąpił mały problemik. A jaki zapytasz. To zerknij i zauważysz że nie wyświetla się nam atrybut "type" mimo że dodaliśmy. O co tu chodzi???
+    I tak się prezentuje nasz input. Wizualnie wygląda OK ale jak zerkniemy w DevToolse to możemy się dopatrzeć że wystąpił mały <span class='text-pink-500'>problemik</span>. A jaki zapytasz. To zerknij i zauważysz że nie wyświetla się nam atrybut "type" mimo że dodaliśmy. O co tu chodzi???
   </p>
 </TextBoxMD>
 
@@ -189,7 +190,7 @@ export default defineComponent({
     W przypadku komponentów z pojedynczym elementem opakowującym, znanych również jako pojedyncze komponenty główne, takie zachowanie jest bardzo proste. Vue po prostu wstrzyknie wszystkie atrybuty, klasy i style do elementu głównego.
   </p>
   <p class='my-2'>
-    W komponentach wielordzeniowych, takich jak nasz FormInput, Vue nie może ustalić bez naszej pomocy, do którego miejsca lub fragmentu powinien wstrzyknąć atrybuty — więc Vue po prostu się poddaje i powinno wyświetlić <span class='text-pink-500'>ostrzeżenie</span>.
+    W komponentach wielordzeniowych, takich jak nasz FormInput gdzie mamy już dwa elemnty "label" oraz "input", Vue nie może ustalić bez naszej pomocy, do którego miejsca lub fragmentu powinien wstrzyknąć atrybuty — więc Vue po prostu się poddaje i powinno wyświetlić się <span class='text-pink-500'>ostrzeżenie</span>.
   </p>
 </TextBoxMD>
 
@@ -343,7 +344,8 @@ export default defineComponent({
   />
 </Form>
 
-<TextBoxMD>
+<TextBoxMD id='step2'>
+  <h1 class="text-xl uppercase font-semibold text-gray-300 mb-4">Krok 2</h1>
   <h1 class="text-2xl uppercase font-semibold">
     <span class='text-green-500 forn-bold'>#</span> FormSelect
   </h1>
@@ -351,7 +353,7 @@ export default defineComponent({
     To co jedziemy dalej. Czas na jakiegoś inputa typu selecta
   </p>
   <p class='my-2'>
-    Z labelkiem będzie identycznie więc bierzemy się od razu za grubsze sprawy. Jak poprzednio aby nasz komponent był elastyczny musimy umożliwić rodzicowi jego modyfikowanie. Więc znów v-model dodamy dopiero w rodzicu a w komponencie dodamy modelValue czyli naszą domyślną nazwe właściwości, której VUE będzie szukać podczas wiązania v-model do niestandardowych komponentów. Ok czas start. Tworzymy "FormSelect" jako nowy komponent. Jako że w select potrzebujemy jakiś opcje wyboru to dokładamy options którę za pomocą pętli pozwoli nam wybrać jakąś dostępną opcję. 
+    Z labelkiem będzie identycznie więc bierzemy się od razu za grubsze sprawy. Jak poprzednio aby nasz komponent był elastyczny musimy umożliwić rodzicowi jego modyfikowanie. Tworzymy "FormSelect" jako nowy komponent. V-model dodamy dopiero w rodzicu a w komponencie dodamy modelValue czyli naszą domyślną nazwe właściwości, której VUE będzie szukać podczas wiązania v-model do niestandardowych komponentów. Jako że w select potrzebujemy jakiś opcje wyboru to dokładamy options którę za pomocą pętli pozwoli nam wybrać jakąś dostępną opcję. Jako opcje chcemy od rodzica uzystać tablicę więc zdefinujemy sobie również propsa options. 
   </p>
 </TextBoxMD>
 
@@ -383,7 +385,15 @@ export default defineComponent ({
     label: {
       type: String,
       required: true
-    }
+    },
+    modelValue: {
+      type: [String, Number],
+      default: ''
+    },
+    options: {
+      type: Array,
+      required: true
+    },
   }
 
 })
@@ -392,30 +402,94 @@ export default defineComponent ({
 
 <TextBoxMD>
   <p>
-    Zauważ, że tym razem nie używamy bezpośredniego powiązania, konfigurując nasz detektor zdarzeń zmiany za pomocą @change słowo kluczowe, tak jak zrobiliśmy to w naszym FormInput dla @input wydarzenie. Tym razem konfigurujemy powiązanie naszego zdarzenia bezpośrednio z plikiem v-bind obiekt, po naszym $attrs wiążący.
+    Teraz, gdy nasze value jest już ustawione musimy ustawić emit aby pozwolić naszemu komponentowi komunikować się z rodzicem i gdy dane ulegną zmianie powinny zostać zaktualizowane o stan rodzica. 
+  </p>
+  <p class='my-2'>
+    Dlatego elementy select wywołują zdarzenie zmiany "change", gdy użytkownik dokonuje nowego wyboru, więc w przeciwieństwie do naszego komponentu FormInput, będziemy nasłuchiwać zdarzenia zmiany "change" elementu select a nie "input"
   </p> 
   <p class='my-2'>
-    W Vue 3 ważne jest, aby pamiętać, że jeśli zdecydujemy się nie używać @składni znaku, zdarzenie zostanie poprzedzone słowem kluczowym on, w tym przypadku onChange ponieważ słuchałem change wydarzenie.
+    Musimy również powiązać $attrs z naszym elementem select, tak jak to zrobiliśmy z elementem input dla FormInput, zajmiemy się nimi razem i powiążemy je używając składni v-bind.
   </p>
+  <p class='my-2'>
+    Ponieważ $attrs jest obiektem, możemy użyć operatora spread JavaScript, aby połączyć nasze wiązania w jeden obiekt. Czyliw naszym v-bind rozłozymy nasz $attrs oraz dodamy zdarzenie change.
+  </p>
+</TextBoxMD>
 
-Wszystkie odbiorniki zdarzeń, które są odbierane w $attrs od rodzica poprzedzone są przedrostkiem on słowo kluczowe, a pierwsza litera jest wielka.
+```vue
+<template>
+  <label> 
+    {{ label }}
+  </label>
+  <select 
+    v-bind="{
+      ...$attrs,
+      onChange: ($event) => { $emit('update:modelValue', $event.target.value) }
+    }"
+    :value="modelValue"
+  >
+    <option
+      v-for="option in options"
+      :value="option"
+      :key="option"
+      :selected="option === modelValue"
+    >
+      {{ option }}
+    </option>
+  </select>
+</template>
 
-Na naszym słuchaczu zdarzeń dla onChangechwytamy $eventjako parametr funkcji i $emitnasze wydarzenie update:modelValuez ładunkiem $event.target.valuepoinformowanie rodzica o wszelkich zmianach.
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent ({
+  name: 'FormSelect',
+  props: {
+    label: {
+      type: String,
+      required: true
+    },
+    modelValue: {
+      type: [String, Number],
+      default: ''
+    },
+    options: {
+      type: Array,
+      required: true
+    },
+  }
+})
+</script>
+
+```
+
+<TextBoxMD>
   <p>
+    Zauważ, że tym razem nie używamy bezpośredniego powiązania (binding), konfigurując nasz detektor zdarzeń zmiany za pomocą @change słowo kluczowe, tak jak zrobiliśmy to w naszym FormInput dla @input wydarzenie. Tym razem konfigurujemy powiązanie naszego zdarzenia bezpośrednio z plikiem v-bind obiekt, po naszym $attrs wiążący.
+  </p> 
+  <p class='my-2'>
+    W Vue 3 ważne jest, aby pamiętać, że jeśli zdecydujemy się nie używać @składni znaku, zdarzenie zostanie poprzedzone słowem kluczowym on, w tym przypadku onChange ponieważ nasłuchujemy na zdarzenie "change"
+  </p>
+  <p class='my-2'>
+    Wszystkie odbiorniki zdarzeń, które są odbierane w $attrsod rodzica poprzedzone są przedrostkiem onsłowo kluczowe, a pierwsza litera jest wielka.
+    Na naszym słuchaczu zdarzeń dla onChangechwytamy $eventjako parametr funkcji i $emitnasze wydarzenie update:modelValuez ładunkiem $event.target.valuepoinformowanie rodzica o wszelkich zmianach. 
+  </p>
+  <p class='my-2'>
     I co dalej. Trzeba by wybrać jakąś opcję. 
   </p>
 </TextBoxMD>
 
-<div class='mx-10 my-2 p-5 mt-10 bg-gray-600 rounded-lg text-white'>
-  <h1 class='text-2xl uppercase font-semibold'>Checkbox</h1> 
-  <p>Kolej na checkboxa, który równie często wystepuje w formularzach. Z label już wiem jak sobie poradzić ale czy wiemy jak z v-model. Tutaj będzie troszkę inaczej ponieważ checkboxy mają kilka dziwactw! o których musimy pamiętać zanim zaczniemy ustawiać nasze wiązania. Pierwszym z nich jest to, że wejścia checkboxów wiążą swój stan z właściwością checked, a nie bezpośrednio z wartością 'value'
+<TextBoxMD>
+  <h1 class="text-xl uppercase font-semibold text-gray-300 mb-4">Krok 3</h1>
+  <h1 class="text-2xl uppercase font-semibold">
+    <span class='text-green-500 forn-bold'>#</span> Checkbox
+  </h1>
+  <p class='my-2 indent-6'>
+  Kolej na checkboxa, który równie często wystepuje w formularzach. Z label już wiem jak sobie poradzić ale czy wiemy jak z poradzić sobie z v-model. Tutaj będzie troszkę inaczej ponieważ checkboxy mają kilka dziwactw! o których musimy pamiętać zanim zaczniemy ustawiać nasze wiązania. Pierwszym z nich jest to, że wejścia checkboxów wiążą swój stan z właściwością checked, a nie bezpośrednio z wartością 'value'
   </p>
-
-  <p class='my-4'>
-  Właściwość 'value' pól checkbox nie jest zwykle używana na frontendzie, ponieważ jej głównym celem jest dostarczenie wartości, gdy jest przekazywana do backendu poprzez przycisk submit. Jeśli pominiemy tę wartość, domyślnie ustawia się ona na on, co jest w porządku dla większości aplikacji - ponieważ większość formularzy będzie obsługiwana za pośrednictwem jakiegoś asynchronicznego postu, a przekazywane zmienne do backendu są kontrolowane przez kod frontendowy.
+  <p class='my-2'>
+  Właściwość "value" pól checkbox nie jest zwykle używana na frontendzie, ponieważ jej głównym celem jest dostarczenie wartości, gdy jest przekazywana do backendu poprzez przycisk "submit". Jeśli pominiemy tę wartość, domyślnie ustawia się ona na on, co jest w porządku dla większości aplikacji - ponieważ większość formularzy będzie obsługiwana za pośrednictwem jakiegoś asynchronicznego postu, a przekazywane zmienne do backendu są kontrolowane przez kod frontendowy.
   </p>
-
-  <p class="my-4">
+  <p class="my-2">
   Drugą rzeczą, o której musimy pamiętać jest to, że wejścia typu checkbox nie wywołują zdarzeń wejściowych, ale zdarzenia zmiany, gdy są zaznaczone i odznaczone.
   </p>
 
@@ -426,9 +500,11 @@ Na naszym słuchaczu zdarzeń dla onChangechwytamy $eventjako parametr funkcji i
   <p>
   Następnie przejdźmy do szablonu i zastąpmy wiązanie v-model, które zostało skopiowane z formularza demo wcześniej, naszym nowym wiązaniem :checked w naszym rekwizycie modelValue.
   </p>
-</div>
+</TextBoxMD>
 
-```js
+```vue
+// FormCheckbox
+
 <template>
 <div>
   <input
@@ -436,7 +512,7 @@ Na naszym słuchaczu zdarzeń dla onChangechwytamy $eventjako parametr funkcji i
     :checked="modelValue"
     class="field"
   />
-  <label v-if="label" class="ml-2">{{ label }}</label>
+  <label>{{ label }}</label>
 </div>
 </template>
 
@@ -458,7 +534,7 @@ export default defineComponent({
 </script>
 ```
 
-<div class='mx-auto w-96 border border-green-500 p-6 rounded-lg'>
+<div class='mx-auto w-96 p-6'>
   <FormCheckbox label='Zaznacz mnie przyjacielu'/>
   <FormCheckbox label='I mnie też'/>
 </div>
@@ -496,7 +572,10 @@ Zauważ, że dla pól wyboru (checkbox) nie emitujemy wartości celu (target val
 </Form>
 
 <div class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
-  <h1 class='text-2xl uppercase font-semibold'>Radio</h1> 
+  <h1 class="text-xl uppercase font-semibold text-gray-300 mb-4">Krok 4</h1>
+  <h1 class="text-2xl uppercase font-semibold">
+    <span class='text-green-500 forn-bold'>#</span> Radio
+  </h1> 
   <p>Ufff już bliżej końca. Zostało jeszcze radio</p>
   <p>
   Nadszedł czas, aby zająć się ostatnim z naszych elementów formularza Radio.
@@ -660,7 +739,10 @@ export default defineComponent({
 
 
 <div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
-  <h1 class='text-2xl uppercase font-semibold'>RadioGroup</h1> 
+  <h1 class="text-xl uppercase font-semibold text-gray-300 mb-4">Krok 5</h1>
+  <h1 class="text-2xl uppercase font-semibold">
+    <span class='text-green-500 forn-bold'>#</span> RadioGroup
+  </h1>  
   <p>Jak widzieliśmy, przyciski radiowe mają kilka dziwactw, które mogą potencjalnie uczynić je mylącymi i trudnymi do pracy, ale zrobiliśmy duży postęp w tworzeniu solidnego komponentu BaseRadio. W naszej następnej lekcji pójdziemy o krok dalej i stworzymy komponent BaseRadioGroup, który pozwoli nam jeszcze bardziej uprościć konfigurację i tworzenie grup przycisków radiowych.
   </p>
 
@@ -962,6 +1044,13 @@ Dodajmy A horizontalcss i zastosuj ją, gdy element używa układu poziomego. Lu
   W następnej lekcji zrobimy mały krok i przyjrzymy się, jak możemy prawidłowo obsługiwać przesyłanie formularzy w Vue, wykorzystując moc powszechnie używanej biblioteki do wysyłania żądań HTTP: Axios. 
   </p>
 </div>
+
+<TextBoxMD>
+  <h1 class="text-xl uppercase font-semibold text-gray-300 mb-4">Krok 6</h1>
+  <h1 class="text-2xl uppercase font-semibold">
+    <span class='text-green-500 forn-bold'>#</span> Wysyłanie formularza
+  </h1>  
+</TextBoxMD>
 
 
 
