@@ -1045,11 +1045,29 @@ Dodajmy A horizontalcss i zastosuj ją, gdy element używa układu poziomego. Lu
   </p>
 </div>
 
+<!-- Nasz Formularz -->
+<div>
+  <FormData />
+</div>
+
+
 <TextBoxMD>
   <h1 class="text-xl uppercase font-semibold text-gray-300 mb-4">Krok 6</h1>
   <h1 class="text-2xl uppercase font-semibold">
-    <span class='text-green-500 forn-bold'>#</span> Wysyłanie formularza
-  </h1>  
+    <span class='text-green-500 font-bold'>#</span> Wysyłanie formularza
+  </h1>
+  <p class='my-4'>
+  Można powiedzieć że ze wszystkimi komponentami które zbudowaliśmy, możemy teraz stworzyć dowolne typy formularzy. Ale jaki pożytek byłby z takich formularzy jeżeli nie możemy wysłać danych które użytkownik wprowadził. 
+  </p>
+  <p class='my-4'>
+  Tak więc w obecnym stanie rozwoju frontendu mamy kilka podejściem do przesyłania danych z naszych formularzy do backendu np: <span class='text-green-500 font-semibold'>XMLHTTPRequests a w skrócie XHR</span> lub <span class='text-green-500 font-semibold'>Fetch</span>
+  </p>
+  <BoxInfo title='Ciekawostka' description='Obiekt XMLHttpRequest istnieje w Javascript nierozerwalnie od momentu powstania Ajax i służy do nawiązywania dynamicznych połączeń XHR.
+  W dzisiejszych czasach mamy dla niego nowszy zamiennik w postaci Fetch i to prawdopodobnie z niego będziesz głównie korzystał. Zasady działania tu i tam są podobne, dlatego warto poznać obydwa, zwłaszcza, że Fetch nie zadziała na każdej przeglądarce. Polecam poczytać na stronie kurs.js https://kursjs.pl/kurs/ajax/ajax'>
+  </BoxInfo>
+  <p class='my-4'>
+  Tak więc w obecnym stanie rozwoju frontendu mamy kilka podejściem do przesyłania danych z naszych formularzy do backendu np: <span class='text-green-500 font-semibold'>XMLHTTPRequests a w skrócie XHR</span> lub <span class='text-green-500 font-semibold'>Fetch</span>
+  </p>
 </TextBoxMD>
 
 

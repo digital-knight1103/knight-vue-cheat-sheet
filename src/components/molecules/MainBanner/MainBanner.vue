@@ -7,14 +7,20 @@
           :alt="alt"
         >
         <!-- START CONTENT -->
-        <div class="relative max-w-lg mx-auto text-center mb-12 z-10">
+        <div class="relative max-w-lg mx-auto text-center mb-12 z-10 uppercase">
           <h3 class="text-3xl md:text-4xl font-bold text-white mb-3">
             {{ title}}
           </h3>
-          <p class="font-medium text-blue-200 mb-6">
+          <p class="text-white mb-6 font-semibold">
             {{ subtitle }}
           </p>
-          <a class="inline-block w-full sm:w-auto px-16 py-3 leading-6 text-center font-semibold text-blue-50 bg-gray-500 hover:bg-gray-600 transition duration-200 rounded-lg" href="#">Zaczynajmy</a>
+          <RouterLink 
+            to='/introduction'
+            class="inline-block w-full sm:w-auto px-16 py-3 leading-6 text-center font-semibold text-blue-50 bg-gray-500 hover:bg-gray-600 transition duration-200 rounded-lg"
+          >
+            Zaczynajmy
+          </RouterLink>
+          <!-- <a class="inline-block w-full sm:w-auto px-16 py-3 leading-6 text-center font-semibold text-blue-50 bg-gray-500 hover:bg-gray-600 transition duration-200 rounded-lg" href="#">Zaczynajmy</a> -->
         </div>
         <!-- END CONTENT -->
         <span class="mask absolute top-0 left-0 w-full h-full bg-cover opacity-60"></span>

@@ -4,7 +4,13 @@
     <nav class="lg:hidden flex items-center justify-between p-8 bg-gray-700 mb-3">
       <div class="w-full xl:w-auto px-2 xl:mr-12">
         <div class="flex items-center justify-between">
-          <a class="inline-flex items-center h-8" href="#">
+          <!-- <RouterLink 
+            to="/"
+            class="inline-flex items-center h-8"
+          >
+            <img src="../assets/htmlknight.svg" alt="knight vue logo">
+          </RouterLink> -->
+          <a class="inline-flex items-center h-8" href="/">
             <img src="../assets/htmlknight.svg" alt="knight vue logo">
           </a>
           <div class="xl:hidden">
@@ -19,7 +25,14 @@
       <div class="lg:hidden navbar-backdrop fixed top-0 left-0 w-full h-full bg-gray-800 opacity-50"></div>
       <nav class="fixed top-0 left-0 bottom-0 w-full max-w-xxs flex flex-col h-full pb-8 pt-2 px-4 bg-gray-700 overflow-auto">
         <div class="mb-6">
-          <a class="flex justify-center mb-4" href="#">
+          <!-- <RouterLink 
+          to="/"
+          class="inline-flex items-center h-8"
+          >
+            <img class="h-20" src="../assets/htmlknight.svg" alt="logo knight vue">
+          </RouterLink> -->
+
+          <a class="flex justify-center mb-4" href="/">
             <img class="h-20" src="../assets/htmlknight.svg" alt="logo knight vue">
           </a>
 
@@ -33,7 +46,7 @@
             </li> -->
 
             <li class="mb-2">
-              <RouterLink to='/' class="flex items-center p-4 text-white bg-green-500 rounded-xl">
+              <RouterLink to='/introduction' class="flex items-center p-4 text-white bg-green-500 rounded-xl">
                 <IconOverview />
                 <span class="ml-8 text-sm font-semibold">Wstęp</span>
               </RouterLink>

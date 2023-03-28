@@ -11,19 +11,21 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/compositionAPI',
-      name: 'compositionAPI',
+      path: '/introduction',
+      name: 'introduction',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
+      component: () => import('../views/IntroductionView.vue')
+    },
+    {
+      path: '/compositionAPI',
+      name: 'compositionAPI',
       component: () => import('../views/CompositionView.vue')
     },
     {
       path: '/atomicdesign',
       name: 'atomicdesign',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/AtomicDesignView.vue')
     },
     {
@@ -34,9 +36,6 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
     },
     // Knowledge

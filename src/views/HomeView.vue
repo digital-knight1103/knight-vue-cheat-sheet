@@ -1,7 +1,11 @@
 <template>
   <main>
-    <!-- <TheWelcome /> -->
-    <MainBanner title='Mały przewodnik VUE3' subtitle='Będzie tutaj opis' :path='pathImg' alt="Images Banner" />
+    <MainBanner 
+      title='Mały przewodnik VUE3' 
+      subtitle='Jesteś gotowy na podróż ' 
+      :path='pathImg' 
+      alt="Images Banner"
+    />
   </main>
 </template>
 
