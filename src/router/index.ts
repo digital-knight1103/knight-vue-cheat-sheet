@@ -89,6 +89,31 @@ const router = createRouter({
       name: 'slots',
       component: () => import('../views/SlotsView.vue')
     },
+    {
+      path: '/provideinject',
+      name: 'provideinject',
+      component: () => import('../views/ProvideAndInjectView.vue')
+    },
+    {
+      path: '/lifecyclehooks',
+      name: 'lifecyclehooks',
+      component: () => import('../views/LifecycleHooksView.vue')
+    },
+    {
+      path: '/styles',
+      name: 'styles',
+      component: () => import('../views/ClassAndStylesView.vue')
+    },
+    {
+      path: '/composables',
+      name: 'composables',
+      component: () => import('../views/ComposablesView.vue')
+    },
+    {
+      path: '/dynamic',
+      name: 'dynamic',
+      component: () => import('../views/DynamicComponentView.vue')
+    },
 
   ]
 })

@@ -149,7 +149,7 @@
 
             <!-- class/styles -->
             <li class="mb-2">
-              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="styles">
                 <IconUser/>
                 <span class="ml-8 font-bold">
                   Klasy i style
@@ -169,7 +169,7 @@
 
             <!-- provides/inject -->
             <li class="mb-2">
-              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="provideinject">
                 <IconUser/>
                 <span class="ml-8 font-bold">
                   Provides/Inject
@@ -179,7 +179,7 @@
 
             <!-- lifecycle Hooks -->
             <li class="mb-2">
-              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="lifecyclehooks">
                 <IconUser/>
                 <span class="ml-8 font-bold">
                   Cykl życia
@@ -189,7 +189,7 @@
 
             <!-- composables -->
             <li class="mb-2">
-              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="/#">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="composables">
                 <IconUser/>
                 <span class="ml-8 font-bold">
                   Composables
@@ -197,7 +197,17 @@
               </RouterLink>
             </li>
 
-            <!-- composables -->
+            <!-- Dynamic Component -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="dynamic">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Dynamic Component
+                </span>
+              </RouterLink>
+            </li>
+
+            <!-- TESTOWA -->
             <li class="mb-2">
               <RouterLink class='text-green-300 hover:bg-gray-800 rounded-xl' to="test">
                 <IconUser/>

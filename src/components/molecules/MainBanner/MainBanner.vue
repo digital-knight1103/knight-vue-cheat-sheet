@@ -20,7 +20,6 @@
           >
             Zaczynajmy
           </RouterLink>
-          <!-- <a class="inline-block w-full sm:w-auto px-16 py-3 leading-6 text-center font-semibold text-blue-50 bg-gray-500 hover:bg-gray-600 transition duration-200 rounded-lg" href="#">Zaczynajmy</a> -->
         </div>
         <!-- END CONTENT -->
         <span class="mask absolute top-0 left-0 w-full h-full bg-cover opacity-60"></span>
