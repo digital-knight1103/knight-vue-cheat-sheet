@@ -49,7 +49,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@assets': path.resolve(__dirname, './src/assets'),
     },
-    extensions: ['.ts', '.json', '.vue', '.png']
+    extensions: ['.ts', '.json', '.vue', '.png', '.md']
   },
   
 })
