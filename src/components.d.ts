@@ -24,6 +24,7 @@ declare module '@vue/runtime-core' {
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     LoadingBar: typeof import('./components/atoms/LoadingBar/LoadingBar.vue')['default']
     MainBanner: typeof import('./components/molecules/MainBanner/MainBanner.vue')['default']
+    PageAnimation: typeof import('./components/atoms/PageAnimation/PageAnimation.vue')['default']
     PageContent: typeof import('./components/molecules/PageContent/PageContent.vue')['default']
     PageHeader: typeof import('./components/molecules/PageHeader/PageHeader.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
