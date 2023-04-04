@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="flex p-0 relative overflow-hidden items-center bg-cover bg-center min-h-[300px] rounded-lg mt-4" 
+    class="flex p-0 relative overflow-hidden items-center bg-cover bg-center rounded-lg mt-4" 
     :class="[big ? smallBanner : bigBanner]"
   >
     <img 

@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader.vue'
 import PageContent from '@/components/molecules/PageContent/PageContent.vue'
 import IntroductionMark from './PageMD/IntorductionMark.md'
@@ -21,6 +21,12 @@ export default defineComponent({
     IntroductionMark
   },
   setup() {
+    const height = ref(false)
+
+    return {
+      height
+    }
   }
+
 })
 </script>
