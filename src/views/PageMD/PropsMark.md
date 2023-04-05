@@ -26,7 +26,7 @@ title: Props and Emits
 
 
 ```vue
-// Dziecko
+// Dziecko (ChildComponent)
 
 <template>
   <h1> {{ title }} </h1>
@@ -52,26 +52,95 @@ export default {
 ```
 
 <TextBoxMD>
-  <p>
 
-  </p>
+  1. -4- Czas zarejestrować nasz komponent w rodzicu. 
+  2. -5- Jako że w naszym dziecku ustawiliśmy że prop "title" jest wymagany required=true to musimy go umieścić w naszym rodzicu
+  3. -6- W naszym przypadkugdy nie podamy wartości drugiego propa description wyświetli się opis defaultowy
 </TextBoxMD>
 
 ```vue
-// Rodzic
+// Rodzic (ParentComponent)
 
 <template>
   <div>
-    <ChildComponent message='Wiadomość do ciebie Rycerzu' />
+    <ChildComponent title='Piękny Komponent' />
   </div>
 </template>
 
 <script>
-import ChildComponent from ''
+import ChildComponent from './ChildComponent'
 export default {
-  name: 'ChildComponent',
-  props: ['message']
+  name: 'ParentComponent',
+  components: {
+    ChildComponent
+  }
 }
 </script>
 
 ```
+
+<TextBoxMD>
+  <p>
+    Możemy też w rodzicy skorzystać ze zmiennej reaktywnej przy pomocy np: "ref" o którym więcej w dziale ref, reactive i danymi manipulować z części setup tylko musimy pamiętać aby skorzytać z v-bild czyli dwukropka przed wartością :description
+  </p>
+</TextBoxMD>
+
+```vue
+// Rodzic (ParentComponent)
+
+<template>
+  <div>
+    <ChildComponent title='Piękny Komponent' :description='msg'/>
+  </div>
+</template>
+
+<script>
+import { ref } from 'vue'
+import ChildComponent from './ChildComponent'
+export default {
+  name: 'ParentComponent',
+  components: {
+    ChildComponent
+  },
+  setup() {
+    const msg = ref('Wow nowa wiadomość')
+  }
+}
+</script>
+
+```
+
+<TextBoxMD>
+  <p>
+    Ale żeby nie było tak nudno to oczywiście możemy również popracować z naszym propem w komponencie. Może zróbmy aby nasz title był zapisany dużymi literami.
+  </p>
+
+  1. -- Musimy w naszym setup dodać props aby móc z nim pracować i poprzez słowo kluczowe props.nazwapropsa możemy walczyć dalej
+</TextBoxMD>
+
+```vue
+<template>
+  <h1> {{ bigTitle }} </h1>
+</template>
+
+<script>
+export default {
+  name: 'ChildComponent',
+  // props: ['title', 'description']
+  props: {
+    title: {
+      type: String,
+      required: true,
+    }
+  },
+  setup(props) {
+    const bigTitle = props.title.toUpperCase()
+
+    return {
+      bigTitle
+    }
+  }
+}
+</script>
+```
+
