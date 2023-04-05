@@ -6,10 +6,10 @@ title: Props and Emits
 </h1>
 
 <TextBoxMD>
-  <p class='indent-6'>
+  <p class='mb-8'>
     Ponieważ Vue wykorzystuje koncepcję, która nazywa się jednokierunkowym przepływem danych. Dane przekazywane z komponentu nadrzędnego ( rodzica ) do komponentu ( dziecka ) powinny być zmieniane tylko w komponencie nadrzędnym (rodzicu). Po prostu przekazujemy dane do komponentu aby był uniwersalny i reużywlany. Props to argumenty, które deklarujemy w definicji komponentu i mogą one przyjmować różne typy danych, takie jak liczby, łańcuchy znaków, obiekty czy funkcje.
   </p>
-  <p>
+  <p class='mb-8'>
     Aby przekazać propsy do komponentu, musimy użyć atrybutu v-bind w elemencie, w którym renderujemy ten komponent. Na przykład, jeśli mamy komponent o nazwie "ChildComponent" z deklarowanym props "message", to możemy przekazać wartość dla tego propsa w ten sposób: 
   </p>
 </TextBoxMD>

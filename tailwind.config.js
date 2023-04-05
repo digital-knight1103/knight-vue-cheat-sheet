@@ -18,7 +18,7 @@ module.exports = {
           '2xl': '1380px',
       },
       colors: {
-          current: 'currentColor',
+          // current: 'currentColor',
           transparent: 'transparent',
           black: '#000',
           white: '#fff',
@@ -737,10 +737,10 @@ module.exports = {
       stroke: {
           current: 'currentColor',
       },
-      textColor: theme => ({
-          ...theme('colors'),
-          body: '#919EB0',
-      }),
+      // textColor: theme => ({
+      //     ...theme('colors'),
+      //     body: '#919EB0',
+      // }),
       textOpacity: (theme) => theme('opacity'),
       transformOrigin: {
         center: 'center',
@@ -975,7 +975,7 @@ module.exports = {
       strokeWidth: ['responsive'],
       tableLayout: ['responsive'],
       textAlign: ['responsive'],
-      textColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
+      // textColor: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
       textDecoration: ['responsive', 'group-hover', 'focus-within', 'hover', 'focus'],
       textOpacity: ['responsive', 'dark', 'group-hover', 'focus-within', 'hover', 'focus'],
       textOverflow: ['responsive'],
