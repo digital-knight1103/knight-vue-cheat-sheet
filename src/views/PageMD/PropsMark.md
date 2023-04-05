@@ -6,11 +6,54 @@ title: Props and Emits
 </h1>
 
 <TextBoxMD>
-  <p class='mb-8'>
-    Ponieważ Vue wykorzystuje koncepcję, która nazywa się jednokierunkowym przepływem danych. Dane przekazywane z komponentu nadrzędnego ( rodzica ) do komponentu ( dziecka ) powinny być zmieniane tylko w komponencie nadrzędnym (rodzicu). Po prostu przekazujemy dane do komponentu aby był uniwersalny i reużywlany. Props to argumenty, które deklarujemy w definicji komponentu i mogą one przyjmować różne typy danych, takie jak liczby, łańcuchy znaków, obiekty czy funkcje.
+  <p class='mb-6'>
+    "Props" oraz "Emits" są bardzo ważne w VUE ponieważ przekazywanie danych pomiędzy komponentami to fundamentalny element pracy z VUE. Ponieważ VUE wykorzystuje koncepcję, która nazywa się jednokierunkowym przepływem danych (one-way data flow) oznacza to że dane przesyłane są w jednym kierunku z komponentu nadrzędnego (rodzica) do jednego z jego elementów podrzędnych (dziecka) w przypadku "Propsów" oraz odwrotnie w przypadku "Emits" co sprawia że są bardziej uniwersalne i reużywalne, ułatwia też późniejsze debugowanie oraz testowanie aplikacji.
   </p>
+    <h1 class="text-lg uppercase font-semibold">
+    <span class='text-green-500 forn-bold'>#</span> Props
+  </h1>
   <p class='mb-8'>
-    Aby przekazać propsy do komponentu, musimy użyć atrybutu v-bind w elemencie, w którym renderujemy ten komponent. Na przykład, jeśli mamy komponent o nazwie "ChildComponent" z deklarowanym props "message", to możemy przekazać wartość dla tego propsa w ten sposób: 
+    Ale jak mamy rozumieć te komunikację. Może zacznijmy od "Propsów". Są to niestandardowe atrybuty, które możemy zarejestrować w komponencie co pozwala nam przekazywać dane z tak jak wcześniej pisaliśmy komponentu nadrzędnego (rodzica) do podrzędnego (dziecka). Props to argumenty, które deklarujemy w definicji komponentu i mogą one przyjmować różne typy danych, takie jak: liczby, łańcuchy znaków, obiekty czy funkcje. Propsy troche inaczej deklaruje się dla składni script setup ale to zaraz pokażemy.
+  </p>
+  <p class='mb-6'>
+    Zerknijmy na przykład:
+  </p>
+
+  1. -1-  Stworzyliśmy nasz komponent (dziecko) w którym chcemy przekazać dwie wartości tytuł i opis ale nie podamy go w naszym komponencie dziecka tylko żeby był reużywalny chcemy te dane przekazać w rodzicu.
+  2. -2-  Dane rejestrujemy w sekcji setup i możemy je przekaząć poprzez tablicę lub jeżeli wiemy dokładnie jaką wartość chcemy przekazać [String, Number, Array ...] to wtedy umieszczamy to w obiekcie (zalecane)
+  3. -3-  Dzięki temu że korzystamy z obiektu możemy również ustawić wartość domyślną dla naszej wartości jako zabezpieczenie, ustawić aby wartość była obowiąskowo podana w elemencie nadrzędnym (rodzicu required) lub ustawić walidacje danych. 
+</TextBoxMD>
+
+
+```vue
+// Dziecko
+
+<template>
+  <h1> {{ title }} </h1>
+  <p> {{ description }} </p>
+</template>
+
+<script>
+export default {
+  name: 'ChildComponent',
+  // props: ['title', 'description']
+  props: {
+    title: {
+      type: String,
+      required: true //wartość wymagana
+    },
+    desctiption {
+      type: String,
+      default: 'Hello World'
+    }
+  }
+}
+</script>
+```
+
+<TextBoxMD>
+  <p>
+
   </p>
 </TextBoxMD>
 
@@ -31,19 +74,4 @@ export default {
 }
 </script>
 
-```
-
-```vue
-// Dziecko
-
-<template>
-  <h1> {{ message }} </h1>
-</template>
-
-<script>
-export default {
-  name: 'ChildComponent',
-  props: ['message']
-}
-</script>
 ```
