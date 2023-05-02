@@ -9,6 +9,15 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@assets': path.resolve(__dirname, './src/assets'),
+      // sprawdzić
+      '~/': `${path.resolve(__dirname, 'src')}/`,
+    },
+    extensions: ['.ts', '.json', '.vue', '.png', '.md']
+  },
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/], // <--
@@ -44,12 +53,4 @@ export default defineConfig({
       dts: 'src/components.d.ts',
     }),
   ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '@assets': path.resolve(__dirname, './src/assets'),
-    },
-    extensions: ['.ts', '.json', '.vue', '.png', '.md']
-  },
-  
 })

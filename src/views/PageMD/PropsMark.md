@@ -21,7 +21,7 @@ title: Props and Emits
 
   1. -1-  Stworzyliśmy nasz komponent (dziecko) w którym chcemy przekazać dwie wartości tytuł i opis ale nie podamy go w naszym komponencie dziecka tylko żeby był reużywalny chcemy te dane przekazać w rodzicu.
   2. -2-  Dane rejestrujemy w sekcji setup i możemy je przekaząć poprzez tablicę lub jeżeli wiemy dokładnie jaką wartość chcemy przekazać [String, Number, Array ...] to wtedy umieszczamy to w obiekcie (zalecane)
-  3. -3-  Dzięki temu że korzystamy z obiektu możemy również ustawić wartość domyślną dla naszej wartości jako zabezpieczenie, ustawić aby wartość była obowiąskowo podana w elemencie nadrzędnym (rodzicu required) lub ustawić walidacje danych. 
+  3. -3-  Dzięki temu że korzystamy z obiektu możemy również ustawić wartość domyślną dla naszej wartości jako zabezpieczenie, ustawić aby wartość była obowiązkowa w elemencie nadrzędnym (rodzicu required) lub ustawić walidacje danych (validator)
 </TextBoxMD>
 
 
@@ -29,12 +29,14 @@ title: Props and Emits
 // Dziecko (ChildComponent)
 
 <template>
-  <h1> {{ title }} </h1>
+  <h1 class="color"> {{ title }} </h1>
   <p> {{ description }} </p>
 </template>
 
-<script>
-export default {
+<script lang='ts'>
+import { defineComponent } from 'vue' // defineComponent = TypeScript 
+
+export default defineComponent({
   name: 'ChildComponent',
   // props: ['title', 'description']
   props: {
@@ -44,18 +46,25 @@ export default {
     },
     desctiption {
       type: String,
-      default: 'Hello World'
+      default: 'Hej. Jestem Propem'
+    },
+    color: {
+      type: String,
+      default: 'primary',
+      validator(value: string) { // bez TS wystarczy tylko value
+        return ['primary', 'secodary', 'warning', 'różowiutki'].includes(value)
+      }
     }
   }
-}
+})
 </script>
 ```
 
 <TextBoxMD>
 
   1. -4- Czas zarejestrować nasz komponent w rodzicu. 
-  2. -5- Jako że w naszym dziecku ustawiliśmy że prop "title" jest wymagany required=true to musimy go umieścić w naszym rodzicu
-  3. -6- W naszym przypadkugdy nie podamy wartości drugiego propa description wyświetli się opis defaultowy
+  2. -5- Jako że w naszym dziecku ustawiliśmy że prop "title" jest wymagany required=true to musimy go umieścić w naszym rodzicu inczej będzie błąd.
+  3. -6- W naszym przypadku gdy nie podamy wartości drugiego propa description wyświetli się nam opis defaultowy czyli "Hej. Jestem Propem", ale za to zmieniliśmy kolor na secondary.
 </TextBoxMD>
 
 ```vue
@@ -63,7 +72,7 @@ export default {
 
 <template>
   <div>
-    <ChildComponent title='Piękny Komponent' />
+    <ChildComponent title='Piękny Komponent' color='secondary'/>
   </div>
 </template>
 
