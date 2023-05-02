@@ -18,6 +18,8 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "install": "^0.13.0",
+    "npm": "^9.6.5",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"

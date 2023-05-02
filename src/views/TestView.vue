@@ -1,12 +1,18 @@
 <template>
   <div class="container">
     <PageHeader title="Test" path="../src/assets/images/forest.png"></PageHeader>
-    <PageContent>
-      <AppButton @click="createBox" text='Dodaj Boxa' class="w-[200px] mt-10 mx-auto"/>
+    <PageContent class="p-10">
+
+      <AppButton @click="createBox">
+        Dodaj Boxa
+      </AppButton>
+
       <div ref="place" class="grid grid-cols-8">
         
       </div>
       <LoadingBar></LoadingBar>
+
+
     </PageContent>
   </div>
 </template>
@@ -16,7 +22,7 @@ import { defineComponent, onMounted, ref } from 'vue'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader.vue';
 import PageContent from '@/components/molecules/PageContent/PageContent.vue'
 import AppButton from '@/components/atoms/AppButton/AppButton.vue';
-import LoadingBar from '@/components/atoms/LoadingBar/LoadingBar.vue'
+import LoadingBar from '@/components/atoms/LoadingBar/LoadingBar.vue';
 
 export default defineComponent({
   name: 'CompositionView',
@@ -24,7 +30,7 @@ export default defineComponent({
     PageHeader,
     PageContent,
     AppButton,
-    LoadingBar
+    LoadingBar,
 },
   setup() {
     const place = ref<HTMLElement | null>(null)
@@ -43,6 +49,7 @@ export default defineComponent({
     onMounted(() => {
       place.value
       console.log("onMounted", place.value)
+      console.log("Icon", AppIcon);
     })
 
     return {
