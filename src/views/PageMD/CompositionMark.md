@@ -28,7 +28,7 @@ title: CompositionApi
 
 <template>
   <div>
-    <h1>OptionAPI</h1>
+    <h1>{{ message }}</h1>
   </div>
 </template>
 
@@ -37,7 +37,8 @@ export default {
   data() {
     return {
       count: 0,
-      message: "Hello world"
+      msg: "option",
+      text: 'api'
     }
   },
   methods: {
@@ -46,45 +47,70 @@ export default {
     }
   },
   computed: {
-    reversedMessage() {
-      return this.message.split('').reverse().join('')
+    message() {
+      return this.msg.charAt(0).toUpperCase() 
+           + this.msg.slice(1) 
+           + this.text.toUpperCase() + ' !';
     }
   }
 }
 </script>
 
 ```
-
 
 ```vue
 <!-- CompositionAPI -->
 
 <template>
-  <h1>CompositionAPI</h1>
+  <h1>{{ message }}</h1>
 </template>
 
 <script>
-import { reactive, computed } from 'vue'
+import { reactive, computed } from 'vue';
 export default {
   setup() {
     const state = reactive({
       count: 0,
-      message: "Hello world"
-    })
+      msg: 'composition',
+      text: 'api',
+    });
     const increment = () => {
-      state.count++
-    }
-    const reversedMessage = computed(() => {
-      return state.message.split('').reverse().join('')
-    })
+      state.count++;
+    };
+    const message = computed(() => {
+      return state.msg.charAt(0).toUpperCase() 
+           + state.msg.slice(1) 
+           + state.text.toUpperCase() + ' !';
+    });
     return {
       state,
       increment,
-      reversedMessage
-    }
-  }
-}
+      message,
+    };
+  },
+};
 </script>
+
 ```
 </div>
+
+<TextBoxMD>
+  <p class='mb-4'>
+    Na pierwszy rzut oka *OptionsApi* wydaję się przyjemniejszy i bardziej poukładany ale uwierzcie mi jak sie dłużej się popracuje z CompositionAPI wtedy zaczyny dostrzegać się plusy. 
+  </p>
+  
+  <p class='my-2'>
+    A najważniejsze z nich to:
+    <ol>
+      <li class='mb-2'>1. Reużywalność kodu: Composition API zachęca do tworzenia kompozycji, które są funkcjami, które mogą być używane wielokrotnie w różnych komponentach. Dzięki temu można łatwo przenieść logikę i stan między komponentami, co prowadzi do bardziej modułowego kodu i ułatwia ponowne użycie.
+      </li>
+      <li class='mb-2'>2. Czytelność kodu: Composition API pozwala na logiczne grupowanie powiązanych funkcji, danych i ich efektów w jednym miejscu. Zamiast rozproszonego kodu w różnych sekcjach, wszystko jest zdefiniowane w jednym miejscu, co ułatwia zrozumienie i utrzymanie kodu.
+      </li>
+      <li class='mb-2'>3. Skalowalność: Composition API dobrze skaluje się w przypadku większych projektów, gdzie istnieje wiele funkcji i logika do zarządzania. Dzięki możliwości dzielenia kompozycji na mniejsze, bardziej zrozumiałe części, łatwiej jest zarządzać i rozwijać kod.</li>
+      <li class='mb-2'>4. Typowanie: Składnia Composition API działa lepiej z narzędziami do statycznego typowania, takimi jak TypeScript. Dzięki temu można łatwiej wykrywać i unikać błędów typów w kodzie.</li>
+    </ol>
+  </p>
+
+  <img src="../../assets/images/composition.svg" style="width:800px; margin: 40px auto;">
+</TextBoxMD>
 
