@@ -3,7 +3,7 @@
   <input
     type="checkbox"
     :checked="modelValue"
-    @change="$emit('update:modelValue', $event.target.checked)"
+    @change="$emit('update:modelValue', ($event.target as HTMLInputElement).checked)"
   />
   <label v-if="label" class="ml-2">{{ label }}</label>
 </div>
@@ -11,6 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+
 export default defineComponent({
   name: 'FormCheckbox',
   props: {
@@ -21,7 +22,7 @@ export default defineComponent({
       modelValue: {
       type: Boolean,
       default: false
-  }
+    }
   }
 })
 </script>

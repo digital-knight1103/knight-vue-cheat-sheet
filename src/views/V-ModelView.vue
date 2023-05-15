@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <PageHeader title="v-model"></PageHeader>
+    <PageHeader title="v-model" path="../src/assets/images/proggramGirl.png"></PageHeader>
     <PageContent></PageContent>
   </div>
 </template>

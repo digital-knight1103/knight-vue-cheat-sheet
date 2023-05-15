@@ -19,7 +19,13 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import type { PropType } from 'vue'
+
 import FormRadio from '../FormRadio/FormRadio.vue';
+
+interface selectItem {
+  [value: string]: string 
+}
 
 export default defineComponent({
   name: 'FormRadioGroup',
@@ -28,7 +34,7 @@ export default defineComponent({
   },
   props: {
     options: {
-      type: Array,
+      type: Array as PropType<selectItem[]>,
       required: true
     },
     name: {

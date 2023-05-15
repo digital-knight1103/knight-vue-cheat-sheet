@@ -114,3 +114,9 @@ export default {
   <img src="../../assets/images/composition.svg" style="width:800px; margin: 40px auto;">
 </TextBoxMD>
 
+<TextBoxMD>
+  <p class='mb-4'>
+    Na pierwszy rzut oka *OptionsApi* wydaję się przyjemniejszy i bardziej poukładany ale uwierzcie mi jak sie dłużej się popracuje z CompositionAPI wtedy zaczyny dostrzegać się plusy. 
+  </p>
+</TextBoxMD>
+

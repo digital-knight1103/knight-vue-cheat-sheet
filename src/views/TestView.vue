@@ -33,11 +33,11 @@ export default defineComponent({
     LoadingBar,
 },
   setup() {
-    const place = ref<HTMLElement | null>(null)
+    const place = ref<HTMLElement | null>()
     // const place = ref(null)
     let number = 1
 
-    let value = ref(10)
+    // let value = ref(10)
 
     const createBox = () => {
       const box = document.createElement('div')
@@ -48,8 +48,6 @@ export default defineComponent({
 
     onMounted(() => {
       place.value
-      console.log("onMounted", place.value)
-      console.log("Icon", AppIcon);
     })
 
     return {
