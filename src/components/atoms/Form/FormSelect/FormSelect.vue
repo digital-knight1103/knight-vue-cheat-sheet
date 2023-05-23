@@ -12,7 +12,7 @@
       class="block w-full outline-none bg-transparent text-sm text-gray-100 font-medium"
       v-bind="{
         ...$attrs,
-        onChange: ($event) => { $emit('update:modelValue', $event.target.value) }
+        onChange: ($event) => { $emit('update:modelValue', ($event.target as HTMLInputElement).value) }
       }"
       :placeholder="placeholder?.length > 0 ? placeholder : label"
       :disabled="disabled"

@@ -17,7 +17,7 @@ const duration = ref(10000 * 1000)
 const elapsed = ref(0)
 
 let lastTime = performance.now()
-let handle
+let handle:number
 const update = () => {
   const time = performance.now()
   elapsed.value += Math.min(time - lastTime, duration.value - elapsed.value)
