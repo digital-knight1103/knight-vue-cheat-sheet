@@ -6,25 +6,52 @@
       :path='pathImg' 
       alt="Images Banner"
     />
-    <button @click="decreaseCounter">-</button>
-      <span>{{ counter }}</span>
-    <button @click="increaseCounter">+</button>
+
+    <div class="mt-2 block text-center text-xl font-semibold ">
+      <h3>{{ counterTitle }}:</h3>
+      <h3>{{ counterData.title }}</h3>
+      <button class='text-blue-300' @click="decreaseCounter">-</button>
+      <span 
+        class="p-4"
+        :class="{
+          'text-green-300' : (counter >= 3),
+          'text-green-500' : (counter >= 5),
+          'text-green-600' : (counter >= 7),
+          'text-green-700' : (counter >= 9),
+          'text-pink-600' : (counter >= 10)
+        }"
+      >
+      {{ counterData.count }}</span>
+      <button class='text-green-500' @click="increaseCounter">+</button>
+    </div>
+    <div class="block text-center">
+      <h4>Edit counter title:</h4>
+      <input type="text" v-model="counterTitle"/>
+    </div>
   </main>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 
 // nie dodajemy importów komponentów
 // nie tworzymy setup()
   const pathImg = ref('../src/assets/images/space.png')
-  const counter = ref(0)
+  const counter = ref(0),
+        counterTitle = ref('Counter') //bez const zmienne po przecinku
+
+  const counterData = reactive({
+    count: 0,
+    title: 'My Counter'
+  })  
 
   const decreaseCounter = () => {
-    return counter.value = counter.value - 1
+    // counter.value = counter.value - 1
+    counterData.count--
   }
   const increaseCounter = () => {
-    return counter.value++
+    // counter.value++
+    counterData.count++
   }
 </script>
 

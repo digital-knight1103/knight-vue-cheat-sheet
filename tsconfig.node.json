@@ -1,8 +1,43 @@
 {
   "extends": "@vue/tsconfig/tsconfig.node.json",
-  "include": ["vite.config.*", "vitest.config.*", "cypress.config.*", "playwright.config.*"],
+  "include": [
+    "vite.config.*",
+    "vitest.config.*",
+    "cypress.config.*",
+    "playwright.config.*",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.vue"
+  ],
   "compilerOptions": {
     "composite": true,
-    "types": ["node"]
-  }
+    "types": ["node"],
+    "module": "esnext",
+    "paths": {
+      "@/": [
+        "./src/*"
+      ],
+      "@*": [
+        "./src/components/*"
+      ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
+      "@atoms/*": [
+        "./src/components/atoms/*"
+      ],
+      "@molecules/*": [
+        "./src/components/molecules/*"
+      ],
+      "@organisms/*": [
+        "./src/components/organisms/*"
+      ],
+      "@mark/*": [
+        "./src/views/PageMD/*"
+      ],
+      "@views/*": [
+        "./src/views/*"
+      ],
+    }
+  },
 }

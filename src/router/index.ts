@@ -70,6 +70,11 @@ const router = createRouter({
       component: () => import('../views/PropsEmitsView.vue')
     },
     {
+      path: '/ref',
+      name: 'ref',
+      component: () => import('../views/RefView.vue')
+    },
+    {
       path: '/events',
       name: 'events',
       component: () => import('../views/EventsView.vue')

@@ -103,7 +103,17 @@
               <span class="absolute text-[12px] font-bold">Wiedza</span>
             </div>
 
-            <!-- Props -->
+            <!-- Ref/Reactive -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="ref">
+                <IconRef/>
+                <span class="ml-8 font-bold">
+                  Ref / Reactive
+                </span>
+              </RouterLink>
+            </li>
+
+            <!-- Props/Emits -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="propsemits">
                 <IconUser/>
@@ -311,38 +321,38 @@
 </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
+<script setup lang="ts">
+import { ref } from 'vue'
 import IconOverview from '../assets/icons/IconOverview.vue'
 import IconBurger from '../assets/icons/IconBurger.vue'
-import IconAnalitics from '@/assets/icons/IconAnalitics.vue'
-import IconOrder from '@/assets/icons/IconOrder.vue'
-import IconUser from '@/assets/icons/IconUser.vue'
-import IconSetting from '@/assets/icons/IconSetting.vue'
-import IconLogout from '@/assets/icons/IconLogout.vue'
-import IconArrowDown from '@/assets/icons/IconArrowDown.vue'
-import IconSuitcase from '@/assets/icons/IconSuitcase.vue'
-import IconVerticalDots from '@/assets/icons/IconVerticalDots.vue'
-import IconDoubleArrowTop from '@/assets/icons/IconDoubleArrowTop.vue'
-import TimerVisit from '@/components/atoms/TimerVisit/TimerVisit.vue'
+import IconAnalitics from '../assets/icons/IconAnalitics.vue'
+import IconOrder from '../assets/icons/IconOrder.vue'
+import IconUser from '../assets/icons/IconUser.vue'
+import IconSetting from '../assets/icons/IconSetting.vue'
+import IconLogout from '../assets/icons/IconLogout.vue'
+import IconArrowDown from '../assets/icons/IconArrowDown.vue'
+import IconSuitcase from '../assets/icons/IconSuitcase.vue'
+import IconVerticalDots from '../assets/icons/IconVerticalDots.vue'
+import IconDoubleArrowTop from '../assets/icons/IconDoubleArrowTop.vue'
+import TimerVisit from '../components/atoms/TimerVisit/TimerVisit.vue'
 
-export default defineComponent({
-  name: 'TheNavigation',
-  components: {
-    IconOverview,
-    IconBurger,
-    IconAnalitics,
-    IconOrder,
-    IconUser,
-    IconSetting,
-    IconLogout,
-    IconArrowDown,
-    IconSuitcase,
-    IconVerticalDots,
-    IconDoubleArrowTop,
-    TimerVisit
-  },
-  setup() {
+// export default defineComponent({
+  // name: 'TheNavigation',
+  // components: {
+  //   IconOverview,
+  //   IconBurger,
+  //   IconAnalitics,
+  //   IconOrder,
+  //   IconUser,
+  //   IconSetting,
+  //   IconLogout,
+  //   IconArrowDown,
+  //   IconSuitcase,
+  //   IconVerticalDots,
+  //   IconDoubleArrowTop,
+  //   TimerVisit
+  // },
+  // setup() {
     const anim = ref('fade')
 
     // Burger menus
@@ -386,11 +396,11 @@ export default defineComponent({
         }
       });
     
-      return {
-        anim,
-      }
-  }
-})
+      // return {
+      //   anim,
+      // }
+  // }
+// })
 </script>
 
 <style scoped>

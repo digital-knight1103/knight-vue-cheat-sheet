@@ -12,9 +12,12 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@atom': path.resolve(__dirname, './src/components/atoms'),
+      '@molecules': path.resolve(__dirname, './src/components/molecules'),
       '@assets': path.resolve(__dirname, './src/assets'),
+      '@mark': path.resolve(__dirname, './src/views/PageMD'),
       // sprawdzić
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+      // '~/': `${path.resolve(__dirname, 'src')}/`,
     },
     extensions: ['.ts', '.json', '.vue', '.png', '.md']
   },
