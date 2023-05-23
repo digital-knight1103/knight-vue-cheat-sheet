@@ -106,7 +106,7 @@
             <!-- Ref/Reactive -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="ref">
-                <IconRef/>
+                <IconRef />
                 <span class="ml-8 font-bold">
                   Ref / Reactive
                 </span>
@@ -116,7 +116,7 @@
             <!-- Computed -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="computed">
-                <IconUser/>
+                <IconComputed/>
                 <span class="ml-8 font-bold">
                   Computed
                 </span>
@@ -125,7 +125,7 @@
 
             <!-- watch -->
             <li class="mb-2">
-              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="ref">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="watch">
                 <IconUser/>
                 <span class="ml-8 font-bold">
                   Watch
@@ -212,7 +212,7 @@
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="lifecyclehooks">
                 <IconUser/>
                 <span class="ml-8 font-bold">
-                  Cykl życia
+                  Cykl życia (Hooks)
                 </span>
               </RouterLink>
             </li>
@@ -343,6 +343,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import IconRef from '../assets/icons/IconRef.vue'
+import IconComputed from '../assets/icons/IconComputed.vue'
 import IconOverview from '../assets/icons/IconOverview.vue'
 import IconBurger from '../assets/icons/IconBurger.vue'
 import IconAnalitics from '../assets/icons/IconAnalitics.vue'
@@ -356,23 +358,6 @@ import IconVerticalDots from '../assets/icons/IconVerticalDots.vue'
 import IconDoubleArrowTop from '../assets/icons/IconDoubleArrowTop.vue'
 import TimerVisit from '../components/atoms/TimerVisit/TimerVisit.vue'
 
-// export default defineComponent({
-  // name: 'TheNavigation',
-  // components: {
-  //   IconOverview,
-  //   IconBurger,
-  //   IconAnalitics,
-  //   IconOrder,
-  //   IconUser,
-  //   IconSetting,
-  //   IconLogout,
-  //   IconArrowDown,
-  //   IconSuitcase,
-  //   IconVerticalDots,
-  //   IconDoubleArrowTop,
-  //   TimerVisit
-  // },
-  // setup() {
     const anim = ref('fade')
 
     // Burger menus

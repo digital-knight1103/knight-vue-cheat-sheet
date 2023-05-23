@@ -112,7 +112,7 @@ const router = createRouter({
     {
       path: '/lifecyclehooks',
       name: 'lifecyclehooks',
-      component: () => import('../views/LifeCycleHooksView.vue')
+      component: () => import('../views/LifecycleHooksView.vue')
     },
     {
       path: '/styles',
