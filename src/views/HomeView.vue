@@ -22,8 +22,12 @@
         }"
       >
       {{ counterData.count }}</span>
-      <button class='text-green-500' @click="increaseCounter">+</button>
+      <button class='text-green-500' @click="increaseCounter(1)">+</button>
+      <button class='text-pink-500' @click="increaseCounter(2)">(++)</button>
     </div>
+
+    <p>This counter is {{ oddOrEven }} number</p>
+
     <div class="block text-center">
       <h4>Edit counter title:</h4>
       <input type="text" v-model="counterTitle"/>
@@ -32,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue';
+import { ref, reactive, computed, watch } from 'vue';
 
 // nie dodajemy importów komponentów
 // nie tworzymy setup()
@@ -49,10 +53,37 @@ import { ref, reactive } from 'vue';
     // counter.value = counter.value - 1
     counterData.count--
   }
-  const increaseCounter = () => {
+  const increaseCounter = (amount:number) => {
+    console.log(amount);
     // counter.value++
-    counterData.count++
+    // counterData.count++
+    counterData.count = counterData.count + amount 
   }
+
+  const oddOrEven = computed(() => {
+    if (counterData.count % 2 === 0) {
+      return 'even'
+    } else {
+      return 'odd'
+    }
+  })
+
+  //watch powinno się ustawiac po danych które będziemy obserowować
+  // 1. pierwszy parametr to reaktywna dana którą będziemy obserwować
+  // 2. drugi parametr to metoda
+
+  watch(() => counterData.count, (newCount, oldCount) => {
+    console.log('newCount', newCount);
+    console.log('oldCount', oldCount);
+
+    if(counterData.count === 20) {
+      alert('Nie do wiary')
+    }
+
+  })
+
+
+
 </script>
 
 <!-- compositionAPI

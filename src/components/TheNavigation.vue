@@ -113,6 +113,26 @@
               </RouterLink>
             </li>
 
+            <!-- Computed -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="computed">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Computed
+                </span>
+              </RouterLink>
+            </li>
+
+            <!-- watch -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="ref">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Watch
+                </span>
+              </RouterLink>
+            </li>
+
             <!-- Props/Emits -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="propsemits">

@@ -75,6 +75,16 @@ const router = createRouter({
       component: () => import('../views/RefView.vue')
     },
     {
+      path: '/Computed',
+      name: 'Computed',
+      component: () => import('../views/ComputedView.vue')
+    },
+    {
+      path: '/watch',
+      name: 'watch',
+      component: () => import('../views/WatchView.vue')
+    },
+    {
       path: '/events',
       name: 'events',
       component: () => import('../views/EventsView.vue')
@@ -102,7 +112,7 @@ const router = createRouter({
     {
       path: '/lifecyclehooks',
       name: 'lifecyclehooks',
-      component: () => import('../views/LifecycleHooksView.vue')
+      component: () => import('../views/LifeCycleHooksView.vue')
     },
     {
       path: '/styles',

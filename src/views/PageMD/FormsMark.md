@@ -1,6 +1,11 @@
 ---
 title: Forms
 ---
+
+- [Sekcja 1](#sekcja-1)
+- [Sekcja 2](#sekcja-2)
+- [Sekcja 3](#sekcja-3)
+
 <h1 class='text-white mb-10 mt-5 text-2xl uppercase text-center'>
   Budujemy Formularz krok po kroku
 </h1>
@@ -76,6 +81,11 @@ export default defineComponent ({
     W tym przykładzie wartość modelu jest przechowywana jako właściwość danych komponentu, którą nazywa się modelValue. Ta wartość będzie przekazana do elementu formularza (rodzica) jako wartość value.
   </p>
 </TextBoxMD>
+
+# Sekcja 1
+# Sekcja 2
+# Sekcja 3
+
 
 ```vue
 // FormInput
