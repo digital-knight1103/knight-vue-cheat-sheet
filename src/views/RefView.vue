@@ -1,13 +1,13 @@
 <template>
   <div>
-    <h1>Ref</h1>
+    <!-- TODO zmień tapete -->
+    <PageHeader path="../src/assets/images/knighteye.png" title="Ref / Reactive"></PageHeader>
+    <PageContent>
+      <RefMark />
+    </PageContent>
   </div>
 </template>
 
 <script setup lang="ts">
-
+import RefMark from '@mark/RefMark'
 </script>
-
-<style lang="scss" scoped>
-
-</style>
