@@ -129,6 +129,28 @@ const router = createRouter({
       name: 'dynamic',
       component: () => import('../views/DynamicComponentView.vue')
     },
+    // extras
+    {
+      path: '/routing',
+      name: 'routing',
+      component: () => import('../views/RoutingView.vue')
+    },
+    {
+      path: '/pinia',
+      name: 'pinia',
+      component: () => import('../views/PiniaView.vue')
+    },
+    {
+      path: '/firebase',
+      name: 'firebase',
+      component: () => import('../views/FirebaseView.vue')
+    },
+    {
+      path: '/vueuse',
+      name: 'vueuse',
+      component: () => import('../views/VueUseView.vue')
+    },
+
 
   ]
 })

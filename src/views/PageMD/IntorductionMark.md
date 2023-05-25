@@ -6,7 +6,7 @@ title: Intorduction
 </h1>
 
 <TextBoxMD>
-  <p class='pb-6'>
+  <p class='pb-6 text-white'>
     Cześć Rycerzu. Powstaje tutaj mały projekcik który ma służyć jako materiał pomocniczy w nauce VUE z mocnym nastawieniem na VUE3 w składni compositionAPI. Tworzę te stronę z głównym założeniem żeby samemu się uczyć i zebrać tu wiele ciekawych informacji , narzędzi jak i najlepszych praktyk w pracy z tym freamworkiem. Wiadomo nic nie zastąpi <span class='text-green-500'>dokumentacji</span> ale mam nadzieję że zbiorę tu sporo materiałów i uda mi się wytłumaczyć pewne koncepcje które pomogą i mnie i innym w pracy z VUE. 
   </p>
   <p class='pb-6'>

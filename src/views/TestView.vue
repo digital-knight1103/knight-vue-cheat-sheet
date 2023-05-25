@@ -12,7 +12,7 @@
       </div>
       <LoadingBar></LoadingBar>
 
-      
+    <!-- Odonel course -->
     <div class="mt-2 block text-center text-xl font-semibold ">
       <h3>{{ counterTitle }}:</h3>
       <h3>{{ counterData.title }}</h3>
@@ -58,7 +58,8 @@ import { useRoute } from 'vue-router';
 // import AppButton from '@/components/atoms/AppButton/AppButton.vue';
 // import LoadingBar from '@/components/atoms/LoadingBar/LoadingBar.vue';
 
-    const place = ref<HTMLElement | null>()
+// const place = ref<HTMLElement | null>()
+    const place = ref()
     // const place = ref(null)
     let number = 1
 

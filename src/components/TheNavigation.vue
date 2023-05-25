@@ -238,7 +238,7 @@
             </li>
 
             <!-- TESTOWA -->
-            <li class="mb-2">
+            <li class="mb-8">
               <RouterLink class='text-green-300 hover:bg-gray-800 rounded-xl' to="test">
                 <IconUser/>
                 <span class="ml-8 font-bold">
@@ -246,7 +246,51 @@
                 </span>
               </RouterLink>
             </li>
+
+            <div class="border-green-500 opacity-60 border-t-[1px] relative mb-10">
+              <span class="absolute text-[12px] font-bold">Dodatki</span>
+            </div>
+
+            <!-- Routing -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="routing">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Routing
+                </span>
+              </RouterLink>
+            </li>
+
+            <!-- state -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="pinia">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Pinia (state)
+                </span>
+              </RouterLink>
+            </li>
+
+            <!-- state -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="firebase">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  Firebase
+                </span>
+              </RouterLink>
+            </li>
+
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="vueuse">
+                <IconUser/>
+                <span class="ml-8 font-bold">
+                  VueUse
+                </span>
+              </RouterLink>
+            </li>
           </ul>
+
 
           <div>
             <div class="border-green-500 opacity-60 border-t-[1px] relative mb-6">
