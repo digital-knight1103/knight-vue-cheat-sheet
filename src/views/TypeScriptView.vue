@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>VueUse</h1>
+    <h1>TypeScript</h1>
   </div>
 </template>
 

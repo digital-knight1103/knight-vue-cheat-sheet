@@ -131,6 +131,11 @@ const router = createRouter({
     },
     // extras
     {
+      path: '/typescript',
+      name: 'typescript',
+      component: () => import('../views/TypeScriptView.vue')
+    },
+    {
       path: '/routing',
       name: 'routing',
       component: () => import('../views/RoutingView.vue')
@@ -150,8 +155,6 @@ const router = createRouter({
       name: 'vueuse',
       component: () => import('../views/VueUseView.vue')
     },
-
-
   ]
 })
 
