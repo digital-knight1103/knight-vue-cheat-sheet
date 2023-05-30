@@ -32,6 +32,7 @@ declare module '@vue/runtime-core' {
     TabsWrapper: typeof import('./components/molecules/TabsWrapper/TabsWrapper.vue')['default']
     TextBoxMD: typeof import('./components/atoms/TextBoxMD/TextBoxMD.vue')['default']
     TheAvatar: typeof import('./components/atoms/TheAvatar/TheAvatar.vue')['default']
+    TheCounter: typeof import('./components/readme/TheCounter.vue')['default']
     TheNavigation: typeof import('./components/TheNavigation.vue')['default']
     TheTab: typeof import('./components/atoms/TheTab/TheTab.vue')['default']
     TheWelcome: typeof import('./components/TheWelcome.vue')['default']
