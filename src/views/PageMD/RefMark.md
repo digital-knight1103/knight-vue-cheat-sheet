@@ -75,20 +75,59 @@ export default {
 </TextBoxMD>
 
 <TextBoxMD>
-  <h1 class="text-2xl font-semibold">
+  <h1 class="text-2xl font-semibold mb-6">
     <span class='text-green-500 forn-bold'>#</span>  CompositionAPI
   </h1>
   <p>
-    To małe wprowadzenie i powtórkę OptionsApi mamy za sobą. Czas skupić się na tym co jest na topie i zalecane przez producenta czyt. "Evan You i VUE" nawet się zrymowało. Jak juz wczesniej zostało wspomniane w CompositionAPI dane reaktywne tworzy się trochę inaczej i możemy skorzystać z róznych rozwiązań ale żeby nie było mamy tez możliwość tworzenia danych które nie są reaktywne (non-reactive) ponieważ nie zawsze potrzebujemy coś robić z naszymi danymi a po co dodawać naszej aplikacji kolejne zadania do wykonania. 
+    To małe wprowadzenie i powtórkę OptionsApi mamy za sobą. Czas skupić się na tym co jest na topie i zalecane przez producenta czyt. "Evan You i VUE" nawet się zrymowało. Jak juz wczesniej zostało wspomniane w CompositionAPI dane reaktywne tworzy się trochę inaczej i możemy skorzystać z różnych podejść ale żeby nie było mamy tez możliwość tworzenia danych które nie są reaktywne (non-reactive) ponieważ nie zawsze potrzebujemy coś robić z naszymi danymi a po co dodawać naszej aplikacji kolejne zadania do wykonania. 
   </p>
   <p class='my-2'>
-    We VUE3 CompositionAPI aby nasze dane aby były reaktywne i mutowalne musimy zastosować funkcje takie jak `ref` oraz `reactive`<br>
-    Aby skorzystać z reaktywnych danych w Vue 3, korzystamy z funkcji dostarczanych przez Composition API, takich jak ref i reactive. ref używamy do tworzenia refów dla prostych typów danych, natomiast reactive służy do tworzenia reactive obiektów dla bardziej złożonych struktur.<br>
-    Vue 3 wprowadza nowy system reaktywności, nazwany Composition API, który oferuje programistom bardziej elastyczne i potężne narzędzia do pracy z danymi.
-    W Vue 3, reaktywne dane są reprezentowane jako tzw. refy (referencje) lub reactive (reaktywne) obiekty. Refy to opakowanie dla wartości, które umożliwiają śledzenie zmian i automatyczne wywoływanie ponownego renderowania komponentów, gdy dane się zmieniają. Refy są szczególnie przydatne w przypadku prostych typów danych, takich jak liczby czy łańcuchy znaków.
-    Reactive obiekty, z drugiej strony, umożliwiają reaktywne zarządzanie bardziej złożonymi danymi, takimi jak obiekty i tablice. Wszelkie zmiany dokonane na reactive obiektach są automatycznie śledzone, co pozwala na natychmiastowe odzwierciedlanie tych zmian w interfejsie użytkownika.
+    We VUE3 CompositionAPI aby nasze dane aby były reaktywne i mutowalne korzystamy z funkcji dostarczanych przez Composition API, takich jak <span class='font-semibold text-pink-500'>'ref'</span> oraz <span class='font-semibold text-pink-500'>"reactive"</span><br>
+  </p>
+  
+  <p>
+    Przyjeło się że "ref" używamy raczej do tworzenia prostych typów danych, natomiast reactive służy do tworzenia obiektów dla bardziej złożonych struktur.<br>
+    I tak jak to w reaktywnych danych wszelkie zmiany dokonane na naszych danych są automatycznie śledzone, co pozwala na natychmiastowe odzwierciedlanie tych zmian w interfejsie użytkownika.
+  </p>
+  <p class='my-2'>
+    To jedziemy z przykładami bo tam będzie mi łatwiej przedstawić kilka niuansów. 
   </p>
 </TextBoxMD>
+
+<div class='flex'>
+
+```js
+<script setup>
+import { ref } from 'vue'
+
+const msg = ref('Hello World!')
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg">
+</template>
+```
+
+```js
+<script setup>
+import { reactive } from 'vue'
+
+const msg = ref('Hello World!')
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+  <input v-model="msg">
+</template>
+```
+
+</div>
+
+
+
+
+
 
 poprzez użycie ref zmienna staje się obiektem dlatego musimy użyć value
 - zdjęcie z devtools
