@@ -3,7 +3,7 @@
   <button class='text-white block mx-auto  mb-6 text-center border p-2 rounded-md' @click="increment">Klikamy i zwiększamy: {{ count }}</button>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   // reactive state
   data() {

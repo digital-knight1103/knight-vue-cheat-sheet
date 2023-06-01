@@ -10,9 +10,9 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import PageHeader from '@/components/molecules/PageHeader/PageHeader.vue'
-import PageContent from '@/components/molecules/PageContent/PageContent.vue'
-import BoxInfo from '@/components/atoms/BoxInfo/BoxInfo.vue'
+import PageHeader from '../components/molecules/PageHeader/PageHeader.vue'
+import PageContent from '../components/molecules/PageContent/PageContent.vue'
+import BoxInfo from '../components/atoms/BoxInfo/BoxInfo.vue'
 
 export default defineComponent({
   name: 'CompositionView',

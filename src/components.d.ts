@@ -34,6 +34,7 @@ declare module '@vue/runtime-core' {
     TheAvatar: typeof import('./components/atoms/TheAvatar/TheAvatar.vue')['default']
     TheCounter: typeof import('./components/readme/TheCounter.vue')['default']
     TheNavigation: typeof import('./components/TheNavigation.vue')['default']
+    TheReactive: typeof import('./components/readme/TheReactive.vue')['default']
     TheTab: typeof import('./components/atoms/TheTab/TheTab.vue')['default']
     TheWelcome: typeof import('./components/TheWelcome.vue')['default']
     TimerVisit: typeof import('./components/atoms/TimerVisit/TimerVisit.vue')['default']

@@ -45,7 +45,7 @@ export default {
   </p>
 </TextBoxMD>
 
-```js
+```vue
 <template>
   <button @click="increment">Count is: {{ count }}</button>
 </template>
@@ -82,7 +82,7 @@ export default {
     To małe wprowadzenie i powtórkę OptionsApi mamy za sobą. Czas skupić się na tym co jest na topie i zalecane przez producenta czyt. "Evan You i VUE" nawet się zrymowało. Jak juz wczesniej zostało wspomniane w CompositionAPI dane reaktywne tworzy się trochę inaczej i możemy skorzystać z różnych podejść ale żeby nie było mamy tez możliwość tworzenia danych które nie są reaktywne (non-reactive) ponieważ nie zawsze potrzebujemy coś robić z naszymi danymi a po co dodawać naszej aplikacji kolejne zadania do wykonania. 
   </p>
   <p class='my-2'>
-    We VUE3 CompositionAPI aby nasze dane aby były reaktywne i mutowalne korzystamy z funkcji dostarczanych przez Composition API, takich jak <span class='font-semibold text-pink-500'>'ref'</span> oraz <span class='font-semibold text-pink-500'>"reactive"</span><br>
+    We VUE3 CompositionAPI aby nasze dane aby były reaktywne i mutowalne korzystamy z funkcji dostarczanych przez Composition API, takich jak <span class='font-semibold text-pink-500'>"ref"</span> oraz <span class='font-semibold text-pink-500'>"reactive"</span><br>
   </p>
   
   <p>
@@ -90,46 +90,109 @@ export default {
     I tak jak to w reaktywnych danych wszelkie zmiany dokonane na naszych danych są automatycznie śledzone, co pozwala na natychmiastowe odzwierciedlanie tych zmian w interfejsie użytkownika.
   </p>
   <p class='my-2'>
-    To jedziemy z przykładami bo tam będzie mi łatwiej przedstawić kilka niuansów. 
+    To jedziemy z przykładami bo tam będzie mi łatwiej przedstawić kilka niuansów. Zacznijmy od "ref"<br>
+    W CompositionAPI aby skorzystać z refa oraz reactive musimy je zaimportować 
   </p>
 </TextBoxMD>
 
-<div class='flex'>
+<div class='flex justify-center flex-wrap'>
 
-```js
+```vue
+<!-- bez danych reaktywnych -->
+
 <script setup>
-import { ref } from 'vue'
+let counter = 12
 
-const msg = ref('Hello World!')
+const increment = () => {
+  counter++
+}
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg">
+  <h1>Counter</h1>
+  <p> {{ counter }}</p>
+  <button @click="increment()"> +1 </button>
 </template>
 ```
 
-```js
-<script setup>
-import { reactive } from 'vue'
+```vue
+<!-- dane reaktywne -->
 
-const msg = ref('Hello World!')
+<script setup>
+import { ref } from 'vue'
+
+const counter = ref(12)
+
+const increment = () => {
+  counter.value++
+}
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
-  <input v-model="msg">
+  <h1>Counter</h1>
+  <p> {{ counter }}</p>
+  <button @click="increment()"> +1 </button>
 </template>
 ```
 
 </div>
 
+<TheReactive></TheReactive>
+
+<TextBoxMD>
+  <p>
+    Analizujemy powyższy kod: <br>
+    1. Na pierwszym przykładzie zauważymy że pomimo zadeklarowania zmiennej let couter i dodania funkcji increment tak naprawdę nic sie nie stanie. Nasz button nie będzie reagował dlatego że VUE nie obserwuje naszej zmiennej i pomimo akcji na przycisku nie nastapi ponowne renderowanie komponentu. <br>
+    2. Drugi przykład już ładnie nam będzie działał ponieważ poprzez "ref" nasza zmienna zrobiła się reaktywna i teraz VUE będzie wiedział że każde działanie na naszej zmiennej ma spowodować zakualizowanie komponentu.<br>
+    <span class='text-green-500'>poklikaj na +1 oraz -1</span><br>
+    3. Jednak jak dobrze się przypatrzymy coś zmieniło się w naszej funckji increment. Tak dokładnie teraz aby odwołać się do nasze funkcji musimy to zrobić poprzez dodanie słowa kluczowego value a dlaczego? Już ci pokazuje na zdjęciu poniżej
+  </p>
+</TextBoxMD>
+
+<img src="../../assets/images/reactive.png" style="width:500px; margin: 40px auto;">
+
+<TextBoxMD>
+  <p>
+    W devToolsach widać jak na dłoni co ref zrobił z naszą zmienną. Zamienił ją w obiekt. I żeby dostać się do wartości value w obiekcie musimy zapisać to jak couter.value. Pięknie. <br>
+  </p>
+</TextBoxMD>
+
+<BoxInfo class='mx-auto' title='Ciekawostka z const i let.' description='Czy w przykładzie nie nurtowało cię że nasza zmienna counter mimo że jest const to się zmieniała. Dokładnie jeżeli korzystamy z ref nie musimy korzystać z let, ponieważ ref zmienia naszą zmienną w obiekt a w obiektach możemy modyfikować referecję. To taka mała powtóreczka z JS. '/>
+
+<TextBoxMD>
+  <p>
+    To czas popracować trochę z naszą funkcją reactive. Przykład poniżej. <br>
+  </p>
+</TextBoxMD>
+
+```vue
+<script setup>
+import { reactive } from 'vue'
+
+const state = reactive({
+  counter: 12,
+  text: 'Witam',
+  product: ['Gruszka', 'Orzeszki']
+})
+
+</script>
+
+<template>
+  <h1>{{ state.text }}</h1>
+  <p>{{ state.counter }}</p>
+
+  <input v-model="state.text">
+</template>
+```
+
+<TextBoxMD>
+  <p>
+    To przeanalizujemy nasz kod. W tym przypadku importujemy naszą funkcję reactive. <br>
+    2. Tworzymy naszą zmienną state (nazwa dowolna) i w przeciwieństwie do refa w reactive musimy zawsze zwrócić obiekt. 
+    I tak nasz "state" stał się od teraz reaktywnym obiektem. I co jest miłe to z naszymi danymi pracujemy teraz jak na zwykłym js obiekcie czyli aby odnieść się do naszych danych wykorzystujem nazwaobiektu.properties. 
+  </p>
+</TextBoxMD>
 
 
-
-
-
-poprzez użycie ref zmienna staje się obiektem dlatego musimy użyć value
-- zdjęcie z devtools
-- ciekawostka 
 - Dzięki reaktywnym danym w Vue 3, programiści mogą łatwo zarządzać stanem aplikacji i automatycznie odświeżać interfejs użytkownika w odpowiedzi na zmiany danych. Jest to istotne w budowie dynamicznych i responsywnych aplikacji internetowych.
+-1. ref()może przyjmować jako argumenty prymitywy (najczęściej: Boolean, StringI Number) oraz Obiekty, podczas gdy reactive() może przyjmować tylko Obiekty jako argumenty. 
