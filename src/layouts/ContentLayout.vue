@@ -10,5 +10,16 @@
 </template>
 
 <script setup lang="ts">
-// export default {}
+
+// const props = defineProps(['title', 'path'])
+
+defineProps<{
+  title: {
+    type: String,
+    required: true,
+  },
+  path: string
+}>()
+
+
 </script>

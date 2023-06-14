@@ -31,7 +31,6 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TabsWrapper: typeof import('./components/molecules/TabsWrapper/TabsWrapper.vue')['default']
-    Test: typeof import('./components/Test.vue')['default']
     TextBoxMD: typeof import('./components/atoms/TextBoxMD/TextBoxMD.vue')['default']
     TheAvatar: typeof import('./components/atoms/TheAvatar/TheAvatar.vue')['default']
     TheCounter: typeof import('./components/readme/TheCounter.vue')['default']

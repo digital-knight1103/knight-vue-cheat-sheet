@@ -6,7 +6,8 @@
     <RouterView />
     <div>
       <button btn text-sm m="3 t8" @click="router.back()">
-        {{ t('button.back') }}
+        {{ ('button.back') }}
+        <!-- {{ t('button.back') }} -->
       </button>
     </div>
   </main>

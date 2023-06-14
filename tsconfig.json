@@ -12,7 +12,7 @@
     }
   ],
   "compilerOptions": {
-    "lib": ["DOM", "ESNext"],
+    "lib": ["DOM", "ESNext", "dom"],
   }
   
 }
