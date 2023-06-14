@@ -21,12 +21,14 @@ const router = createRouter({
     {
       path: '/compositionAPI',
       name: 'compositionAPI',
-      component: () => import('../views/CompositionView.vue')
+      component: () => import('../views/CompositionView.vue'),
+      meta: { layout: 'ContentLayout' },
     },
     {
       path: '/atomicdesign',
       name: 'atomicdesign',
-      component: () => import('../views/AtomicDesignView.vue')
+      component: () => import('../views/AtomicDesignView.vue'),
+      meta: { layout: 'ContentLayout' },
     },
     {
       path: '/components',

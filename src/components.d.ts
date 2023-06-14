@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppButton: typeof import('./components/atoms/AppButton/AppButton.vue')['default']
     AppIcon: typeof import('./components/atoms/AppIcon/AppIcon.vue')['default']
+    AppTest: typeof import('./components/AppTest.vue')['default']
     BoxInfo: typeof import('./components/atoms/BoxInfo/BoxInfo.vue')['default']
     CardComponent: typeof import('./components/molecules/CardComponent/CardComponent.vue')['default']
     FormCheckbox: typeof import('./components/atoms/Form/FormCheckbox/FormCheckbox.vue')['default']
@@ -30,6 +31,7 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TabsWrapper: typeof import('./components/molecules/TabsWrapper/TabsWrapper.vue')['default']
+    Test: typeof import('./components/Test.vue')['default']
     TextBoxMD: typeof import('./components/atoms/TextBoxMD/TextBoxMD.vue')['default']
     TheAvatar: typeof import('./components/atoms/TheAvatar/TheAvatar.vue')['default']
     TheCounter: typeof import('./components/readme/TheCounter.vue')['default']

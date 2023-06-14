@@ -175,6 +175,7 @@ const state = reactive({
   product: ['Gruszka', 'Orzeszki']
 })
 
+
 </script>
 
 <template>
@@ -189,10 +190,41 @@ const state = reactive({
   <p>
     To przeanalizujemy nasz kod. W tym przypadku importujemy naszą funkcję reactive. <br>
     2. Tworzymy naszą zmienną state (nazwa dowolna) i w przeciwieństwie do refa w reactive musimy zawsze zwrócić obiekt. 
-    I tak nasz "state" stał się od teraz reaktywnym obiektem. I co jest miłe to z naszymi danymi pracujemy teraz jak na zwykłym js obiekcie czyli aby odnieść się do naszych danych wykorzystujem nazwaobiektu.properties. 
+    I tak nasz "state" stał się od teraz reaktywnym obiektem. I co jest miłe to z naszymi danymi pracujemy teraz jak na zwykłym js obiekcie czyli aby odnieść się do naszych danych wykorzystujem nazwaobiektu.properties. Łatwe i przyjemne
+  </p>
+  <p>
+    Ale Ale. Jak to jest obiekt to może trzeba go "rozsmarować" korzystająć z spread operator i nie trzeba by używać nazwy naszego obiektu jak przedrostek. co wy na to??? Niestety jak uzyjemy spred operator na naszym ...state to utracimy reaktywność ale nie martwmy się bo mamy takie coś jak toRefs. 
   </p>
 </TextBoxMD>
+
+```vue
+<script setup>
+import { reactive, toRefs } from 'vue'
+
+const state = reactive({
+  counter: 12,
+  text: 'Witam',
+  product: ['Gruszka', 'Orzeszki']
+})
+
+const newState = toRefs(state)
+
+
+</script>
+
+<template>
+  <h1>{{ state.text }}</h1>
+  <p>{{ state.counter }}</p>
+
+  <input v-model="state.text">
+</template>
+```
+
+<AppTest />
+
+
 
 
 - Dzięki reaktywnym danym w Vue 3, programiści mogą łatwo zarządzać stanem aplikacji i automatycznie odświeżać interfejs użytkownika w odpowiedzi na zmiany danych. Jest to istotne w budowie dynamicznych i responsywnych aplikacji internetowych.
 -1. ref()może przyjmować jako argumenty prymitywy (najczęściej: Boolean, StringI Number) oraz Obiekty, podczas gdy reactive() może przyjmować tylko Obiekty jako argumenty. 
+- Jeżeli masz kilka zmiennych nie powiązanych ze sobą warto skorzystać z refa

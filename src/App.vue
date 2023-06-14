@@ -1,5 +1,8 @@
 <template>
       <TheNavigation/>
+      <main>
+        <AppLayout />
+      </main>
 
       <!-- <div class="mx-auto lg:ml-[290px] rounded-lg mt-8">
         <RouterView v-slot="{ Component }">
@@ -12,6 +15,7 @@
 
 <script setup lang="ts">
 import TheNavigation from './components/TheNavigation.vue';
+import AppLayout from './layouts/AppLayout.vue'
 </script>
 
 <style>

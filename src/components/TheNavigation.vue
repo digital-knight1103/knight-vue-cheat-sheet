@@ -370,14 +370,14 @@
       </nav>
     </div>
 
-    <div class="mx-auto lg:ml-[290px] rounded-lg mt-8">
-      <RouterView v-slot="{ Component }">
+    <!-- <div class="mx-auto lg:ml-[290px] rounded-lg mt-8">
+      <RouterView v-slot="{ Component }"> -->
         <!-- ref value name -->
-        <Transition :name="anim" mode="out-in">
+        <!-- <Transition :name="anim" mode="out-in">
           <Component :is="Component"/>
         </Transition>
       </RouterView>
-    </div>
+    </div> -->
   
     <!-- TODO JESZCZE SPRAWDZIC porównać z app -->
     <!-- <RouterView /> -->

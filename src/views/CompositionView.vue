@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
-    <PageHeader title="CompositionAPI" path="../src/assets/images/forest.png"></PageHeader>
-    <PageContent>
+  <!-- <div class="container"> -->
+    <!-- <PageHeader title="CompositionAPI" path="../src/assets/images/forest.png"></PageHeader> -->
+    <!-- <PageContent> -->
       <CompositionMark />
-    </PageContent>
-  </div>
+    <!-- </PageContent> -->
+  <!-- </div> -->
 </template>
 
 <script setup lang="ts">
