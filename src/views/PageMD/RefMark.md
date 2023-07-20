@@ -84,7 +84,11 @@ export default {
   <p class='my-2'>
     We VUE3 CompositionAPI aby nasze dane aby były reaktywne i mutowalne korzystamy z funkcji dostarczanych przez Composition API, takich jak <span class='font-semibold text-pink-500'>"ref"</span> oraz <span class='font-semibold text-pink-500'>"reactive"</span><br>
   </p>
-  
+
+  <BoxInfo class='block mx-auto' title='Ciekawostka !' description='Czasami warto się na chwilkę zatrzymać i zerknąć do DevToolsów. Bo co tak naprawdę funkcja ref oraz reactiv robi z naszą zmienną, Ref zamienia zwykłą wartość JavaScript na obiekt, który jest reaktywny, natomiast w reactive zmienia obiekt na obiekt reaktywny Proxy.'>
+    <img src="../../assets/images/ref-devtools.webp" style="width:500px; margin: 40px auto;"/>
+  </BoxInfo>
+
   <p>
     Przyjeło się że "ref" używamy raczej do tworzenia prostych typów danych, natomiast reactive służy do tworzenia obiektów dla bardziej złożonych struktur.<br>
     I tak jak to w reaktywnych danych wszelkie zmiany dokonane na naszych danych są automatycznie śledzone, co pozwala na natychmiastowe odzwierciedlanie tych zmian w interfejsie użytkownika.
@@ -99,6 +103,7 @@ export default {
 
 ```vue
 <!-- bez danych reaktywnych -->
+<!-- nie będzie działać  -->
 
 <script setup>
 let counter = 12
