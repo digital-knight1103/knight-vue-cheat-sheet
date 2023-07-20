@@ -444,12 +444,6 @@ import TimerVisit from '../components/atoms/TimerVisit/TimerVisit.vue'
           }
         }
       });
-    
-      // return {
-      //   anim,
-      // }
-  // }
-// })
 </script>
 
 <style scoped>

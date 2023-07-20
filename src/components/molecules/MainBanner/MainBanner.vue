@@ -1,6 +1,6 @@
 <template>
-    <div class="md:max-w-[2000px] container h-full">
-      <div class="relative py-24 md:py-64 px-8 bg-green-500 rounded-2xl overflow-hidden shadow-lg shadow-green-500/10">
+    <div class="md:max-w-[2000px] container">
+      <div class="relative py-24 md:py-72 px-8 bg-green-500 rounded-2xl overflow-hidden shadow-lg shadow-green-500/10">
         <img 
           class="absolute top-0 left-0 h-full w-full object-cover" 
           :src="path" 
