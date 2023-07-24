@@ -7,8 +7,8 @@ title: Ref/Reactive
 </h1>
 
 - [1. Reaktywne Dane](#1-options)
-- [1. OptionsAPI](#1-options) 
 - [2. CompositionAPI](#2-composition)
+- [3. Podsumowanie](#3-summary)
 
 <TextBoxMD>
   <h1 class="text-2xl font-semibold">

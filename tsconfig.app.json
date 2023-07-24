@@ -1,8 +1,11 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue", "src/**/*.md"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
+    "preserveValueImports": false,
+    "importsNotUsedAsValues": "remove",
+    "verbatimModuleSyntax": true,
     "composite": true,
     "baseUrl": ".",
     "paths": {
@@ -10,6 +13,7 @@
       "@assets/*": ["./src/assets/*"],
       "@atoms/*": ["./src/components/atoms/*"],
       "@molecules/*": ["./src/components/molecules/*"],
+      "@mark/*": ["./src/views/PageMD/*"],
     }
   }
 }

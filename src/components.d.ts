@@ -11,7 +11,6 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppButton: typeof import('./components/atoms/AppButton/AppButton.vue')['default']
     AppIcon: typeof import('./components/atoms/AppIcon/AppIcon.vue')['default']
-    AppTest: typeof import('./components/AppTest.vue')['default']
     BoxInfo: typeof import('./components/atoms/BoxInfo/BoxInfo.vue')['default']
     CardComponent: typeof import('./components/molecules/CardComponent/CardComponent.vue')['default']
     FormCheckbox: typeof import('./components/atoms/Form/FormCheckbox/FormCheckbox.vue')['default']

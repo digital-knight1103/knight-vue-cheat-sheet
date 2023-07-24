@@ -14,6 +14,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@atom': path.resolve(__dirname, './src/components/atoms'),
       '@molecules': path.resolve(__dirname, './src/components/molecules'),
+      '@readmeExample': path.resolve(__dirname, './src/components/readmeExample/*'),
       '@assets': path.resolve(__dirname, './src/assets'),
       '@mark': path.resolve(__dirname, './src/views/PageMD'),
       // sprawdzić
