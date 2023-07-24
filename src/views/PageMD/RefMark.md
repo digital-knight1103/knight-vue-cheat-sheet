@@ -38,7 +38,7 @@ export default {
 
 <TextBoxMD>
   <p>
-    Jak można zauważyć W powyższym przykładzie "counter" oraz "name" zadeklarowane w 'data' są teraz reaktywne. Kiedy następuje zmiana wartości któregoś z tych pól, Vue automatycznie odświeży komponent, aby odzwierciedlić nową wartość.
+    Jak można zauważyć W powyższym przykładzie "counter" oraz "name" zadeklarowane w "data" są teraz reaktywne. Kiedy następuje zmiana wartości któregoś z tych pól, Vue automatycznie odświeży komponent, aby odzwierciedlić nową wartość.
   </p>
   <p>
     Aby uzyskać dostęp do danych reaktywnych wewnątrz komponentu w OptionAPI, musimy odwoływać się do nich za pomocą składnika "this". Na przykład, aby uzyskać dostęp do counter wewnątrz metody, możemy napisać:
@@ -47,14 +47,13 @@ export default {
 
 ```vue
 <template>
-  <button @click="increment">Count is: {{ count }}</button>
+  <button @click="increment">Klikamy i zwiększamy: {{ count }}</button>
 </template>
 
 export default {
   data() {
     return {
       counter: 0,
-      name: 'John'
     };
   },
   methods: {
@@ -85,12 +84,12 @@ export default {
     We VUE3 CompositionAPI aby nasze dane aby były reaktywne i mutowalne korzystamy z funkcji dostarczanych przez Composition API, takich jak <span class='font-semibold text-pink-500'>"ref"</span> oraz <span class='font-semibold text-pink-500'>"reactive"</span><br>
   </p>
 
-  <BoxInfo class='block mx-auto' title='Ciekawostka !' description='Czasami warto się na chwilkę zatrzymać i zerknąć do DevToolsów. Bo co tak naprawdę funkcja ref oraz reactiv robi z naszą zmienną, Ref zamienia zwykłą wartość JavaScript na obiekt, który jest reaktywny, natomiast w reactive zmienia obiekt na obiekt reaktywny Proxy.'>
+  <BoxInfo class='block mx-auto' title='Ciekawostka !' description='Czasami warto się na chwilkę zatrzymać i zerknąć do DevToolsów. Bo co tak naprawdę funkcja ref oraz reactiv robi z naszą zmienną, Ref zamienia zwykłą wartość JavaScript na obiekt, który jest reaktywny, natomiast w reactive zmienia obiekt na obiekt reaktywny Proxy. (o obiektach proxy więcej w dokumentacji)'>
     <img src="../../assets/images/ref-devtools.webp" style="width:500px; margin: 40px auto;"/>
   </BoxInfo>
 
   <p>
-    Przyjeło się że "ref" używamy raczej do tworzenia prostych typów danych, natomiast reactive służy do tworzenia obiektów dla bardziej złożonych struktur.<br>
+    A jaka jest różnica między "ref" a "reactive". Tak naprawdę od nas zależy czego użyjemy i z który podejściem nam się wygodniej pracuje, jednak przyjeło się że "ref" używamy raczej do tworzenia prostych typów danych, natomiast reactive służy do tworzenia obiektów dla bardziej złożonych struktur.<br>
     I tak jak to w reaktywnych danych wszelkie zmiany dokonane na naszych danych są automatycznie śledzone, co pozwala na natychmiastowe odzwierciedlanie tych zmian w interfejsie użytkownika.
   </p>
   <p class='my-2'>
@@ -147,10 +146,10 @@ const increment = () => {
 <TextBoxMD>
   <p>
     Analizujemy powyższy kod: <br>
-    1. Na pierwszym przykładzie zauważymy że pomimo zadeklarowania zmiennej let couter i dodania funkcji increment tak naprawdę nic sie nie stanie. Nasz button nie będzie reagował dlatego że VUE nie obserwuje naszej zmiennej i pomimo akcji na przycisku nie nastapi ponowne renderowanie komponentu. <br>
+    1. Na pierwszym przykładzie zauważymy że pomimo zadeklarowania zmiennej let couter i dodania funkcji increment tak naprawdę nic sie nie stanie. Nasz przycisk nie będzie reagował dlatego że VUE nie obserwuje naszej zmiennej i pomimo akcji na przycisku nie nastapi ponowne renderowanie komponentu. <br>
     2. Drugi przykład już ładnie nam będzie działał ponieważ poprzez "ref" nasza zmienna zrobiła się reaktywna i teraz VUE będzie wiedział że każde działanie na naszej zmiennej ma spowodować zakualizowanie komponentu.<br>
     <span class='text-green-500'>poklikaj na +1 oraz -1</span><br>
-    3. Jednak jak dobrze się przypatrzymy coś zmieniło się w naszej funckji increment. Tak dokładnie teraz aby odwołać się do nasze funkcji musimy to zrobić poprzez dodanie słowa kluczowego value a dlaczego? Już ci pokazuje na zdjęciu poniżej
+    3. Jednak jak dobrze się przypatrzymy coś zmieniło się w naszej funkcji increment. Tak dokładnie teraz aby odwołać się do nasze funkcji musimy to zrobić poprzez dodanie słowa kluczowego value a dlaczego? Już ci pokazuje na zdjęciu poniżej
   </p>
 </TextBoxMD>
 
@@ -194,17 +193,22 @@ const state = reactive({
 <TextBoxMD>
   <p>
     To przeanalizujemy nasz kod. W tym przypadku importujemy naszą funkcję reactive. <br>
-    2. Tworzymy naszą zmienną state (nazwa dowolna) i w przeciwieństwie do refa w reactive musimy zawsze zwrócić obiekt. 
-    I tak nasz "state" stał się od teraz reaktywnym obiektem. I co jest miłe to z naszymi danymi pracujemy teraz jak na zwykłym js obiekcie czyli aby odnieść się do naszych danych wykorzystujem nazwaobiektu.properties. Łatwe i przyjemne
+    1. Tworzymy naszą zmienną state (nazwa dowolna) i w przeciwieństwie do refa w reactive musimy zawsze zwrócić obiekt. 
+    I tak nasz "state" stał się od teraz reaktywnym obiektem. I co jest miłe to z naszymi danymi pracujemy teraz jak na zwykłym js obiekcie czyli aby odnieść się do naszych danych wykorzystujem nazwaobiektu.properties. Łatwe i przyjemne.
   </p>
   <p>
-    Ale Ale. Jak to jest obiekt to może trzeba go "rozsmarować" korzystająć z spread operator i nie trzeba by używać nazwy naszego obiektu jak przedrostek. co wy na to??? Niestety jak uzyjemy spred operator na naszym ...state to utracimy reaktywność ale nie martwmy się bo mamy takie coś jak toRefs. 
+    Ale Ale. Jak to jest obiekt to może trzeba go "rozsmarować" korzystająć z spread operator i nie trzeba by używać nazwy naszego obiektu jak przedrostek. co wy na to??? Niestety jak uzyjemy spread operator na naszym ...state to utracimy reaktywność ale nie martwmy się bo mamy takie coś jak toRefs. 
   </p>
 </TextBoxMD>
 
+<div class='flex justify-center flex-wrap'>
+
 ```vue
+<!-- spread operator  -->
+<!-- tracimy reaktywność -->
+
 <script setup>
-import { reactive, toRefs } from 'vue'
+import { reactive } from 'vue'
 
 const state = reactive({
   counter: 12,
@@ -212,24 +216,65 @@ const state = reactive({
   product: ['Gruszka', 'Orzeszki']
 })
 
-const newState = toRefs(state)
-
-
+const newState = (...state)
 </script>
 
 <template>
-  <h1>{{ state.text }}</h1>
-  <p>{{ state.counter }}</p>
+  <!-- nie działa -->
+  <h1>{{ text }}</h1>
+  <p>{{ counter }}</p>
 
-  <input v-model="state.text">
+  <input v-model="text">
 </template>
 ```
 
+```vue
+<!-- toRefs  -->
+
+<template>
+  <h1>{{ text }}</h1>
+  <p>{{ counter }} </p>
+  <p>Lubię {{ product[0] }} i {{ product[1] }}</p>
+
+  <input v-model="text">
+
+  <div clas="p-4 border"> 
+    <h1>{{ pro.title }}</h1>
+    <p>koszt {{ pro.price }} </p>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { reactive, toRefs } from 'vue'
+
+    //z toRefs
+    const state = reactive({
+      counter: 12,
+      text: 'Witam',
+      product: ['Gruszki', 'Orzeszki']
+    })
+
+    const { counter, text, product } = toRefs(state)
+
+    // bez to Refs
+    const pro = reactive({
+      title: 'lolo',
+      price: 23
+    })
+</script>
+```
+
+</div>
+
 <AppTest />
 
-
-
-
-- Dzięki reaktywnym danym w Vue 3, programiści mogą łatwo zarządzać stanem aplikacji i automatycznie odświeżać interfejs użytkownika w odpowiedzi na zmiany danych. Jest to istotne w budowie dynamicznych i responsywnych aplikacji internetowych.
--1. ref()może przyjmować jako argumenty prymitywy (najczęściej: Boolean, StringI Number) oraz Obiekty, podczas gdy reactive() może przyjmować tylko Obiekty jako argumenty. 
-- Jeżeli masz kilka zmiennych nie powiązanych ze sobą warto skorzystać z refa
+<TextBoxMD>
+  <h1 class="text-2xl font-semibold mb-6">
+    <span class='text-green-500 forn-bold'>#</span> Podsumowanie
+  </h1>
+  <p>
+    - Dzięki reaktywnym danym w Vue 3, programiści mogą łatwo zarządzać stanem aplikacji i automatycznie odświeżać interfejs użytkownika w odpowiedzi na zmiany danych. Jest to istotne w budowie dynamicznych i responsywnych aplikacji internetowych. <br>
+    - Refa raczej stosuje się jako argumenty do danych prymitywnych (najczęściej: Boolean, String, Number), podczas gdy reactive() może przyjmować tylko Obiekty jako argumenty.
+    - warto zerknąć czasami w devToolsy i przeanalizować sobie budowę obiektów zwracanych przez ref lub reactive
+  </p>
+</TextBoxMD>
