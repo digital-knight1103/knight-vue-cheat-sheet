@@ -1,5 +1,5 @@
 <template>
-  <div class="block border mx-auto text-center w-[20%] mb-8">
+  <div class="block border mx-auto text-center w-[30%] mb-8 rounded-lg">
     <h1>{{ text }}</h1>
     <p>{{ counter }} </p>
     <p>Lubię {{ product[0] }} i {{ product[1] }}</p>
