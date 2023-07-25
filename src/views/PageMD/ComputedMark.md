@@ -63,7 +63,8 @@ export default {
     <span class='text-green-500 forn-bold'>#</span>  CompositionApi
   </h1>
   <p class='my-2'>
-    W CompositionApi aby skorzystać z "computed" musimy najpierw zainportować.
+    W CompositionApi aby skorzystać z "computed" musimy najpierw zainportować. A potem wykorzysujemy jak w przykładzie poniżej. Czyli zmienna + computed i heja. <br>
+    Pokazane są dwa przykłady jedne napisany w skłądni -- script setup -- a drugi zwykłym compositionApi 
   </p>
 </TextBoxMD>
 
@@ -127,4 +128,59 @@ const message = computed(() => {
 
 </div>
 
+<TextBoxMD>
+  <p class='my-2'>
+    No i po naszych pięknych obliczeniach otrzymujemy cudowny napis. 
+  </p>
+</TextBoxMD>
+
 <ExampleCom />
+
+
+<TextBoxMD>
+  <p class='my-2'>
+    Teraz kolejny przyjemny przykład gdzie postaramy się stworzyć pełne imię urzytkownika.
+  </p>
+</TextBoxMD>
+
+<div class='flex justify-center flex-wrap'>
+
+```vue
+<!-- bez computed -->
+<template>
+  <p>Imię: {{ firstName }} {{ lastName}}</p>
+</template>
+
+<script setup>
+import { ref, computed } from 'vue';
+
+const firstName = ref('Jan');
+const lastName = ref('Kowalski');
+
+</script>
+
+```
+
+```vue
+<!-- z computed -->
+
+<template>
+  <p>Imię: {{ fullName }}</p>
+</template>
+
+<script setup>
+import { ref, computed } from 'vue';
+
+const firstName = ref('Jan');
+const lastName = ref('Kowalski');
+
+// Deklaracja Computed Property.
+  const fullName = computed(() => {
+    return `${firstName.value} ${lastName.value}`;
+});
+</script>
+
+
+```
+
+</div>

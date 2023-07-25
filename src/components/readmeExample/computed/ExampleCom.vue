@@ -1,5 +1,7 @@
 <template>
-  <h1>{{ message }}</h1>
+  <div class="my-8 flex mx-auto justify-center p-10 text-center border rounded-lg w-[30%]">
+    <h1 class="text-white text-xl">{{ message }}</h1>
+  </div>
 </template>
 
 <script setup lang="ts">
