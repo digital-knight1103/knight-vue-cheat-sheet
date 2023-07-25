@@ -12,13 +12,119 @@ title: Computed
 
 <TextBoxMD>
   <h1 class="text-2xl font-semibold">
-    <span class='text-green-500 forn-bold'>#</span>  Computed Properties 
+    <span class='text-green-500 forn-bold'>#</span>  Computed Properties - wartości obliczone.
   </h1>
   <p class='my-2'>
-    Reaktywne dane stanowią kluczowy koncept we VUE. Pozwalają one na automatyczną aktualizację danych w komponencie bez potrzeby ręcznego manipulowania nimi. Czyli w dużym uproszczeniu VUE "obserwuje" nasze zmienne i w razie konieczności reaguje na ich zmianny.
+    Świetnie. Rozumiemy już reaktywność danych to teraz przyjrzyjmy się kolejnej potężnej funkcji VUE a mowa tu o computed properties. Computed pozwala nam na tworzenie zależności lub wykonywać wszelakie przekształcenia obliczanych wartości na podstawie innych danych. Computed properties są automatycznie przeliczane tylko wtedy, gdy zależne od nich dane ulegają zmianie, co pomaga w zoptymalizowaniu wydajności aplikacji. <br>
+    Brzmi to trochę strasznie ale zaraz popracujemy na przykładach i się wszystko okaże rozjaśni.
   </p>
   <p>
-    To co starczy teorii. Najlepiej jak popracujemy na przykładach. To w ramach przypomnienia (bo głównie skupiamy się na CompositionAPI) zerkniemy jak to się odbywało w wersji starszej niż VUE3 czyli naszym OptionsAPI.<br>
-    W OptionsAPI do deklarowania stanu reaktywnego dodajemy właściwość `data` (data properties) do obiektu naszego komponentu. Od teraz nasze dane w 'data' są reaktywne i zmiana ich spowoduje ponowne renderowanie komponentu.
+    Ok to szybka powtórka jak to się wykonywało w OptionsAPI
   </p>
 </TextBoxMD>
+
+```vue
+<template>
+  <div>
+    <h1>{{ reversedMessage }}</h1>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      count: 0,
+      msg: "option",
+      text: 'api'
+    }
+  },
+  methods: {
+    ...
+  },
+  computed: {
+    reversedMessage() {
+      return this.msg.charAt(0).toUpperCase() 
+           + this.msg.slice(1) 
+           + this.text.toUpperCase() + ' !';
+    }
+  }
+}
+</script>
+
+```
+
+<TextBoxMD>
+  <p>W OptionApi w sekcji "data" stworzyliśmy nasze dane które są reaktywne dzięki czemu możemy teraz z nimi pracować. Tworzymy sekcję "computed" i w niej wyliczamy i pracujemy na naszych danych. łatwe. To powtórkę mamy za sobą, zerknijmy teraz jak to się robi w CompositionApi</p>
+</TextBoxMD>
+
+<TextBoxMD>
+  <h1 class="text-2xl font-semibold mb-6">
+    <span class='text-green-500 forn-bold'>#</span>  CompositionApi
+  </h1>
+  <p class='my-2'>
+    W CompositionApi aby skorzystać z "computed" musimy najpierw zainportować.
+  </p>
+</TextBoxMD>
+
+<div class='flex justify-center flex-wrap'>
+
+```vue
+<!-- CompositionApi -->
+
+<template>
+  <h1>{{ message }}</h1>
+</template>
+
+<script>
+import { reactive, computed } from 'vue';
+export default {
+  setup() {
+    const state = reactive({
+      msg: 'composition',
+      text: 'api',
+    });
+    const message = computed(() => {
+      return (
+        state.msg.charAt(0).toUpperCase() +
+        state.msg.slice(1) +
+        state.text.toUpperCase() + ' !'
+      );
+    });
+    return {
+      state,
+      increment,
+      message,
+    };
+  },
+};
+</script>
+```
+
+```vue
+<!-- CompositionApi - Script Setup -->
+
+<template>
+  <h1>{{ message }}</h1>
+</template>
+
+<script setup lang="ts">
+import { reactive, computed } from 'vue';
+
+const state = reactive({
+  msg: 'composition',
+  text: 'api',
+});
+const message = computed(() => {
+  return (
+    state.msg.charAt(0).toUpperCase() +
+    state.msg.slice(1) +
+    state.text.toUpperCase() + ' !'
+  );
+});
+</script>
+```
+
+</div>
+
+<ExampleCom />
