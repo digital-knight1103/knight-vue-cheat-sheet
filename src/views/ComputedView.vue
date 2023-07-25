@@ -3,12 +3,12 @@
     <!-- TODO zmień tapete -->
     <PageHeader path="../src/assets/images/knighteye.png" title="Computed"></PageHeader>
     <PageContent>
-      <ComputedMark />
+      <ComputedMark/>
     </PageContent>
   </div>
   
 </template>
 
 <script setup lang="ts">
-import ComputedMark from '@mark/ComputedMark'
+import ComputedMark from './PageMD/ComputedMark.md'
 </script>
