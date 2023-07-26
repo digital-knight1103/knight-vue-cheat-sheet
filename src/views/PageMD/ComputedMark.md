@@ -64,7 +64,7 @@ export default {
   </h1>
   <p class='my-2'>
     W CompositionApi aby skorzystać z "computed" musimy najpierw zainportować. A potem wykorzysujemy jak w przykładzie poniżej. Czyli zmienna + computed i heja. <br>
-    Pokazane są dwa przykłady jedne napisany w skłądni -- script setup -- a drugi zwykłym compositionApi 
+    Pokazane są dwa przykłady jedne napisany w składni -- script setup -- a drugi zwykłym compositionApi 
   </p>
 </TextBoxMD>
 
@@ -139,7 +139,7 @@ const message = computed(() => {
 
 <TextBoxMD>
   <p class='my-2'>
-    Teraz kolejny przyjemny przykład gdzie postaramy się stworzyć pełne imię urzytkownika.
+    Teraz kolejny przyjemny przykład gdzie postaramy się stworzyć pełne imię użytkownika.
   </p>
 </TextBoxMD>
 
@@ -180,7 +180,78 @@ const lastName = ref('Kowalski');
 });
 </script>
 
-
 ```
 
 </div>
+
+<TextBoxMD>
+  <p>
+    Na pierwszy rzut oka wydaje się że zdecydowanie mniej kodu mamy bez uzycia "computed" jednak dobrą praktyką jest aby w szablonie nie umieszcać zbyt dużo logiki. Może to sprawić że nasz template zrobi się rozdęty i trudny w utrzymaniu. Starajmy się aby nasze wyrażenia w szablonie ograniczały się do minimum i raczej prostych operacji.
+  </p>
+  <p>
+    To może jeszcze jeden przykład prosto z dokumentacji vue.
+  </p>
+  <p>
+    Mamy obiekt z zagnieżdżoną tablicą i chcemy wyświetlić odpowiedni komunikat w zależności od tego czy autor posiada jakieś książki czy nie:
+  </p>
+</TextBoxMD>
+
+
+<div class='flex justify-center flex-wrap'>
+
+```vue
+<!-- bez computed -->
+
+<script setup>
+import { reactive, computed } from 'vue'
+
+const author = reactive({
+  name: 'John Doe',
+  books: [
+    'Vue 2 - Advanced Guide',
+    'Vue 3 - Basic Guide',
+    'Vue 4 - The Mystery'
+  ]
+})
+</script>
+
+<template>
+  <p>Has published books:</p>
+  <span>{{ author.books.length > 0 ? 'Yes' : 'No' }}</span>
+</template>
+```
+
+```vue
+<!-- z computed -->
+
+<script setup>
+import { reactive, computed } from 'vue'
+
+const author = reactive({
+  name: 'John Doe',
+  books: [
+    'Vue 2 - Advanced Guide',
+    'Vue 3 - Basic Guide',
+    'Vue 4 - The Mystery'
+  ]
+})
+
+// a computed ref
+const publishedBooksMessage = computed(() => {
+  return author.books.length > 0 ? 'Yes' : 'No'
+})
+</script>
+
+<template>
+  <p>Has published books:</p>
+  <span>{{ publishedBooksMessage }}</span>
+</template>
+```
+
+</div>
+
+<TextBoxMD>
+  <p>
+    I od razu widać że np: jak będziemy mieli duży rozbudowany komponent a w naszym "template" zaczniemy umieszczać bardzo dużo logiki stanie się on poprostu mało czytelny. Dlatego warto naszą logikę umieszczać w odpowiednim miejscu jakim jest sekcja "setup"
+  </p>
+</TextBoxMD>
