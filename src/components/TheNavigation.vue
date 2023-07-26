@@ -116,7 +116,7 @@
             <!-- Computed -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="computed">
-                <IconComputed/>
+                <IconComputed />
                 <span class="ml-8 font-bold">
                   Computed
                 </span>
@@ -126,7 +126,7 @@
             <!-- watch -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="watch">
-                <IconUser/>
+                <IconWatch />
                 <span class="ml-8 font-bold">
                   Watch
                 </span>
@@ -389,6 +389,7 @@
 import { ref } from 'vue'
 import IconRef from '../assets/icons/IconRef.vue'
 import IconComputed from '../assets/icons/IconComputed.vue'
+import IconWatch from '../assets/icons/IconWatch.vue'
 import IconOverview from '../assets/icons/IconOverview.vue'
 import IconBurger from '../assets/icons/IconBurger.vue'
 import IconAnalitics from '../assets/icons/IconAnalitics.vue'
