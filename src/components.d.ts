@@ -25,6 +25,7 @@ declare module '@vue/runtime-core' {
     FormSelect: typeof import('./components/atoms/Form/FormSelect/FormSelect.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     IfExampleOne: typeof import('./components/readmeExample/if/IfExampleOne.vue')['default']
+    IfExampleTwo: typeof import('./components/readmeExample/if/IfExampleTwo.vue')['default']
     LoadingBar: typeof import('./components/atoms/LoadingBar/LoadingBar.vue')['default']
     MainBanner: typeof import('./components/molecules/MainBanner/MainBanner.vue')['default']
     PageAnimation: typeof import('./components/atoms/PageAnimation/PageAnimation.vue')['default']

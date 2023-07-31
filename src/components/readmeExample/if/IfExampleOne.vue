@@ -9,7 +9,7 @@ const toggleMessage = () => {
 </script>
 
 <template>
-  <div class="p-4 border rounded-lg flex flex-col justify-center max-w-md mx-auto">
+  <div class="p-4 mt-4 mb-8 border rounded-lg flex flex-col justify-center max-w-md mx-auto">
     <!-- <h1 class="">{{ showMessage }}</h1> -->
     <button 
       @click="toggleMessage"
