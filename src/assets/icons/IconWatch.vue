@@ -3,7 +3,7 @@
     fill="currentColor" 
     width="24" 
     height="24" 
-    viewBox="0 0 24 24" 
+    viewBox="-2 5 24 24" 
     version="1.1" 
     xmlns="http://www.w3.org/2000/svg">
   <title>eye</title>

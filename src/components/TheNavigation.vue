@@ -133,6 +133,16 @@
               </RouterLink>
             </li>
 
+            <!-- conditional rendering -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="if">
+                <IconIf />
+                <span class="ml-8 font-bold">
+                  Conditional rendering
+                </span>
+              </RouterLink>
+            </li>
+
             <!-- Props/Emits -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="propsemits">
@@ -390,6 +400,7 @@ import { ref } from 'vue'
 import IconRef from '../assets/icons/IconRef.vue'
 import IconComputed from '../assets/icons/IconComputed.vue'
 import IconWatch from '../assets/icons/IconWatch.vue'
+import IconIf from '../assets/icons/IconIf.vue'
 import IconOverview from '../assets/icons/IconOverview.vue'
 import IconBurger from '../assets/icons/IconBurger.vue'
 import IconAnalitics from '../assets/icons/IconAnalitics.vue'
