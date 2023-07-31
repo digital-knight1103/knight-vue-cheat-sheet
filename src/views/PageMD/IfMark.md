@@ -72,3 +72,5 @@ const showMessage = ref(true);
 ```
 
 </div>
+
+<IfExampleOne />
