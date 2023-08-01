@@ -13,7 +13,7 @@ title: Renderowanie warunkowe
     <span class='text-green-500 forn-bold'>#</span>  Conditional Rendering  - Renderowanie warunkowe.
   </h1>
   <p class='my-2'>
-    A teraz bardzo fajne i przyjemne renderowanie warunkowe za pomocą dyrektywy "v-if", "v-else" oraz "v-else-if". Ogólnie pracy z if czy else nie trzeba nikomu tłumaczyć. W prostych żołnierskich słowach: "Te dyrektywy pozwalają na wyświetlenie różnych elementów w zależnosći od spełnionych warunków."
+    A teraz bardzo fajne i przyjemne renderowanie warunkowe za pomocą dyrektywy "v-if", "v-else", "v-else-if" oraz "v-show". Ogólnie pracy z if czy else nie trzeba nikomu tłumaczyć. W prostych żołnierskich słowach: "Te dyrektywy pozwalają na wyświetlenie różnych elementów w zależnosći od spełnionych warunków."
   </p>
   <p class='my-2'>
      Można również użyć atrybutu "v-show" do dynamicznego ukrywania i pokazywania elementów, ale v-if i v-show mają różnice w działaniu, co warto wiedzieć ale zaraz pokażemy i omówimy sobie wszystko na przykładach.
@@ -114,6 +114,9 @@ const condition = ref('Świerzak');
   </h1>
   <p class='my-2'>
     Zanim przejdziemy do kolejnych przykładów chciałbym ci jeszcze przybliżyć jeszcze jedną możliwość warunkowego renderowania jaką jest v-show bo tak naprawdę we Vue mamy dwie możliwość. Ale po co nam dwie możliwość zapytasz. To już pokazujemy różnicę między v-if ponieważ na pierwszy rzut oka te dyrektywy wyglądają podobnie jednak wystepują między nimi małe różnice.
+  </p>
+  <p class='my-2'>
+    v-if 
   </p>
 </TextBoxMD>
 
