@@ -116,8 +116,21 @@ const condition = ref('Świerzak');
     Zanim przejdziemy do kolejnych przykładów chciałbym ci jeszcze przybliżyć jeszcze jedną możliwość warunkowego renderowania jaką jest v-show bo tak naprawdę we Vue mamy dwie możliwość. Ale po co nam dwie możliwość zapytasz. To już pokazujemy różnicę między v-if ponieważ na pierwszy rzut oka te dyrektywy wyglądają podobnie jednak wystepują między nimi małe różnice.
   </p>
   <p class='my-2'>
-    v-if 
+    Róznica polega nam tym że v-show zawsze się wyrenderuje i będzie w naszym DOM. v-show przełącza tylko właściwość CSS "display" naszego elementu. Widać to bardzo dobrze w devToolsach.
   </p>
+
+  <img class='w-[20%] mx-auto my-8' src="../../assets/images/if-devTools.jpg">
+
+  <p class='my-2'>
+    Trzeba też pamiętać że z v-show nieobsługuje naszego template anie wzspółdziała z nim v-else
+  </p>
+  <p class='my-2'> 
+    Podsumowując v-if jest tak naprawdę takim naszym prawdziwym renderowaniem warunkowym, ponieważ te komponenty w naszym bloku warunkowym zostaną odpowiednio zniszczone i ponownie utworzone podczas przełączania. v-if też działa leniwie. Czyli jeżeli nasz warunek jest fałszywy podczas pierwszego renderowania to wtedy nic się nie wydarzy. Nasz blok nie zostanie wyrenderowany do tego momentu aż warunek nie stanie się prawdziwy po raz pierwszy dlatego też v-if ma większe koszty przełączania między blokami warunkowymi kody natomiast v-show ma wyższe koszty renderu bloku tylko podczas pierwszego renderowania. 
+  </p>
+  <p class='my-2'>
+    Dlatego czasami warto na już na etapie tworzenia komponentu się chwilkę zastanowić czy nasz blok będzie wielokrotnie przełączany wtedy warto wtkorzystać v-show czy np. coś się wyświetli raz w zależności od przychodzącej informacji i nasz warunek raczej w czasie się nie będzie zbyt często zmieniał wtedy warto skorzystać z v-if.
+  </p>
+
 </TextBoxMD>
 
 

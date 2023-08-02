@@ -3,7 +3,7 @@ import { reactive } from 'vue'
 
 const product = reactive({
   name: 'Miecz',
-  inStock: true
+  inStock: false
 })
 
 
@@ -16,6 +16,8 @@ const product = reactive({
     <p v-if="product.inStock">In stock</p>
     <p v-else>Out of stock</p>
   </div>
+
+  <h1 v-show="product.inStock">v-show</h1>
 </template>
 
 
