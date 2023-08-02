@@ -11,7 +11,6 @@ const airSword = reactive({
   inventory: 12,
 })
 
-
 </script>
 
 <template>
@@ -26,7 +25,7 @@ const airSword = reactive({
         <p v-else>Niedostępnę</p>
         <span class="text-pink-500">{{ fireSword.inventory }}</span>
       </div>
-      <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-lg shadow h-12">
+      <button :disabled="fireSword.inventory < 1" class=" text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-lg shadow h-12">
         Kup
       </button>
     </div>
@@ -40,7 +39,7 @@ const airSword = reactive({
         <p v-else>Niedostępnę</p>
         <span class="text-green-500">{{ airSword.inventory }}</span>
       </div>
-      <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-lg shadow h-12">
+      <button :disabled="airSword.inventory < 1" class="bg-white text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-lg shadow h-12">
         Kup
       </button>
     </div>

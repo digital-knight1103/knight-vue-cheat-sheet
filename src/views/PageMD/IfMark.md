@@ -145,3 +145,44 @@ const condition = ref('Świerzak');
 </TextBoxMD>
 
 <IfExampleTwo />
+
+```vue
+<script setup lang="ts">
+import { reactive } from 'vue'
+
+const fireSword = reactive({
+  name: 'Miecz ognia',
+  inventory: 0,
+})
+</script>
+
+<template>
+    <div>
+      <img src='/images/fireSword.svg' />
+        <div>
+          <h1> {{ fireSword.name }}</h1>
+          <p v-if="fireSword.inventory > 5"> 
+            Duża dostępność
+          </p>
+          <p v-else-if="fireSword.inventory <=5 && fireSword.inventory > 0">
+           Mała dostepność 
+          </p>
+          <p v-else> Niedostępnę </p>
+          <span>{{ fireSword.inventory }}</span>
+        </div>
+      <button :disabled="fireSword.inventory < 1">
+        Kup
+      </button>
+    </div>
+</template>
+
+```
+
+<TextBoxMD>
+  <p class='my-2'>
+    Analizując powyższy przykład możemy zauważyć że w zależności jakie dane dostaniemy takie wyświetlą nam się informacje lub będziemy mogli wpływać na nasz komponent np: działanie przycisku.
+  </p>
+  <p>
+    Od razu widać że w zależności od ilości posiadanych mieczy możemy wyświetlić inną informację dla użytkownika oraz przy braku produktu np: zablokować przycisk aby dodanie produkty do koszyka było niemożliwe lub przyciemnić produktu, możliwości jest wiele ogranicza nas tylko wyobraźnia i oczywiście dobre UX. 
+  </p>
+</TextBoxMD>

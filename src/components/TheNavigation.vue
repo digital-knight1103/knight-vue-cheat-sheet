@@ -133,12 +133,22 @@
               </RouterLink>
             </li>
 
+            <!-- class/styles -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="styles">
+                <IconPalette />
+                <span class="ml-8 font-bold">
+                  Klasy i style
+                </span>
+              </RouterLink>
+            </li>
+
             <!-- conditional rendering -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="if">
                 <IconIf />
                 <span class="ml-8 font-bold">
-                  Conditional rendering
+                  Renderowanie warunkowe
                 </span>
               </RouterLink>
             </li>
@@ -183,16 +193,6 @@
                 </svg>
                 <span class="ml-8 font-bold">
                   Formularze
-                </span>
-              </RouterLink>
-            </li>
-
-            <!-- class/styles -->
-            <li class="mb-2">
-              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="styles">
-                <IconUser/>
-                <span class="ml-8 font-bold">
-                  Klasy i style
                 </span>
               </RouterLink>
             </li>
@@ -400,6 +400,7 @@ import { ref } from 'vue'
 import IconRef from '../assets/icons/IconRef.vue'
 import IconComputed from '../assets/icons/IconComputed.vue'
 import IconWatch from '../assets/icons/IconWatch.vue'
+import IconPalette from '../assets/icons/IconPalette.vue'
 import IconIf from '../assets/icons/IconIf.vue'
 import IconOverview from '../assets/icons/IconOverview.vue'
 import IconBurger from '../assets/icons/IconBurger.vue'
