@@ -1,5 +1,6 @@
 import path from 'path'
-import { fileURLToPath, URL } from 'node:url'
+// import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from 'url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -12,7 +13,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '@atom': path.resolve(__dirname, './src/components/atoms'),
+      '@atoms': path.resolve(__dirname, './src/components/atoms'),
       '@molecules': path.resolve(__dirname, './src/components/molecules'),
       '@readmeExample': path.resolve(__dirname, './src/components/readmeExample/*'),
       '@assets': path.resolve(__dirname, './src/assets'),

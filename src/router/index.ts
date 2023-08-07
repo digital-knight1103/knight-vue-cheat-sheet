@@ -90,6 +90,11 @@ const router = createRouter({
       component: () => import('../views/IfView.vue')
     },
     {
+      path: '/lists',
+      name: 'lists',
+      component: () => import('../views/ListsView.vue')
+    },
+    {
       path: '/events',
       name: 'events',
       component: () => import('../views/EventsView.vue')

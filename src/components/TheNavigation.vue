@@ -153,6 +153,16 @@
               </RouterLink>
             </li>
 
+            <!-- list rendering -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="lists">
+                <IconList />
+                <span class="ml-8 font-bold">
+                  listy v-for
+                </span>
+              </RouterLink>
+            </li>
+
             <!-- Props/Emits -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="propsemits">
@@ -402,6 +412,7 @@ import IconComputed from '../assets/icons/IconComputed.vue'
 import IconWatch from '../assets/icons/IconWatch.vue'
 import IconPalette from '../assets/icons/IconPalette.vue'
 import IconIf from '../assets/icons/IconIf.vue'
+import IconList from '../assets/icons/IconList.vue'
 import IconOverview from '../assets/icons/IconOverview.vue'
 import IconBurger from '../assets/icons/IconBurger.vue'
 import IconAnalitics from '../assets/icons/IconAnalitics.vue'

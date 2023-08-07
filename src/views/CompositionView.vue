@@ -8,5 +8,5 @@
 </template>
 
 <script setup lang="ts">
-import CompositionMark from '@mark/CompositionMark'
+import CompositionMark from '@mark/CompositionMark.md'
 </script>

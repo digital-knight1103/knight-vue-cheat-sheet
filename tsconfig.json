@@ -13,6 +13,15 @@
   ],
   "compilerOptions": {
     "lib": ["dom", "ESNext"],
-  }
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*", "./dist/*"],
+      "@assets/*": ["src/assets/*"],
+      "@atoms/*": ["src/components/atoms/*"],
+      "@molecules/*": ["src/components/molecules/*"],
+      "@mark/*": ["src/views/PageMD/*"],
+    }
+  },
+  "include": ["src"],
   
 }

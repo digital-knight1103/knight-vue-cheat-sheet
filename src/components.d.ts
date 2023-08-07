@@ -13,7 +13,6 @@ declare module '@vue/runtime-core' {
     AppIcon: typeof import('./components/atoms/AppIcon/AppIcon.vue')['default']
     BoxInfo: typeof import('./components/atoms/BoxInfo/BoxInfo.vue')['default']
     CardComponent: typeof import('./components/molecules/CardComponent/CardComponent.vue')['default']
-    Example1: typeof import('./components/readmeExample/computed/example1.vue')['default']
     ExampleCom: typeof import('./components/readmeExample/computed/ExampleCom.vue')['default']
     FormCheckbox: typeof import('./components/atoms/Form/FormCheckbox/FormCheckbox.vue')['default']
     FormData: typeof import('./components/molecules/FormData/FormData.vue')['default']

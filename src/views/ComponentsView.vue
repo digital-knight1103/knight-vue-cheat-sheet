@@ -12,8 +12,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue"
-import PageHeader from "@/components/molecules/PageHeader/PageHeader.vue";
-import CardComponent from "@/components/molecules/CardComponent/CardComponent.vue";
+import PageHeader from "@molecules/PageHeader/PageHeader.vue";
+import CardComponent from "@molecules/CardComponent/CardComponent.vue";
 
 export default defineComponent({
   name: 'ComponentView',

@@ -3,14 +3,14 @@
     <!-- TODO zmień tapete -->
     <PageHeader 
       path="../src/assets/images/knighteye.png" 
-      title="v-if, v-else">
+      title="Renderowanie List">
     </PageHeader>
     <PageContent>
-      <IfMark />
+      <ListMark />
     </PageContent>
   </div>
 </template>
 
 <script setup lang="ts">
-import IfMark from '@mark/IfMark'
+import ListMark from '@mark/ListMark'
 </script>
