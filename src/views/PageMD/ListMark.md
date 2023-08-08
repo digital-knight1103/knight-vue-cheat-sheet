@@ -33,7 +33,7 @@ title: Renderowanie list v-for
   <ul>
     <li 
       v-for="(item, index) in ingredients" 
-      :key="index"
+      :key="item.id"
     > 
       {{ item }}: indeks {{ index }} 
     </li>
@@ -46,10 +46,10 @@ title: Renderowanie list v-for
   const meal = ref('Pizza z Ananasem')
 
   const ingredients = ref([
-    "1kg sera",
-    "Sos pomidorowy",
-    "Szyneczka",
-    "Duży ananas",
+    {id: 1, label: "1kg sera"},
+    {id: 2, label: "Sos pomidorowy"},
+    {id: 3, label: "Szyneczka"},
+    {id: 4, label: "Duży ananas"},
   ])
 </script>
 ```
@@ -74,3 +74,10 @@ title: Renderowanie list v-for
   </li>
 </template>
 ```
+
+<TextBoxMD>
+  <p class='my-2'>
+    4. W listach zalecane jest również dodawanie specjalnego atrybutu klucza (key) do wszystkich pętli. Jest to unikalny identyfikator dla naszego elementu. Nie jest to konieczne dla prostych tablic ale jest dobrą praktyką. Zresztą większość rozszerzeń wspomagających naszą prace z VUE wyrzuci nam komunikat o braku klucza. 
+    
+  </p>
+</TextBoxMD>

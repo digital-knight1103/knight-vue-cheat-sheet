@@ -10,7 +10,7 @@
     <ul>
       <li
         v-for="(item, index) in ingredients" 
-        :key="item"> {{ item }} | indeks: {{ index }} </li>
+        :key="item.id"> {{ item.label }} | indeks: {{ index }} </li>
     </ul>
   </div>
 </template>
@@ -21,10 +21,10 @@
   const meal = ref('Pizza z Ananasem')
 
   const ingredients = ref([
-    "1kg sera",
-    "Sos pomidorowy",
-    "Szyneczka",
-    "Duży ananas",
+    {id: 1, label: "1kg sera"},
+    {id: 2, label: "Sos pomidorowy"},
+    {id: 3, label: "Szyneczka"},
+    {id: 4, label: "Duży ananas"},
   ])
 </script>
 
