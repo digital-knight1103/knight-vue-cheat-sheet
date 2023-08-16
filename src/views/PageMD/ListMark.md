@@ -62,7 +62,7 @@ title: Renderowanie list v-for
   </p>
   <p class='my-2'>
     1. Naszą tablicę albo obiekt możemy wylistować sobie mimo że nie są danymi reaktywnymi ale nic z nim nie zrobimy. W aplikacjach nasze dane zapewne skądś zostaną dostarczone i będziemy na nich pracować dlatego warto je opakować w jakiś ref albo reactive (obiekty) aby były reaktywne. <br>
-    2. Dyrektywa "v-for" wymaga specjalnej składni w postaci item in items, Gdzie items jest tablicą danych źródłowych natomiast item pojedyńczym elementem naszej tablicy, po którym następuje iteracja. <br>
+    2. Dyrektywa "v-for" wymaga specjalnej składni w postaci item in items (nazwa dowolna), Gdzie items jest tablicą danych źródłowych natomiast item pojedyńczym elementem naszej tablicy, po którym następuje iteracja. <br>
     3. V-for obsługuje również opcjonalny drugi alias dla indeksu naszego elementu
   </p>
 </TextBoxMD>
@@ -77,7 +77,12 @@ title: Renderowanie list v-for
 
 <TextBoxMD>
   <p class='my-2'>
-    4. W listach zalecane jest również dodawanie specjalnego atrybutu klucza (key) do wszystkich pętli. Jest to unikalny identyfikator dla naszego elementu. Nie jest to konieczne dla prostych tablic ale jest dobrą praktyką. Zresztą większość rozszerzeń wspomagających naszą prace z VUE wyrzuci nam komunikat o braku klucza. 
-    
+    4. W listach zalecane jest również dodawanie specjalnego atrybutu klucza (key) do wszystkich pętli. Jest to unikalny identyfikator dla naszego elementu. Nie jest to konieczne dla prostych tablic ale jest dobrą praktyką. Zresztą większość rozszerzeń wspomagających naszą prace z VUE wyrzuci nam komunikat o braku klucza więc warto go dopisać. Zaraz po przykładach opiszemy sobie jeszcze kilka wskazówek i porad dotyczących używania klucza w Vue3.
   </p>
 </TextBoxMD>
+
+<TextBoxMd>
+  <p>
+    Destrukturyzacjas
+  </p>
+</TextBoxMd>
