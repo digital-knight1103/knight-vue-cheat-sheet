@@ -1,6 +1,6 @@
 import path from 'path'
 // import { fileURLToPath, URL } from 'node:url'
-import { fileURLToPath, URL } from 'url'
+// import { fileURLToPath, URL } from 'url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -10,19 +10,6 @@ import Shiki from 'markdown-it-shiki'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)),
-      '@atoms': path.resolve(__dirname, './src/components/atoms'),
-      '@molecules': path.resolve(__dirname, './src/components/molecules'),
-      '@readmeExample': path.resolve(__dirname, './src/components/readmeExample/*'),
-      '@assets': path.resolve(__dirname, './src/assets'),
-      '@mark': path.resolve(__dirname, './src/views/PageMD'),
-      // sprawdzić
-      // '~/': `${path.resolve(__dirname, 'src')}/`,
-    },
-    extensions: ['.ts', '.json', '.vue', '.png', '.md']
-  },
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/], // <--
@@ -58,4 +45,19 @@ export default defineConfig({
       dts: 'src/components.d.ts',
     }),
   ],
+  resolve: {
+    alias: {
+      // '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@': path.resolve(__dirname, './src/'),
+      '@atoms': path.resolve(__dirname, './src/components/atoms'),
+      '@molecules': path.resolve(__dirname, './src/components/molecules'),
+      '@readmeExample': path.resolve(__dirname, './src/components/readmeExample/*'),
+      '@assets': path.resolve(__dirname, './src/assets'),
+      '@mark': path.resolve(__dirname, './src/views/PageMD'),
+      // sprawdzić
+      // '~/': `${path.resolve(__dirname, 'src')}/`,
+    },
+    extensions: ['.ts', '.json', '.vue', '.png', '.md']
+  },
+
 })
