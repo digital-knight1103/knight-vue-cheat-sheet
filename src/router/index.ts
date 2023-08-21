@@ -165,6 +165,11 @@ const router = createRouter({
       name: 'vueuse',
       component: () => import('../views/VueUseView.vue')
     },
+    {
+      path: '/charts',
+      name: 'charts',
+      component: () => import('../views/ChartsView.vue')
+    },
   ]
 })
 

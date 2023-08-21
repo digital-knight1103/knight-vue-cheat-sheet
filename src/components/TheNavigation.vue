@@ -100,7 +100,7 @@
 
               
             <div class="border-green-500 opacity-60 border-t-[1px] relative mb-10">
-              <span class="absolute text-[12px] font-bold">Wiedza</span>
+              <span class="absolute text-[12px] font-bold">Wiedza Ogólna</span>
             </div>
 
             <!-- Ref/Reactive -->
@@ -291,7 +291,7 @@
               </RouterLink>
             </li>
 
-            <!-- state -->
+            <!-- database -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="firebase">
                 <IconUser/>
@@ -301,11 +301,22 @@
               </RouterLink>
             </li>
 
+            <!-- vueuse -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="vueuse">
                 <IconUser/>
                 <span class="ml-8 font-bold">
                   VueUse
+                </span>
+              </RouterLink>
+            </li>
+
+            <!-- charts -->
+            <li class="mb-2">
+              <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="charts">
+                <IconCharts/>
+                <span class="ml-8 font-bold">
+                  Wykresy i diagramy
                 </span>
               </RouterLink>
             </li>
@@ -418,6 +429,7 @@ import IconBurger from '../assets/icons/IconBurger.vue'
 import IconAnalitics from '../assets/icons/IconAnalitics.vue'
 import IconOrder from '../assets/icons/IconOrder.vue'
 import IconUser from '../assets/icons/IconUser.vue'
+import IconCharts from '../assets/icons/IconCharts.vue'
 import IconSetting from '../assets/icons/IconSetting.vue'
 import IconLogout from '../assets/icons/IconLogout.vue'
 import IconArrowDown from '../assets/icons/IconArrowDown.vue'
