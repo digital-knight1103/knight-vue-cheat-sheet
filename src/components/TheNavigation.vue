@@ -220,7 +220,7 @@
             <!-- provides/inject -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="provideinject">
-                <IconUser/>
+                <IconInject/>
                 <span class="ml-8 font-bold">
                   Provides/Inject
                 </span>
@@ -294,7 +294,7 @@
             <!-- database -->
             <li class="mb-2">
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="firebase">
-                <IconUser/>
+                <IconData/>
                 <span class="ml-8 font-bold">
                   Firebase
                 </span>
@@ -424,11 +424,13 @@ import IconWatch from '../assets/icons/IconWatch.vue'
 import IconPalette from '../assets/icons/IconPalette.vue'
 import IconIf from '../assets/icons/IconIf.vue'
 import IconList from '../assets/icons/IconList.vue'
+import IconInject from '../assets/icons/IconInject.vue'
 import IconOverview from '../assets/icons/IconOverview.vue'
 import IconBurger from '../assets/icons/IconBurger.vue'
 import IconAnalitics from '../assets/icons/IconAnalitics.vue'
 import IconOrder from '../assets/icons/IconOrder.vue'
 import IconUser from '../assets/icons/IconUser.vue'
+import IconData from '../assets/icons/IconData.vue'
 import IconCharts from '../assets/icons/IconCharts.vue'
 import IconSetting from '../assets/icons/IconSetting.vue'
 import IconLogout from '../assets/icons/IconLogout.vue'
