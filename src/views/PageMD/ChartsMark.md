@@ -45,3 +45,5 @@ yarn add vue-chartjs chart.js
 # or
 npm i vue-chartjs chart.js
 ```
+
+<barChart></barChart>
