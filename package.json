@@ -18,10 +18,12 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "chart.js": "^4.3.3",
     "install": "^0.13.0",
     "npm": "^9.6.5",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
+    "vue-chartjs": "^5.2.0",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {

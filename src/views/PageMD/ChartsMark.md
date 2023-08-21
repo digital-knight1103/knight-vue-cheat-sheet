@@ -31,6 +31,17 @@ title: Wykresy i diagramy
     <span class='text-green-500 font-bold'>#</span> Twój pierwszy wykres.
   </h1>
   <p class='my-2'>
-    
+    Dobra dość teori. Czas na praktyczne wdrożenie naszych wykresów. Popracujemy trochę z danymi lokalnymi a także spróbujemy uzyskać dane ze źródła asynchronicznego. 
+  </p>
+  <p>
+    Aby zacząc pracę z naszym vue-chartjs musimy najpierw zainstalować nasze biblioteki. 
   </p>
 </TextBoxMD>
+
+``` sh
+pnpm add vue-chartjs chart.js
+# or
+yarn add vue-chartjs chart.js
+# or
+npm i vue-chartjs chart.js
+```
