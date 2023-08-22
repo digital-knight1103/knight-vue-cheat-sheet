@@ -316,7 +316,8 @@
               <RouterLink class='text-gray-300 hover:bg-gray-800 rounded-xl' to="charts">
                 <IconCharts/>
                 <span class="ml-8 font-bold">
-                  Wykresy i diagramy
+                  Wykresy i diagramy <br>
+                  <span class="text-gray-300">(chartsJS)</span>
                 </span>
               </RouterLink>
             </li>

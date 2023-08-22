@@ -18,6 +18,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
+    "caniuse-lite": "^1.0.30001522",
     "chart.js": "^4.3.3",
     "install": "^0.13.0",
     "npm": "^9.6.5",

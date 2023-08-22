@@ -12,7 +12,7 @@ declare module '@vue/runtime-core' {
     AppButton: typeof import('./components/atoms/AppButton/AppButton.vue')['default']
     AppIcon: typeof import('./components/atoms/AppIcon/AppIcon.vue')['default']
     ArrayExample: typeof import('./components/readmeExample/list/ArrayExample.vue')['default']
-    BarChart: typeof import('./components/readmeExample/charts/barChart.vue')['default']
+    BarChart: typeof import('./components/readmeExample/charts/BarChart.vue')['default']
     BoxInfo: typeof import('./components/atoms/BoxInfo/BoxInfo.vue')['default']
     CardComponent: typeof import('./components/molecules/CardComponent/CardComponent.vue')['default']
     ExampleCom: typeof import('./components/readmeExample/computed/ExampleCom.vue')['default']
