@@ -30,7 +30,11 @@ const chartData = reactive({
     'Maj',
     'Czerwiec'
   ],
-  datasets: [ { data: [30, 23, 11, 67, 11, 2, 5] } ]
+  datasets: [ 
+    { 
+      backgroundColor: ['#1B9F4C', 'green'],
+      data: [30, 23, 11, 67, 11, 2, 5]
+    } ]
 })
 
 
