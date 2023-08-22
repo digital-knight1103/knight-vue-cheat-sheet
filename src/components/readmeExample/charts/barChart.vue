@@ -32,6 +32,7 @@ const chartData = reactive({
   ],
   datasets: [ 
     { 
+      label: 'Nadgodzinki',
       backgroundColor: ['#1B9F4C', 'green'],
       data: [30, 23, 11, 67, 11, 2, 5]
     } ]

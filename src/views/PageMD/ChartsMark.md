@@ -59,7 +59,7 @@ npm i vue-chartjs chart.js
   />
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { reactive } from "vue"
 import { Bar } from 'vue-chartjs'
 import { 
@@ -90,10 +90,11 @@ const chartData = reactive({
 
 
 <TextBoxMD>
+  <p class='mb-2'>To lecimy krok po roku.</p>
   <ol>
-    <li>1. Importujemy rodzaj naszego wykresu z pakietu vue-chartjs w naszym przypadku będzie to  { Bar }</li>
-    <li>2. Importujemy wszyskie zależności wymagane dla naszego wykresu</li>
-    <li>3. Musimy zarejestorwać nasze zależnosci.</li>
+    <li>1. Importujemy rodzaj naszego wykresu z pakietu vue-chartjs w naszym przypadku będzie to { Bar } ale możemy wybrać również iine { Pie, Line, Bubble }</li>
+    <li>2. Importujemy wszyskie zależności wymagane dla naszego wykresu czy title, legent...</li>
+    <li>3. Musimy zarejestorwać nasze zależnosci. ChartJS.register </li>
   </ol>
   <p class='my-2'>
     Teraz w naszym template możemy rozpocząć tworzenie naszego wykresu.  
@@ -104,7 +105,7 @@ const chartData = reactive({
   <ol>
     <li>4. Tworzymy dane. Pamiętaj aby opakować je w refa bądź reactive.</li>
     <li>5. Mamy nasz labelki która określa etykiety pojawiające się na dole wykresu</li>
-    <li>6. datasets w tym przypadku określa nam dane czyli np: nadgodziny w danym miesiącu</li>
+    <li>6. datasets w tym miejscu określamy dane czyli np: nadgodziny w danym miesiącu albo dodatkowe elementy jak tytuł czy kolor tła</li>
     <li>7. Jak mamy już nasze fejkowe dane musimy je dostarczyć(połączyć) z naszym wykresem :data="chartData"</li>
   </ol>
 </TextBoxMD>
@@ -114,5 +115,8 @@ const chartData = reactive({
 <TextBoxMD>
   <p class='my-2'>
     Łał. Nawet niezły też nasz wykres ale może trochę go podkręćmy kolorkami aby szefa zamurowało jak zobaczy ile nadgodzin w półroczu zrobiliśmy. 
+  </p>
+  <p class='my-2'>
+    To może jeszcze bardziej rozbudujmy nasz wykresik.  
   </p>
 </TextBoxMD>
