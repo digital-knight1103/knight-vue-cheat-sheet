@@ -129,6 +129,15 @@ const chartData = reactive({
 
 <TextBoxMD>
   <p class='my-2'>
-    Łał. Nawet nieźle nam wyszedł ten wykres. Ale zawsze możemy go trochę podrasować. Dlatego spróbujmy  
+    Łał. Nawet nieźle nam wyszedł ten wykres. Ale zawsze możemy go trochę podrasować. Dlatego spróbujmy troszkę dodać typescripta. No i byśmy może usuneli ten labelek z napisem nadgodzinki bo przestał się nam podobać.
+  </p>
+</TextBoxMD>
+
+<TextBoxMD>
+  <h1 class="text-2xl font-semibold mb-4">
+    <span class='text-green-500 font-bold'>#</span> Dane Asynchroniczne
+  </h1>
+  <p class='my-2'>
+    Teraz spróbujmy pozyskać dane z innego źródła a nie jak teraz na sztywno w komponencie. Taki scenariusz jest bardziej realistyczny. Obecnie nie mamy podłączonego zewnętrznego API ale stwórzy sobie przykładowy plik JSON który będzie naśladował informacje które przyjdą z API z endpointa.
   </p>
 </TextBoxMD>
