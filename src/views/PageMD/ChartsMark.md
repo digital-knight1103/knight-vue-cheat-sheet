@@ -54,12 +54,15 @@ npm i vue-chartjs chart.js
 
 ```vue
 <template>
-  <Bar
-    :data="chartData"
-  />
+  <div class="...">
+    <Bar
+      id="my-chart-id"
+      :data="chartData"
+    />
+  </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { reactive } from "vue"
 import { Bar } from 'vue-chartjs'
 import { 
@@ -71,7 +74,14 @@ import {
     CategoryScale,
     LinearScale } from 'chart.js'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+ChartJS.register(
+    Title, 
+    Tooltip, 
+    Legend, 
+    BarElement, 
+    CategoryScale, 
+    LinearScale
+  )
 
 const chartData = reactive({
   labels: [ 
@@ -82,7 +92,12 @@ const chartData = reactive({
     'Maj',
     'Czerwiec'
   ],
-  datasets: [ { data: [30, 23, 11, 67, 11, 2, 5] } ]
+  datasets: [ 
+    { 
+      label: 'Nadgodzinki',
+      backgroundColor: ['#1B9F4C', '#127838', '#13f065'],
+      data: [30, 23, 11, 67, 11, 2, 5]
+    } ]
 })
 </script>
 
@@ -92,21 +107,21 @@ const chartData = reactive({
 <TextBoxMD>
   <p class='mb-2'>To lecimy krok po roku.</p>
   <ol>
-    <li>1. Importujemy rodzaj naszego wykresu z pakietu vue-chartjs w naszym przypadku będzie to { Bar } ale możemy wybrać również iine { Pie, Line, Bubble }</li>
-    <li>2. Importujemy wszyskie zależności wymagane dla naszego wykresu czy title, legent...</li>
+    <li>1. Importujemy rodzaj naszego wykresu z pakietu vue-chartjs w naszym przypadku będzie to { Bar } ale możemy wybrać również inne { Pie, Line, Bubble }</li>
+    <li>2. Importujemy wszyskie zależności wymagane dla naszego wykresu czyli title, legent...</li>
     <li>3. Musimy zarejestorwać nasze zależnosci. ChartJS.register </li>
   </ol>
   <p class='my-2'>
     Teraz w naszym template możemy rozpocząć tworzenie naszego wykresu.  
   </p>
   <p class='my-2'>
-    UWAGA! Na tym etapie możę pojawić się BŁĄD ponieważ próbujemy wyświetlć wykres ale nie posiadamy obecnie żadnych danych.
+    UWAGA! Na tym etapie może pojawić się BŁĄD ponieważ próbujemy wyświetlć wykres ale nie posiadamy obecnie żadnych danych.
   </p>
   <ol>
     <li>4. Tworzymy dane. Pamiętaj aby opakować je w refa bądź reactive.</li>
     <li>5. Mamy nasz labelki która określa etykiety pojawiające się na dole wykresu</li>
     <li>6. datasets w tym miejscu określamy dane czyli np: nadgodziny w danym miesiącu albo dodatkowe elementy jak tytuł czy kolor tła</li>
-    <li>7. Jak mamy już nasze fejkowe dane musimy je dostarczyć(połączyć) z naszym wykresem :data="chartData"</li>
+    <li>7. Jak mamy już nasze fejkowe dane musimy je dostarczyć (połączyć) z naszym wykresem :data="chartData"</li>
   </ol>
 </TextBoxMD>
 
@@ -114,9 +129,6 @@ const chartData = reactive({
 
 <TextBoxMD>
   <p class='my-2'>
-    Łał. Nawet niezły też nasz wykres ale może trochę go podkręćmy kolorkami aby szefa zamurowało jak zobaczy ile nadgodzin w półroczu zrobiliśmy. 
-  </p>
-  <p class='my-2'>
-    To może jeszcze bardziej rozbudujmy nasz wykresik.  
+    Łał. Nawet nieźle nam wyszedł ten wykres. Ale zawsze możemy go trochę podrasować. Dlatego spróbujmy  
   </p>
 </TextBoxMD>
