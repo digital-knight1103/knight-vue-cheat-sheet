@@ -4,7 +4,6 @@
   "compilerOptions": {
     "preserveValueImports": false,
     "importsNotUsedAsValues": "remove",
-    "verbatimModuleSyntax": true,
     "composite": true,
     "lib": [],
     "types": ["node", "jsdom"]

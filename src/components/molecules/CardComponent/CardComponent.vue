@@ -15,7 +15,7 @@
           <p class="text-gray-300 mb-5">{{ description }}</p>
           <div class="flex flex-wrap items-center mb-6">
             <div class="flex w-full sm:w-auto mb-2 sm:mb-0 sm:mr-2">
-              <img class="w-8 h-8 rounded-full object-cover" src="../../../assets/html.svg" alt="">
+              <!-- <img class="w-8 h-8 rounded-full object-cover" src="../../../assets/html.svg" alt=""> -->
               <img class="w-8 h-8 -ml-2 rounded-full object-cover" src="../../../assets/css3.svg" alt="">
               <img class="w-8 h-8 -ml-2 rounded-full object-cover" src="../../../assets/javascript.svg" alt="">
               <div class="flex items-center justify-center w-8 h-8 -ml-2 bg-gray-500 rounded-full">

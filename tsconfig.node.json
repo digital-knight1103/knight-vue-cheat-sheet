@@ -1,5 +1,5 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.node.json",
+  // "extends": "@tsconfig/node18/tsconfig.json",
   "include": [
     "vite.config.*",
     "vitest.config.*",
@@ -13,35 +13,10 @@
   "compilerOptions": {
     "preserveValueImports": false,
     "importsNotUsedAsValues": "remove",
-    "verbatimModuleSyntax": true,
     "composite": true,
     "types": ["node"],
-    "module": "esnext",
-    "paths": {
-      "@/": [
-        "./src/*"
-      ],
-      "@*": [
-        "./src/components/*"
-      ],
-      "@assets/*": [
-        "./src/assets/*"
-      ],
-      "@atoms/*": [
-        "./src/components/atoms/*"
-      ],
-      "@molecules/*": [
-        "./src/components/molecules/*"
-      ],
-      "@organisms/*": [
-        "./src/components/organisms/*"
-      ],
-      "@mark/*": [
-        "./src/views/PageMD/*"
-      ],
-      "@views/*": [
-        "./src/views/*"
-      ],
-    }
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
   },
 }
