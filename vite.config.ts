@@ -1,9 +1,10 @@
 import path from 'path'
+import { defineConfig } from 'vite'
+import Vue from '@vitejs/plugin-vue'
 // import { fileURLToPath, URL } from 'node:url'
 // import { fileURLToPath, URL } from 'url'
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+
 import Components from 'unplugin-vue-components/vite'
 import Markdown from 'vite-plugin-vue-markdown'
 import Shiki from 'markdown-it-shiki'
@@ -11,8 +12,8 @@ import Shiki from 'markdown-it-shiki'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue({
-      include: [/\.vue$/, /\.md$/], // <--
+    Vue({
+      include: [/\.vue$/, /\.md$/], // <-- allows Vue to compile Markdown files
     }),
     Markdown({
       wrapperClasses: 'prose prose-sm m-auto text-left',
