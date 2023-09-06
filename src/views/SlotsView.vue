@@ -20,7 +20,7 @@ import { defineComponent } from 'vue'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader.vue';
 import PageContent from '@/components/molecules/PageContent/PageContent.vue'
 import TheAvatar from '@/components/atoms/TheAvatar/TheAvatar.vue';
-import SlotsMark from './PageMD/SlotsMark.md'
+import SlotsMark from '@mark/SlotsMark.md'
 
 export default defineComponent({
   name: 'CompositionView',

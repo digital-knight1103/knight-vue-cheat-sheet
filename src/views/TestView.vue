@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <PageHeader title="Test" path="../src/assets/images/forest.png"></PageHeader>
+    <PageHeader title="Test" :path="pathImg"></PageHeader>
     <PageContent class="p-10">
 
       <AppButton @click="createBox">

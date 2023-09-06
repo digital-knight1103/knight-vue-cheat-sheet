@@ -10,5 +10,5 @@
 </template>
 
 <script setup lang="ts">
-import RefMark from '@mark/RefMark'
+import RefMark from '@mark/RefMark.md'
 </script>

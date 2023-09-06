@@ -10,5 +10,5 @@
 </template>
 
 <script setup lang="ts">
-import ChartsMark from '@mark/ChartsMark'
+import ChartsMark from '@mark/ChartsMark.md'
 </script>

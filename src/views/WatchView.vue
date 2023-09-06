@@ -10,5 +10,5 @@
 </template>
 
 <script setup lang="ts">
-import WatchMark from './PageMD/WatchMark.md'
+import WatchMark from '@mark/WatchMark.md'
 </script>

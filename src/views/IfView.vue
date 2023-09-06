@@ -12,5 +12,5 @@
 </template>
 
 <script setup lang="ts">
-import IfMark from '@mark/IfMark'
+import IfMark from '@mark/IfMark.md'
 </script>

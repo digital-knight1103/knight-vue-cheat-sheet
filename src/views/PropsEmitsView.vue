@@ -11,7 +11,7 @@
 import { defineComponent } from 'vue'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader.vue'
 import PageContent from '@/components/molecules/PageContent/PageContent.vue'
-import PropsMark from './PageMD/PropsMark.md'
+import PropsMark from '@mark/PropsMark.md'
 
 export default defineComponent({
   name: 'PropsEmitsView',

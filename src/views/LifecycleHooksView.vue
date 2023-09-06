@@ -9,5 +9,5 @@
 </template>
 
 <script setup lang="ts">
-import LifeCycleHooksMark from '@mark/LifeCycleHooksMark'
+import LifeCycleHooksMark from '@mark/LifeCycleHooksMark.md'
 </script>

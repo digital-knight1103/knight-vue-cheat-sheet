@@ -12,5 +12,5 @@
 </template>
 
 <script setup lang="ts">
-import ListMark from '@mark/ListMark'
+import ListMark from '@mark/ListMark.md'
 </script>

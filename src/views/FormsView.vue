@@ -107,7 +107,7 @@
 import { defineComponent } from 'vue'
 import PageHeader from '@/components/molecules/PageHeader/PageHeader.vue'
 import PageContent from '@/components/molecules/PageContent/PageContent.vue'
-import FormsMark from '../views/PageMD/FormsMark.md'
+import FormsMark from '@mark/FormsMark.md'
 
 export default defineComponent({
   name: 'FormsView',

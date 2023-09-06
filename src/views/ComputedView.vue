@@ -10,5 +10,5 @@
 </template>
 
 <script setup lang="ts">
-import ComputedMark from './PageMD/ComputedMark.md'
+import ComputedMark from '@mark/ComputedMark.md'
 </script>

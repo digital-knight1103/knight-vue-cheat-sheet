@@ -8,5 +8,5 @@
 </template>
 
 <script setup lang="ts">
-import IntroductionMark from './PageMD/IntorductionMark.md'
+import IntroductionMark from '@mark/IntorductionMark.md'
 </script>
