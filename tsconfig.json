@@ -12,7 +12,7 @@
     }
   ],
   "compilerOptions": {
-    "lib": ["dom", "esnext", "dom.iterable"],
+    "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*", "./dist/*"],
