@@ -6,24 +6,18 @@ title: CompositionApi
 </h1>
 
 <TextBoxMD>
-  <p class='indent-6'>
-    Wiemy że VUE wraz z wyjściem wersji "VUE3" wprowadził nowy alternatywny sposób pisania kodu, czyli CompositionAPI który daje nam inny sposób budowania naszych komponentów względem OptionsApi. Ma ona na celu poprawę skalowalności projektu oraz ułatwienie tworzenia reużywalnych komponentów.
-    W skrócie, polega ona na definiowaniu funkcji, które następnie mogą być używane w komponencie. W przeciwieństwie do OptionAPI, CompositionAPI nie opiera się na jednym dużym obiekcie options, ale pozwala na tworzenie wielu mniejszych funkcji, które można następnie składać w większe komponenty. CompositionAPI ma kilka zalet, takich jak łatwiejsze testowanie, ułatwiony refaktoring i ponowne użycie kodu. Ponadto, CompositionAPI pozwala na lepsze wykorzystanie typowych wzorców programistycznych, takich jak np. useFetch, useLocalStorage, useTimer itp.
+  <p class='indent-6 pb-2'>
+    Jedną z rzeczy, która sprawia że VUE jest freamworkiem bardzo wszechstronnym i ciekawym jest to że ciągle ewoluuje i daje nam możliwość komponowania naszych komponentów na 3 różne sposoby. <span class='text-green-400'>OptionAPI</span>, <span class='text-green-400'>CompositionAPI</span> oraz najnowsza wersja i obecnie najbardziej zalecana <span class='text-green-400'>CompositionAPI: script setup</span>, i ta w naszym projekcie będzie wiodąca. Ale nie martwcie się postaram się również od czasu do czasu porównać nowy ze starszym zapisem aby wiedza nam się lepiej utrwaliła jak ktoś sporo walczył w OptionAPI.<br>
+  </p>
+  <p class='py-2'>
+    Ale dlaczego CompositionAPI jest lepsze od OptionAPI zapytasz i dlaczego powstała? Przypomnijmy sobie szybko o OptionAPI<br>
   </p>
   <p class='my-2'>
-    <span class='text-green-500'>OptionAPI</span> (także znany jako Object-based API) to oryginalny sposób tworzenia komponentów w Vue. Polega on na definiowaniu właściwości komponentu w obiekcie options, który zawiera m.in. sekcję data, methods, computed itp. OptionAPI jest stosunkowo łatwy do zrozumienia i stosunkowo mało inwazyjny w stosunku do istniejącego kodu.
-  </p>
-  <p class='my-2'>
-    Porównując OptionAPI i CompositionAPI, można zauważyć, że CompositionAPI jest bardziej elastyczne i pozwala na tworzenie bardziej modułowego i czytelnego kodu. Ponadto, CompositionAPI pozwala na lepsze rozdzielenie funkcjonalności, co ułatwia testowanie i ponowne użycie kodu. OptionAPI z kolei jest bardziej zrozumiały dla początkujących programistów i może być łatwiejszy do użycia w małych projektach. Trzeba też powiedzieć że OptionApi nadal działa w Vue3 i nadal jest aktualny dla wielu przypadków jednak przyszłością Vue jest CompositionApi
-  </p>
-  <p class='my-2'>
-    Pamiętajmy jeszcze że w CompositionAPI możemy również skorzystać ze składni script setup która jeszcze bardziej ułatwia nam pracę. Ale to po kolei. Zerknijmy poniżej i zobaczy czy zauważysz różnice: 
+    <span class='text-green-400'>OptionAPI</span> (także znany jako Object-based API) to oryginalny sposób tworzenia komponentów w Vue. Polega on na definiowaniu właściwości komponentu w obiekcie options, który zawiera m.in. sekcję data, methods, computed itp. OptionAPI jest stosunkowo łatwy do zrozumienia i stosunkowo mało inwazyjny w stosunku do istniejącego kodu. 
   </p>
 </TextBoxMD>
 
-<div class='flex flex-wrap justify-center gap-x-3'>
-
-```vue
+  ```vue
 <!-- OptionsAPI  -->
 
 <template>
@@ -58,6 +52,28 @@ export default {
 
 ```
 
+<TextBoxMD>
+  <p class='indent-6 pb-2'>
+    Na pierwszy rzut oka wydaje się że w OptionAPI jest porządek, wszystko ładnie podzielone na metody, dane, cykle życia itp. Jednak taka organianizacja w komponencie jest z natury mocno restrykcyjna i gdy nasz komponent osiągnął pewien poziom złożoności i skomplikowania zaczynały sie problemy z obsługą logiki. Często się zdarza że kod zarządzający tą samą logiką jest podzielony w różnych częściach skryptu co wpływa na czytelność kodu. Problem też występuje w udostępnianiu kodu reaktywnego między komponentami.
+  </p>
+  <p class='py-2'>
+    I tak w celu wyeliminowania tych przypadłości, poprawy skalowalności projektów oraz ułatwienie tworzenia reużywalnych komponentów cały na zielono wjechał <span class='text-green-400 font-semibold'>VUE 3 z CompositionAPI</span> który do tego jest bardziej przyjazny naszemu kochanemu Typescriptowi.
+  </p>
+  <p class='py-2'>
+    To tak w dużym skrócie o CompositionAPI, polega ona na definiowaniu funkcji, które następnie mogą być używane w komponencie. W przeciwieństwie do OptionAPI, CompositionAPI nie opiera się na jednym dużym obiekcie options, ale pozwala na tworzenie wielu mniejszych funkcji, które można następnie składać w większe komponenty.<br>
+    CompositionAPI ma wiele zalet, takich jak wsponiane wyżej czyli duża skalowanlność, łatwiejsze testowanie, ułatwiony refaktoring i ponowne użycie kodu. Ponadto, CompositionAPI pozwala na lepsze wykorzystanie typowych wzorców programistycznych, takich jak np. useFetch, useLocalStorage, useTimer itp.
+  </p>
+
+  <p class='my-2'>
+    Ok to porównując OptionAPI i CompositionAPI, można zauważyć, że CompositionAPI jest bardziej elastyczne i pozwala na tworzenie bardziej modułowego i czytelnego kodu. Ponadto, CompositionAPI pozwala na lepsze rozdzielenie funkcjonalności, co ułatwia testowanie i ponowne użycie kodu. OptionAPI z kolei jest bardziej zrozumiały dla początkujących programistów i może być łatwiejszy do użycia w małych projektach jednak wydaje mi się że już zdecydowanie bardziej jak zaczynasz naukę skupić się na świeższej składni. Trzeba też powiedzieć że OptionApi nadal działa w Vue3 i nadal jest aktualny dla wielu przypadków jednak przyszłością Vue jest CompositionApi.
+  </p>
+  <p class='my-2'>
+    Pamiętajmy jeszcze że w CompositionAPI możemy również skorzystać ze składni script setup która jeszcze bardziej ułatwia nam pracę. Ale to po kolei. Zerknijmy poniżej i zobaczy czy zauważysz różnice: 
+  </p>
+</TextBoxMD>
+
+<div class='flex flex-wrap justify-center gap-x-3'>
+
 ```vue
 <!-- CompositionAPI -->
 
@@ -90,7 +106,33 @@ export default {
   },
 };
 </script>
+```
 
+```vue
+<!-- CompositionAPI - script setup -->
+
+<template>
+  <h1>{{ message }}</h1>
+</template>
+
+<script setup>
+import { reactive, computed } from 'vue';
+
+const state = reactive({
+  count: 0,
+  msg: 'composition',
+  text: 'api',
+});
+const increment = () => {
+  state.count++;
+};
+const message = computed(() => {
+  return state.msg.charAt(0).toUpperCase() 
+       + state.msg.slice(1) 
+       + state.text.toUpperCase() + ' !';
+});
+
+</script>
 ```
 </div>
 
