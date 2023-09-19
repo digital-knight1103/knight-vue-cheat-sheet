@@ -21,7 +21,7 @@ title: CompositionApi
   </p>
 </TextBoxMD>
 
-<div class='flex flex-wrap justify-center'>
+<div class='flex flex-wrap justify-center gap-x-3'>
 
 ```vue
 <!-- OptionsAPI  -->

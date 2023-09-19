@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-undef
 module.exports = {
   content: [
-    './index.html', './src/layouts/**/*.vue', './src/components/**/*.vue', './src/views/**/*.vue'
+    './index.html', './src/layouts/**/*.vue', './src/components/**/*.vue', './src/views/**/*.vue', './src/views/**/*.md'
   ],
   
   theme: {
@@ -361,7 +361,7 @@ module.exports = {
           extrabold: '800',
           black: '900',
       },
-      gap: (theme) => theme('spacing'),
+      // gap: (theme) => theme('spacing'),
       gradientColorStops: (theme) => theme('colors'),
       // gridAutoColumns: {
       //   auto: 'auto',
