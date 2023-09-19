@@ -1,12 +1,7 @@
 ---
 title: Forms
 ---
-
-- [Sekcja 1](#sekcja-1)
-- [Sekcja 2](#sekcja-2)
-- [Sekcja 3](#sekcja-3)
-
-<h1 class='text-white mb-10 mt-5 text-2xl uppercase text-center'>
+<h1 class='text-white mb-10 text-2xl uppercase text-center'>
   Budujemy Formularz krok po kroku
 </h1>
 
@@ -22,7 +17,7 @@ title: Forms
   </p>
 </TextBoxMD>
 
-<TextBoxMD id='step1'>
+<TextBoxMD>
   <h1 class="text-xl uppercase font-semibold text-gray-300 mb-4">Krok 1</h1>
   <h1 class="text-2xl uppercase font-semibold">
     <span class='text-green-500 forn-bold'>#</span>  Input typu tekst.
@@ -60,6 +55,7 @@ export default defineComponent ({
 })
 </script>
 ```
+
 <BoxInfo class='mx-auto' title='TypeScript' description='Nie wiem czy miałeś wcześniej styczność z TypeScriptem we VUE. Dlatego żebyś się nie przestraszył to odsyłam do Cię do części z TS a tutaj w kodzie dlatego że korzystamy z TypeScripta wystepuje defineComponent.' />
 
 <TextBoxMD>
@@ -81,11 +77,6 @@ export default defineComponent ({
     W tym przykładzie wartość modelu jest przechowywana jako właściwość danych komponentu, którą nazywa się modelValue. Ta wartość będzie przekazana do elementu formularza (rodzica) jako wartość value.
   </p>
 </TextBoxMD>
-
-# Sekcja 1
-# Sekcja 2
-# Sekcja 3
-
 
 ```vue
 // FormInput
@@ -193,7 +184,6 @@ export default defineComponent({
 />
 </div>
 
-
 <TextBoxMD>
   <p class='indent-6'>
     W Vue za każdym razem, gdy przekazujesz atrybuty, klasy i style od rodzica do dziecka, tak jak robimy to z type w naszym FormInput, Vue spróbuje automatycznie dowiedzieć się, gdzie wewnątrz szablonu te atrybuty powinny zostać wstrzyknięte.
@@ -214,6 +204,7 @@ export default defineComponent({
   <input />
 </template>
 ```
+
 ```js
 // Są dwa elementy więc są i problemy
 // Vue nie wie gdzie przekazać atrybut
@@ -290,7 +281,6 @@ export default defineComponent ({
 
 })
 </script>
-</template>
 ```
 
 ```vue
@@ -550,15 +540,12 @@ export default defineComponent({
 </div>
 
 <div class='mx-10 my-2 p-5 mt-10 bg-gray-600 rounded-lg text-white'>
-
   <p class='my-4'>
   Na koniec, musimy emitować update:modelValue kiedy chcemy powiadomić rodzica, że pole wyboru zostało przełączone. Będziemy nasłuchiwać zdarzenia @change na elemencie wejściowym i emitować nowy, sprawdzony stan naszego elementu, gdy tylko zostanie ono wywołane.
   </p>
-
   <p>
-Zauważ, że dla pól wyboru (checkbox) nie emitujemy wartości celu (target value) poprzez $event.target.value, ale zamiast tego status checked poprzez $event.target.checked.
+    Zauważ, że dla pól wyboru (checkbox) nie emitujemy wartości celu (target value) poprzez $event.target.value, ale zamiast tego status checked poprzez $event.target.checked.
   </p>
-
   <p>
   No to wrzućmy nasze checkboxy i połączmy z resztą zobaczymy jak to wygląda
   </p>
@@ -589,11 +576,8 @@ Zauważ, że dla pól wyboru (checkbox) nie emitujemy wartości celu (target val
   <p>Ufff już bliżej końca. Zostało jeszcze radio</p>
   <p>
   Nadszedł czas, aby zająć się ostatnim z naszych elementów formularza Radio.
-
   Przyciski opcji w HTML mają unikalną cechę, o której musimy wiedzieć, zanim zaczniemy budować nasz komponent — nie działają one jako pojedyncze dane wejściowe, jak w przypadku pól wyboru(checkbox). Żyją i funkcjonują jako część grupy przycisków opcji, które mają jeden stan.
-
   W zależności od stanu grupy przycisk radiowy może być aktywny lub nieaktywny w stosunku do przycisków w swojej grupie.
-
   Z powodu tego szczególnego dziwactwa w sposobie działania przycisków opcji, FormRadio komponent będzie miał również inny komponent do ich pogrupowania, the FormRadioGroup. 
   </p>
 
@@ -605,10 +589,8 @@ Zauważ, że dla pól wyboru (checkbox) nie emitujemy wartości celu (target val
   <p class='my-4'>
   Gdy mamy do czynienia z przyciskami radiowymi, każdy przycisk zawiera wartość (value), którą reprezentuje w zestawie. Na przykład, gdybyś miał grupę przycisków opcji do wyboru ulubionego zwierzaka, jeden przycisk opcji reprezentowałby doga inny by reprezentował cat czyli:
   Musi być używany w połączeniu z innymi przyciskami radiowymi, tak aby się wzajemnie wykluczały.
-
   Przyciski radiowe łączysz poprzez podobną wartość nazwy (name):
-
-Często zdarza się, że te przyciski reprezentują również wartości liczbowe. Na przykład podczas wybierania liczby gości do pokoju hotelowego lub nawet wartości logicznych w ich formacie numerycznym. 
+  Często zdarza się, że te przyciski reprezentują również wartości liczbowe. Na przykład podczas wybierania liczby gości do pokoju hotelowego lub nawet wartości logicznych w ich formacie numerycznym. 
   </p>
 </div>
 
@@ -623,6 +605,7 @@ Często zdarza się, że te przyciski reprezentują również wartości liczbowe
 </label>
 //Zaważ że zaznaczenie jednego usuwa zaznaczenie drugiego
 ```
+
 <div class='my-10'>
   <label>
   <input type="radio" name="newsletter" value="yes">
@@ -638,22 +621,15 @@ Często zdarza się, że te przyciski reprezentują również wartości liczbowe
 <div class='mx-10 my-2 p-5 bg-gray-600 rounded-lg text-white'>
   <p>
     Przejdźmy teraz do wiązania naszej właściwości modelValue z naszym elementem wejściowym. Podobnie jak pola wyboru, przyciski radiowe nie wiążą się z właściwością value, ale używają właściwości checked. Jednakże, w szczególnym przypadku przycisków radiowych musimy sprawdzić, czy ten przycisk jest tym, który jest aktualnie wybrany, czy nie.
-
     Wróćmy do naszego ulubionego przykładu ze zwierzątkami. ModelValue naszych elementów BaseRadio będzie zawierał preferencje użytkownika, a więc albo kota albo psa - ale musimy być w stanie powiedzieć temu radiu, którą z tych wartości reprezentuje.
-
     Aby to zrobić, dodamy do komponentu nowy rekwizyt(prop) - value.
   </p>
 
   <p class='my-4'>
     Zauważ, że nie ustawiliśmy wartości domyślnej w przypadku wartości prop, ale zamiast tego wybraliśmy ustawienie właściwości na wymaganą. Jeśli ta właściwość nie jest ustawiona, Vue wyda dla nas ostrzeżenie.
-
-Przycisk radiowy po prostu nie ma sensu, gdy nie ma do niego przypisanej wartości, a wartość domyślna może być potencjalnie problematyczna, jeśli użytkownik zapomni ją ustawić i wiele radioodbiorników będzie miało tę samą wartość.
-
-Aby wiedzieć, czy nasze radio jest :checked, będziemy patrzeć, czy modelValue jest równy wartości. Oznacza to, że preferencje użytkownika, na przykład "pies", będą albo równe wartości tego radia, albo nie będą - zaznaczone lub odznaczone.
-
-Przejdźmy więc dalej i usuńmy stare wiązanie v-model oraz twardo zakodowany atrybut name i zastąpmy go naszym wiązaniem checked. Upewnimy się również, że zaktualizujemy wiązanie wartości do naszego nowego rekwizytu.
-
-Przetłumaczono z www.DeepL.com/Translator (wersja darmowa)
+     radiowy po prostu nie ma sensu, gdy nie ma do niego przypisanej wartości, a wartość domyślna może być potencjalnie problematyczna, jeśli użytkownik zapomni ją ustawić i wiele radioodbiorników będzie miało tę samą wartość.
+    Aby wiedzieć, czy nasze radio jest :checked, będziemy patrzeć, czy modelValue jest równy wartości. Oznacza to, że preferencje użytkownika, na przykład "pies", będą albo równe wartości tego radia, albo nie będą - zaznaczone lub odznaczone.
+    Przejdźmy więc dalej i usuńmy stare wiązanie v-model oraz twardo zakodowany atrybut name i zastąpmy go naszym wiązaniem checked. Upewnimy się również, że zaktualizujemy wiązanie wartości do naszego nowego rekwizytu.
   </p>
 
   <p class='my-4'>
@@ -662,8 +638,7 @@ Przetłumaczono z www.DeepL.com/Translator (wersja darmowa)
 
   <p class='my-4'>
     Zwróć uwagę na ładunek naszego $emit. Zamierzamy emitować prop wartości. Chcemy, aby nasz odbiorca v-modelu na rodzicu przechowywał wartość aktualnie wybranego przycisku radiowego, a ponieważ zdarzenie change będzie wywoływane tylko wtedy, gdy element dokona wybranego wyboru, możemy bezpiecznie odpalić value, aby zaktualizować rodzica o nowo wybraną opcję.
-
-Na koniec, ponieważ usunęliśmy atrybut name, musimy upewnić się, że programista używający tego komponentu jest w stanie ustawić atrybuty takie jak name w naszym input. Tak więc użyjemy v-bind="$attrs" na naszym input, tak jak nauczyliśmy się tego podczas budowania naszego komponentu BaseInput, aby umożliwić wstrzyknięcie tego atrybutu do właściwego elementu.
+    Na koniec, ponieważ usunęliśmy atrybut name, musimy upewnić się, że programista używający tego komponentu jest w stanie ustawić atrybuty takie jak name w naszym input. Tak więc użyjemy v-bind="$attrs" na naszym input, tak jak nauczyliśmy się tego podczas budowania naszego komponentu BaseInput, aby umożliwić wstrzyknięcie tego atrybutu do właściwego elementu.
   </p>
 
 </div>
@@ -758,14 +733,10 @@ export default defineComponent({
 
   <p class='my-4'>
   W naszej ostatniej lekcji stworzyliśmy nasz ostatni komponent formularza bazowego dla tego kursu, BaseRadio.
-
-Jednak zostawiliśmy komponent, który jest całkowicie elastyczny i wielokrotnego użytku, ale czasami trochę trudny do zrozumienia. Dla kogoś, kto nie jest zaznajomiony z wewnętrznym działaniem BaseRadio, grupa wszystkich wskazujących na ten sam stan v-modelu może być myląca. Mogą również wystąpić błędy, jeśli ktoś zapomni dodać atrybut nazwy do pewnej części grupy.
-
-Byłoby lepiej, gdybyśmy mieli komponent opakowujący, który obsługiwał całą logikę zarządzania połączeniami v-model dla naszego użytkownika, dzięki czemu muszą pamiętać, aby zrobić to tylko raz - jak w większości innych, i jest łatwiejszy do zrozumienia na pierwszy rzut oka.
-
-Wejdź do BaseRadioGroup!
+  Jednak zostawiliśmy komponent, który jest całkowicie elastyczny i wielokrotnego użytku, ale czasami trochę trudny do zrozumienia. Dla kogoś, kto nie jest zaznajomiony z wewnętrznym działaniem BaseRadio, grupa wszystkich wskazujących na ten sam stan v-modelu może być myląca. Mogą również wystąpić błędy, jeśli ktoś zapomni dodać atrybut nazwy do pewnej części grupy.
+  Byłoby lepiej, gdybyśmy mieli komponent opakowujący, który obsługiwał całą logikę zarządzania połączeniami v-model dla naszego użytkownika, dzięki czemu muszą pamiętać, aby zrobić to tylko raz - jak w większości innych, i jest łatwiejszy do zrozumienia na pierwszy rzut oka.
+  Wejdź do BaseRadioGroup!
   </p>
-
   <p class='my-4'>
     Jak wspomnieliśmy w ostatniej lekcji, tak naprawdę nie ma sensu, gdy przyciski radiowe są same w sobie, ponieważ nie zapewniają użytkownikowi wyboru, co jest kluczową cechą przycisków radiowych. Więc prawie zawsze chcesz zapewnić co najmniej dwa radia na każdą grupę, chyba że robisz coś takiego.
     <BoxInfo 
@@ -778,7 +749,6 @@ Wejdź do BaseRadioGroup!
 <div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
   <p class='my-4'>
     Aby rozpocząć, musimy utworzyć rekwizyt, który pozwoli użytkownikowi tego komponentu przekazać tablicę opcji, spośród których użytkownik chce wybrać. Chcemy również mieć pewność, że wykorzystujemy dane zawarte w tym nowym optionsprop, aby przejrzeć obiekty zawierające i utworzyć nowy BaseRadioinstancja komponentu dla każdego z nich.
-
     The options właściwość będzie tablicą obiektów i będziemy chcieli, aby każdy z obiektów w środku zawierał co najmniej dwie właściwości: the labeli value. Na przykład:  
   </p>
 </div>
@@ -802,11 +772,8 @@ const radioOptions = [
 <div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
   <p class='my-4'>
     Zauważ, że deklarujemy options prop zgodnie z wymaganiami, ponieważ ten komponent po prostu nie będzie działał bez niego.
-
 Jak dowiedzieliśmy się na ostatniej lekcji, wszystkie grupy radio są połączone razem jako grupa przez name property.
-
 Wszystkie radio w grupie muszą mieć to samo name aby przeglądarka wiedziała, że ​​powinny być zgrupowane.
-
 Więc przejdźmy dalej i dodajmy nasz drugi rekwizyt, the name prop i upewnij się, że jest poprawnie powiązany z naszym FormRadio.  
   </p>
 </div>
@@ -861,14 +828,12 @@ export default defineComponent({
 <div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
   <p class='my-4'>
     Tym razem zrobimy rekwizyt required, ponieważ grupy radiowe bez zaznaczenia niczego nie mają większego sensu; tak naprawdę nie ma stanu „nic nie wybrano” podczas korzystania z tego typu danych wejściowych formularza.
-
 Nie zapomnij również związać modelValue props dla każdego FormRadio w pętli!
-
 Następnie zacznijmy słuchać update:modelValue zdarzenie każdego z FormRadio i wyemitować je z powrotem do rodzica FormRadioGroup.  
   </p>
 </div>
 
-```js 
+```vue 
   <FormRadio
     v-for="option in options"
     :key="option.value"
@@ -920,7 +885,6 @@ Następnie zacznijmy słuchać update:modelValue zdarzenie każdego z FormRadio 
 <div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
   <p class='my-4'>
    Zakłada się, że rekwizyty boolowskie w Vue, które nie są specjalnie powiązane, są prawdziwe . Więc w powyższym przykładzie verticaljest taki sam jak :vertical="true".
-
   Wróćmy do FormRadioGroup.vue dodaj nasz verticalprop i rozpocznij konfigurowanie tej nowej funkcji. 
   </p>
 </div>
@@ -952,13 +916,8 @@ export default {
 
 <div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
   <p class='my-4'>
-   Teraz, aby skorzystać z naszego propa  vertical  , który musimy zapakować FormRadioGroup we własnym komponencie. Gdy radio są ustawione pionowo, chcemy, aby było to a div, a gdy są poziome, użyjemy a span.
-
-  Istnieje oczywiście wiele sposobów rozwiązania tego konkretnego problemu, ale w szczególności to rozwiązanie pozwala mi pokazać, jak wykorzystać moc component :is dla Twoich dynamicznych komponentów formularzy! Zaczniemy od zapakowania wszystkiego w ok component element i przesuwanie v-for zapętlić się na nim.
-
-   (Nie zapomnij zabrać ze sobą również tzw :keywiążąca wraz z v-for)
-
-Teraz musimy określić logikę dla iswłasność r componentczęść. Bez względu na to, do którego ciągu znaków przekażemy, Vue użyje go podczas renderowania komponentu. Jeśli więc ustawimy isnieruchomość do div, ten komponent opakowujący będzie elementem div, a jeśli ustawimy go na span, będzie to oczywiście rozpiętość. 
+   Teraz, aby skorzystać z naszego propa  vertical  , który musimy zapakować FormRadioGroup we własnym komponencie. Gdy radio są ustawione pionowo, chcemy, aby było to a div, a gdy są poziome, użyjemy a span. Istnieje oczywiście wiele sposobów rozwiązania tego konkretnego problemu, ale w szczególności to rozwiązanie pozwala mi pokazać, jak wykorzystać moc component :is dla Twoich dynamicznych komponentów formularzy! Zaczniemy od zapakowania wszystkiego w ok component element i przesuwanie v-for zapętlić się na nim. Nie zapomnij zabrać ze sobą również tzw :keywiążąca wraz z v-for.
+   Teraz musimy określić logikę dla iswłasność r componentczęść. Bez względu na to, do którego ciągu znaków przekażemy, Vue użyje go podczas renderowania komponentu. Jeśli więc ustawimy isnieruchomość do div, ten komponent opakowujący będzie elementem div, a jeśli ustawimy go na span, będzie to oczywiście rozpiętość. 
   </p>
 </div>
 
@@ -983,10 +942,6 @@ Teraz musimy określić logikę dla iswłasność r componentczęść. Bez wzgl�
 </template>
 ```
 
-
-
-
-
 <img src="../../assets/images/divForm.png" style="width:800px;"/>
 
 <div class='flex'>
@@ -997,14 +952,11 @@ Teraz musimy określić logikę dla iswłasność r componentczęść. Bez wzgl�
 <div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
   <p class='my-4'>
     Ponieważ nie jest to bardzo skomplikowana logika, możemy sobie pozwolić na pozostawienie wszystkiego w szablonie. Tutaj sprawdzamy, czy verticalprop jest truey , to ustawiamy a divjeśli nie spantak jak ustaliliśmy jakiś czas temu.
-
     Zauważ, że oba 'div'oraz 'span'są ujęte w pojedyncze cudzysłowy, ponieważ muszą to być łańcuchy znaków.
-
     Jeśli ustawimy verticalflaga dla nas BaseRadioGroupteraz włączone SimpleForm.vuei sprawdź to w przeglądarce, wszystko wydaje się działać zgodnie z oczekiwaniami. 
   </p>
   <p class='my-4'>
   Jest jednak jeszcze jedna regulacja, którą musimy wprowadzić w układzie poziomym. Musimy dodać trochę stylizacji, aby nieco oddzielić elementy.
-
 Dodajmy A horizontalcss i zastosuj ją, gdy element używa układu poziomego. Lub w kategoriach kodu, gdy nie jest to pionowe. 
   </p>
 </div>
@@ -1043,14 +995,11 @@ Dodajmy A horizontalcss i zastosuj ją, gdy element używa układu poziomego. Lu
 <div class='mx-10 my-2 mt-10 p-5 bg-gray-600 rounded-lg text-white'>
   <p class='my-4'>
     W środku componenttag, ustawiamy nowy classwiązanie i używanie składni obiektu do włączania i wyłączania klas.
-
   Kiedykolwiek warunek !verticalocenia na true- więc kiedy pion jest false, będziemy chcieli zastosować nasze horizontalklasa CSS.
-
   Usuńmy verticalflaga z naszego BaseRadioGroupod SimpleForm.vuea następnie jeszcze raz sprawdź przeglądarkę.  
   </p>
   <p class='my-4'>
   Wraz z ukończeniem naszej BaseRadioGroupcomponent kończymy tworzenie naszych komponentów formularza bazowego. Świetna robota, aby przejść przez to wszystko!
-
   W następnej lekcji zrobimy mały krok i przyjrzymy się, jak możemy prawidłowo obsługiwać przesyłanie formularzy w Vue, wykorzystując moc powszechnie używanej biblioteki do wysyłania żądań HTTP: Axios. 
   </p>
 </div>

@@ -9,7 +9,6 @@
     <PageContent>
       <AtomicMark />
     </PageContent>
-    <AppButton>Hello</AppButton>
   </div>
 </template>
 
